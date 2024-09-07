@@ -10,8 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4dcbd470bf2a1ab449d4e74583de7dde, type: 3}
-  m_Name: Stone
+  m_Name: Sword
   m_EditorClassIdentifier: 
-  Name: 
+  Name: Sword
   stackable: 0
-  icon: {fileID: 0}
+  icon: {fileID: 21300000, guid: 98c2d2187f5c1344ebcbe0330ab03c16, type: 3}
