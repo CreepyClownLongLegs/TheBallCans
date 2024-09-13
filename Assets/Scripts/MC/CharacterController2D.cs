@@ -7,7 +7,7 @@ using UnityEngine.InputSystem;
 using UnityEngine.Scripting.APIUpdating;
 
 [RequireComponent(typeof(Rigidbody2D))]
-public class CharacterController2D : MonoBehaviour
+public class CharacterController2D : MonoBehaviour, IDataPersistence
 {
     Animator animator;
     Rigidbody2D rb;
