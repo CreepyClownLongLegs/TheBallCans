@@ -264,7 +264,25 @@ MonoBehaviour:
   loadingCanvas: {fileID: 1989829477}
   loadingCamera: {fileID: 868538289}
   sceneGroups:
-  - GroupName: LEVEL ONE
+  - GroupName: LevelOne
+    Scenes:
+    - Reference:
+        asset: {fileID: 102900000, guid: 8c9cfa26abfee488c85f1582747f6a02, type: 3}
+        guid: 8c9cfa26abfee488c85f1582747f6a02
+      SceneType: 0
+    - Reference:
+        asset: {fileID: 102900000, guid: 6c138c4fedf61564b84676d69acef9ed, type: 3}
+        guid: 6c138c4fedf61564b84676d69acef9ed
+      SceneType: 6
+    - Reference:
+        asset: {fileID: 102900000, guid: 24741aa586b15a3499f0f74f1688354a, type: 3}
+        guid: 24741aa586b15a3499f0f74f1688354a
+      SceneType: 6
+    - Reference:
+        asset: {fileID: 102900000, guid: 0f77f5f29aabcdf4d8bc0afff3b5b749, type: 3}
+        guid: 0f77f5f29aabcdf4d8bc0afff3b5b749
+      SceneType: 6
+  - GroupName: LevelTwo
     Scenes:
     - Reference:
         asset: {fileID: 102900000, guid: 8c9cfa26abfee488c85f1582747f6a02, type: 3}
@@ -274,10 +292,6 @@ MonoBehaviour:
         asset: {fileID: 102900000, guid: 0f77f5f29aabcdf4d8bc0afff3b5b749, type: 3}
         guid: 0f77f5f29aabcdf4d8bc0afff3b5b749
       SceneType: 6
-    - Reference:
-        asset: {fileID: 102900000, guid: e6292eac883fe6348a8586d8cc028307, type: 3}
-        guid: e6292eac883fe6348a8586d8cc028307
-      SceneType: 1
 --- !u!1 &730550718
 GameObject:
   m_ObjectHideFlags: 0

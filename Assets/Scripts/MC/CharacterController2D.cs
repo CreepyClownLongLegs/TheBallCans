@@ -44,15 +44,7 @@ public class CharacterController2D : MonoBehaviour, IDataPersistence
         Input.GetAxisRaw("Vertical"));
     }
 
-    public void LoadGame(GameData data)
-    {
-        this.transform.position = data.playerPosition;
-    }
 
-    public void SaveGame(GameData data)
-    {
-        data.playerPosition = this.transform.position;
-    }
 
     // Update is called once per frame
     void FixedUpdate()
@@ -92,5 +84,13 @@ public class CharacterController2D : MonoBehaviour, IDataPersistence
 
     void goingUpAnimation(){
         current_anim = "walkingmc";
+    }
+
+    public void LoadGame(GameData data)
+    {
+    }
+
+    public void SaveGame(GameData data)
+    {
     }
 }

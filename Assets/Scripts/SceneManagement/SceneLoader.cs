@@ -17,7 +17,7 @@ namespace Systems.SceneManagement{
         [SerializeField] float fillSpeed = 0.5f;
         [SerializeField] Canvas loadingCanvas;
         [SerializeField] Camera loadingCamera;
-        [SerializeField] public SceneGroup[] sceneGroups;
+        [SerializeField] SceneGroup[] sceneGroups;
 
         float targetProgress;
         bool isLoading;

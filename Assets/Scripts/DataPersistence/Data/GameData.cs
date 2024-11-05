@@ -14,6 +14,6 @@ public class GameData
     {
         playerPosition = Vector3.zero;
         itemsCollected = new SerializableDictionary<string, bool>();
-        playerMoney.money = 0;
+//        playerMoney.money = 0;
     }
 }

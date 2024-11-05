@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,6 +8,7 @@ using UnityEngine;
 
 namespace Systems.SceneManagement {
 
+[Serializable]
     public class SceneGroup{
         public string GroupName = "New Scene Group";
         public List<SceneData> Scenes;
@@ -16,7 +18,8 @@ namespace Systems.SceneManagement {
         }
 
     }
-
+    
+[Serializable]
     public class SceneData{
         public SceneReference Reference;
         public string Name => Reference.Name;
