@@ -2,10 +2,11 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Xml.Serialization;
+using UnityEditorInternal;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class InputSystem : MonoBehaviour
+public class InputSystem : PersistentSingleton<InputSystem>
 {
     PlayerInputActions inputActions;
     public static event Action onJump;
@@ -14,6 +15,11 @@ public class InputSystem : MonoBehaviour
     public static event Action goingRight;
     public static event Action goingDown;
     public static event Action goingUp;
+    public static event Action interactPressed;
+
+    bool interactPressedToo = false;
+    bool submitPressed = false;
+
 
     private void Start(){
         inputActions = new PlayerInputActions();
@@ -21,8 +27,33 @@ public class InputSystem : MonoBehaviour
         inputActions.Player.Jump.performed += Jump;
         inputActions.Player.Walking.performed += Movement;
         inputActions.Player.Walking.canceled += Idle;
+        inputActions.Player.Interact.performed += Interact;
     }
     private void OnEnable(){
+    }
+
+    private void Interact(InputAction.CallbackContext context){
+        interactPressed.Invoke();
+        InteractButtonPressed(context);
+    }
+
+    public void InteractButtonPressed(InputAction.CallbackContext context)
+    {
+        if (context.performed && !DialogueManager.Instance.dialogueIsPlaying)
+        {
+            interactPressedToo = true;
+        }
+        else if (context.canceled)
+        {
+            interactPressedToo = false;
+        } 
+    }
+
+    public bool GetInteractPressed() 
+    {
+        bool result = interactPressedToo;
+        interactPressedToo = false;
+        return result;
     }
 
     public void Jump(InputAction.CallbackContext context){
@@ -51,5 +82,29 @@ public class InputSystem : MonoBehaviour
         if(move.y<0){
             	goingUp.Invoke();
         }
+    }
+
+        public void SubmitPressed(InputAction.CallbackContext context)
+    {
+        if (context.performed)
+        {
+            submitPressed = true;
+        }
+        else if (context.canceled)
+        {
+            submitPressed = false;
+        } 
+    }
+
+        public bool GetSubmitPressed() 
+    {
+        bool result = submitPressed;
+        submitPressed = false;
+        return result;
+    }
+
+    public void RegisterSubmitPressed() 
+    {
+        submitPressed = false;
     }
 }

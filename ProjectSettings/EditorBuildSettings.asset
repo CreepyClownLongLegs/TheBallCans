@@ -15,6 +15,9 @@ EditorBuildSettings:
     path: Assets/Scenes/MainMenuScene.unity
     guid: e6292eac883fe6348a8586d8cc028307
   - enabled: 1
+    path: Assets/Scenes/YourRoomUI.unity
+    guid: 326ce0553e6287547a07801874aa8608
+  - enabled: 1
     path: Assets/Scenes/Inventory.unity
     guid: 0f77f5f29aabcdf4d8bc0afff3b5b749
   - enabled: 1
