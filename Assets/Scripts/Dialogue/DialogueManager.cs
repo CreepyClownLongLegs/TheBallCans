@@ -18,11 +18,20 @@ public class DialogueManager : PersistentSingleton<DialogueManager>
     [SerializeField] private GameObject dialoguePanel;
     [SerializeField] private GameObject continueIcon;
     [SerializeField] private TextMeshProUGUI dialogueText;
-    private Animator layoutAnimator;
+    [SerializeField] private Animator layoutAnimator;
+    [SerializeField] private TextMeshProUGUI displayNameText;
+    [SerializeField] private Animator portraitAnimator;
+
 
     [Header("Choices UI")]
     [SerializeField] private GameObject[] choices;
     private TextMeshProUGUI[] choicesText;
+
+
+    private const string SPEAKER_TAG = "speaker";
+    private const string PORTRAIT_TAG = "portrait";
+    private const string LAYOUT_TAG = "layout";
+    private const string AUDIO_TAG = "audio";
 
     private Story currentStory;
     public bool dialogueIsPlaying { get; private set; }
@@ -87,6 +96,7 @@ public class DialogueManager : PersistentSingleton<DialogueManager>
             if(currentStory.canContinue){
                 dialogueText.text = currentStory.Continue();
                 DisplayChoices();
+                HandleTags(currentStory.currentTags);
                 continueIcon.SetActive(true);
             }else {
         StartCoroutine(ExitDialogueMode());
@@ -120,6 +130,42 @@ public class DialogueManager : PersistentSingleton<DialogueManager>
         }
 
         StartCoroutine(SelectFirstChoice());
+    }
+
+        private void HandleTags(List<string> currentTags)
+    {
+        // loop through each tag and handle it accordingly
+        foreach (string tag in currentTags) 
+        {
+            // parse the tag
+            string[] splitTag = tag.Split(':');
+            if (splitTag.Length != 2) 
+            {
+                Debug.LogError("Tag could not be appropriately parsed: " + tag);
+            }
+            string tagKey = splitTag[0].Trim();
+            string tagValue = splitTag[1].Trim();
+            
+            // handle the tag
+            switch (tagKey) 
+            {
+                case SPEAKER_TAG:
+                    displayNameText.text = tagValue;
+                    Debug.Log(tagValue);
+                    break;
+                case PORTRAIT_TAG:
+                    portraitAnimator.Play(tagValue);
+                    break;
+                case LAYOUT_TAG:
+                    layoutAnimator.Play(tagValue);
+                    break;
+                case AUDIO_TAG: 
+                    break;
+                default:
+                    Debug.LogWarning("Tag came in but is not currently being handled: " + tag);
+                    break;
+            }
+        }
     }
 
     private void HideChoices() 
