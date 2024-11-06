@@ -12,7 +12,7 @@ using UnityEngine.UI;
 namespace Systems.SceneManagement{
 
 
-    public class SceneLoader : MonoBehaviour{
+    public class SceneLoader : PersistentSingleton<SceneLoader>{
         [SerializeField] Image loadingBar;
         [SerializeField] float fillSpeed = 0.5f;
         [SerializeField] Canvas loadingCanvas;

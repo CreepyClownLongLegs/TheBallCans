@@ -11,8 +11,14 @@ public class DialogueTrugger : MonoBehaviour
 [SerializeField]private TextAsset inkJSON;
 
 private bool playerInRangeOnce;
+private bool playerCloseEnough;
 private void Awake(){
     visualCue.SetActive(false);
+}
+
+private void Start(){
+    playerCloseEnough = false;
+    playerInRangeOnce = false;
 }
 
 private void OnEnable(){
@@ -25,24 +31,31 @@ private void OnDestroy(){
 
 private void OnTriggerEnter2D(Collider2D collider2D){
     if(collider2D.gameObject.CompareTag("Player")) {
-        visualCue.SetActive(true);}
+        visualCue.SetActive(true);
+        playerCloseEnough = true;
+        Debug.Log(playerCloseEnough);
+        }
 }
 
 private void OnTriggerExit2D(Collider2D collider2D){
     if(collider2D.gameObject.CompareTag("Player")) 
         visualCue.SetActive(false);
         playerInRangeOnce = false;
+        playerCloseEnough = false;
+        Debug.Log(playerCloseEnough);
 }
 
 private void noTalking(){
     visualCue.SetActive(false);
+    if(!DialogueManager.Instance.dialogueIsPlaying && playerCloseEnough) {
+        playerInRangeOnce = true;
+        Debug.Log("Called DialogueManager");
+        DialogueManager.Instance.EnterDialogueMode(inkJSON);
+    }
 }
 
 private void FixedUpdate(){
-    if(!DialogueManager.Instance.dialogueIsPlaying && InputSystem.Instance.GetInteractPressed() && !playerInRangeOnce) {
-        playerInRangeOnce = true;
-        DialogueManager.Instance.EnterDialogueMode(inkJSON);
-    }
+
 }
 
 }

@@ -32,6 +32,7 @@ public class DialogueManager : PersistentSingleton<DialogueManager>
     private const string PORTRAIT_TAG = "portrait";
     private const string LAYOUT_TAG = "layout";
     private const string AUDIO_TAG = "audio";
+    private const string ITEM_TAG = "item";
 
     private Story currentStory;
     public bool dialogueIsPlaying { get; private set; }
@@ -68,6 +69,10 @@ public class DialogueManager : PersistentSingleton<DialogueManager>
         }
     }
 
+
+    public void SetLayoutToItem(){
+        layoutAnimator.Play("item");
+    }
 
 
     public void EnterDialogueMode(TextAsset inkJSONText){
