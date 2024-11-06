@@ -1,7 +1,7 @@
 -> main
 
 === main ===
-How are you feeling today?  #portrait:Andreea_Happy #speaker:Andreea #layout:left
+How are you feeling today?  #portrait:Andreea_Happy #speaker:Andreea #layout:right
 + [Happy]
     That makes me feel as well! #speaker:Andreea #portrait:Andreea_Happy #layout:left
 + [Sad]

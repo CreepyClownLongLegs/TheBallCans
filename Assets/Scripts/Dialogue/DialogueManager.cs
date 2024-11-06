@@ -70,11 +70,6 @@ public class DialogueManager : PersistentSingleton<DialogueManager>
     }
 
 
-    public void SetLayoutToItem(){
-        layoutAnimator.Play("item");
-    }
-
-
     public void EnterDialogueMode(TextAsset inkJSONText){
         currentStory = new Story(inkJSONText.text);
         dialogueIsPlaying = true;

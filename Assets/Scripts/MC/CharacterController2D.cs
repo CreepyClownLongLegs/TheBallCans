@@ -49,7 +49,11 @@ public class CharacterController2D : MonoBehaviour, IDataPersistence
     // Update is called once per frame
     void FixedUpdate()
     {
-        if(DialogueManager.Instance.dialogueIsPlaying) return;
+        if(DialogueManager.Instance.dialogueIsPlaying) {
+            rb.velocity = new Vector2(0,0);
+            motionVector = new Vector2(0,0);
+            return;
+            }
         move();
         changePlayerAnimation();
     }
