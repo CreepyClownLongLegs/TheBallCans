@@ -49,6 +49,7 @@ public class CharacterController2D : MonoBehaviour, IDataPersistence
     // Update is called once per frame
     void FixedUpdate()
     {
+        if(DialogueManager.Instance.dialogueIsPlaying) return;
         move();
         changePlayerAnimation();
     }
