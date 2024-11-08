@@ -33,7 +33,6 @@ private void OnTriggerEnter2D(Collider2D collider2D){
     if(collider2D.gameObject.CompareTag("Player")) {
         visualCue.SetActive(true);
         playerCloseEnough = true;
-        Debug.Log(playerCloseEnough);
         }
 }
 
@@ -42,14 +41,12 @@ private void OnTriggerExit2D(Collider2D collider2D){
         visualCue.SetActive(false);
         playerInRangeOnce = false;
         playerCloseEnough = false;
-        Debug.Log(playerCloseEnough);
 }
 
 private void noTalking(){
     visualCue.SetActive(false);
     if(!DialogueManager.Instance.dialogueIsPlaying && playerCloseEnough) {
         playerInRangeOnce = true;
-        Debug.Log("Called DialogueManager");
         DialogueManager.Instance.EnterDialogueMode(inkJSON);
     }
 }

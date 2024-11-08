@@ -11,7 +11,7 @@ public class NextSceneLoad : MonoBehaviour
 [SerializeField] Vector2 position;
 private void OnTriggerEnter2D(Collider2D collider2D){
     if(collider2D.gameObject.CompareTag("Player")){
-         SceneLoader.Instance.LoadSceneGroup(nextSceneToLoad);
+            _ = SceneLoader.Instance.LoadSceneGroup(nextSceneToLoad);
          GameObject.FindGameObjectWithTag("Player").transform.position = this.position;
     }
 }

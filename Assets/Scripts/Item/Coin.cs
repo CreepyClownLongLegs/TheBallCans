@@ -19,6 +19,7 @@ public class Coin : MonoBehaviour
     {
         //emitter = AudioManager.instance.InitializeEventEmitter(FMODEvents.instance.coinIdle, this.gameObject);
         //emitter.Play();
+
     }
 
     private void OnTriggerEnter2D() 
@@ -35,8 +36,16 @@ public class Coin : MonoBehaviour
         collected = true;
         visual.gameObject.SetActive(false);
         AudioManager.instance.PlayOneShot(FMODEvents.instance.itemCollected, this.transform.position);
+        GameEventsManager.instance.miscEvents.CoinCollected();
 
         // TODO: implement collecting coin/item
-        //GameEventsManager.instance.CoinCollected();
+
+        if(collected){
+            Destroy(this.gameObject);
+        }
+    }
+
+    private void CoinCollected(){
+
     }
 }
