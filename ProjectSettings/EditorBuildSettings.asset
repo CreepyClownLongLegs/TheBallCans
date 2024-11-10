@@ -35,4 +35,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/YourRoomUI.unity
     guid: 326ce0553e6287547a07801874aa8608
+  - enabled: 1
+    path: Assets/Scenes/TheLobbyUI.unity
+    guid: 6e1e8b6bdd71a0a4b8bc069458490a71
+  - enabled: 1
+    path: Assets/Scenes/ElevatorUI.unity
+    guid: 3091b86e1d0b4f64d8cc41e3a3b76914
   m_configObjects: {}

@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Systems.SceneManagement;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -13,6 +14,7 @@ public class CharacterController2D : MonoBehaviour, IDataPersistence
     Rigidbody2D rb;
     [SerializeField] float speed = 0.3f;
     Vector2 motionVector;
+    public bool elevatorPanelIsOpen = false;
 
     string current_anim = "idlemc";
 
@@ -49,9 +51,11 @@ public class CharacterController2D : MonoBehaviour, IDataPersistence
     // Update is called once per frame
     void FixedUpdate()
     {
-        if(DialogueManager.Instance.dialogueIsPlaying) {
+        if(DialogueManager.Instance.dialogueIsPlaying || elevatorPanelIsOpen || SceneLoader.Instance.isLoading) {
             rb.velocity = new Vector2(0,0);
             motionVector = new Vector2(0,0);
+            idleAnimation();
+            changePlayerAnimation();
             return;
             }
         move();

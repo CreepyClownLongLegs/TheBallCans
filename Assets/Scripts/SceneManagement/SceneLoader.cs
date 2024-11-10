@@ -20,9 +20,10 @@ namespace Systems.SceneManagement{
         [SerializeField] SceneGroup[] sceneGroups;
 
         float targetProgress;
-        bool isLoading;
+        public bool isLoading;
 
         public readonly SceneGroupManager manager = new SceneGroupManager();
+        CharacterController2D characterController;
         
         void Awake() {
             // TODO can remove

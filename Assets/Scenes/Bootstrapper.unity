@@ -363,13 +363,13 @@ MonoBehaviour:
   - GroupName: LevelTwo
     Scenes:
     - Reference:
-        asset: {fileID: 102900000, guid: b41fdc501d80c574db4cc3be854c5810, type: 3}
-        guid: b41fdc501d80c574db4cc3be854c5810
-      SceneType: 2
-    - Reference:
         asset: {fileID: 102900000, guid: 8c9cfa26abfee488c85f1582747f6a02, type: 3}
         guid: 8c9cfa26abfee488c85f1582747f6a02
       SceneType: 0
+    - Reference:
+        asset: {fileID: 102900000, guid: b41fdc501d80c574db4cc3be854c5810, type: 3}
+        guid: b41fdc501d80c574db4cc3be854c5810
+      SceneType: 2
     - Reference:
         asset: {fileID: 102900000, guid: 0f77f5f29aabcdf4d8bc0afff3b5b749, type: 3}
         guid: 0f77f5f29aabcdf4d8bc0afff3b5b749
@@ -398,6 +398,26 @@ MonoBehaviour:
         asset: {fileID: 102900000, guid: e6292eac883fe6348a8586d8cc028307, type: 3}
         guid: e6292eac883fe6348a8586d8cc028307
       SceneType: 6
+  - GroupName: The Elevator
+    Scenes:
+    - Reference:
+        asset: {fileID: 102900000, guid: 8c9cfa26abfee488c85f1582747f6a02, type: 3}
+        guid: 8c9cfa26abfee488c85f1582747f6a02
+      SceneType: 0
+    - Reference:
+        asset: {fileID: 102900000, guid: 3091b86e1d0b4f64d8cc41e3a3b76914, type: 3}
+        guid: 3091b86e1d0b4f64d8cc41e3a3b76914
+      SceneType: 2
+  - GroupName: The Lobby
+    Scenes:
+    - Reference:
+        asset: {fileID: 102900000, guid: 8c9cfa26abfee488c85f1582747f6a02, type: 3}
+        guid: 8c9cfa26abfee488c85f1582747f6a02
+      SceneType: 0
+    - Reference:
+        asset: {fileID: 102900000, guid: 6e1e8b6bdd71a0a4b8bc069458490a71, type: 3}
+        guid: 6e1e8b6bdd71a0a4b8bc069458490a71
+      SceneType: 2
 --- !u!1 &730550718
 GameObject:
   m_ObjectHideFlags: 0

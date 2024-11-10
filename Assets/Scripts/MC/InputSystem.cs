@@ -33,7 +33,7 @@ public class InputSystem : PersistentSingleton<InputSystem>
     }
 
     private void Interact(InputAction.CallbackContext context){
-        interactPressed.Invoke();
+        interactPressed?.Invoke();
         InteractButtonPressed(context);
     }
 
