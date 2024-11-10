@@ -10,6 +10,7 @@ public class GameData
     public PlayerData playerMoney;
     public int playerExpirience;
     internal object playerData;
+    public SerializableDictionary<string, bool> coinsCollected;
 
     public GameData()
     {
@@ -17,5 +18,6 @@ public class GameData
         itemsCollected = new SerializableDictionary<string, bool>();
         playerMoney.money = 0;
         playerExpirience = 0;
+        coinsCollected = new SerializableDictionary<string, bool>();
     }
 }
