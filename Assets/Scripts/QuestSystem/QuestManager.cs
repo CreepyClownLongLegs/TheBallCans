@@ -17,8 +17,6 @@ public class QuestManager : MonoBehaviour
     private void Awake()
     {
         questMap = CreateQuestMap();
-        Quest quest = GetQuestById("CollectCoinsQuest");
-        Debug.Log("now");
     }
 
     private void Start()
@@ -27,6 +25,19 @@ public class QuestManager : MonoBehaviour
         GameEventsManager.instance.questEvents.onAdvanceQuest += AdvanceQuest;
         GameEventsManager.instance.questEvents.onFinishQuest += FinishQuest;
         StartCoroutine(check());
+        SceneManager.sceneLoaded += coroutineCheck;
+        GameEventsManager.instance.questEvents.onQuestStepStateChange += QuestStepStateChange;
+
+        foreach (Quest quest in questMap.Values)
+        {
+            // initialize any loaded quest steps
+            if (quest.state == QuestState.IN_PROGRESS)
+            {
+                quest.InstantiateCurrentQuestStep(this.transform);
+            }
+            // broadcast the initial state of all quests on startup
+            GameEventsManager.instance.questEvents.QuestStateChange(quest);
+        }
     }
 
 
@@ -35,6 +46,7 @@ public class QuestManager : MonoBehaviour
         GameEventsManager.instance.questEvents.onStartQuest -= StartQuest;
         GameEventsManager.instance.questEvents.onAdvanceQuest -= AdvanceQuest;
         GameEventsManager.instance.questEvents.onFinishQuest -= FinishQuest;
+        GameEventsManager.instance.questEvents.onQuestStepStateChange -= QuestStepStateChange;
     }
 
     private Dictionary<string, Quest> CreateQuestMap()
@@ -64,17 +76,23 @@ public class QuestManager : MonoBehaviour
         return quest;
     }
 
-        private Quest LoadQuest(QuestInfoSO questInfo)
+    private Quest LoadQuest(QuestInfoSO questInfo)
     {
         Quest quest = null;
 
-        /*
         try 
         {
             // load quest from saved data
             if (PlayerPrefs.HasKey(questInfo.id) && loadQuestState)
             {
                 string serializedData = PlayerPrefs.GetString(questInfo.id);
+                QuestData questData = JsonUtility.FromJson<QuestData>(serializedData);
+                quest = new Quest(questInfo, questData.state, questData.questStepIndex, questData.questStepStates);
+                if (quest.state == QuestState.IN_PROGRESS)
+                    {
+                        quest.InstantiateCurrentQuestStep(this.transform);
+                }
+                Debug.Log(serializedData);
             }
             // otherwise, initialize a new quest
             else 
@@ -89,7 +107,7 @@ public class QuestManager : MonoBehaviour
         {
             Debug.LogError("Failed to load quest with id " + quest.info.id + ": " + e);
         }
-        */
+        
         quest = new Quest(questInfo);
         return quest;
     }
@@ -102,10 +120,8 @@ public class QuestManager : MonoBehaviour
         // check player level requirements
 
         // check quest prerequisites for completion
-        Debug.Log("Quest requirements:" + quest.info.questPrerequirements);
         foreach (QuestInfoSO prerequisiteQuestInfo in quest.info.questPrerequirements)
         {
-                    Debug.Log("Quest requirements:" + prerequisiteQuestInfo.coins);
             if (GetQuestById(prerequisiteQuestInfo.id).state != QuestState.FINISHED)
             {
                 meetsRequirements = false;
@@ -115,9 +131,24 @@ public class QuestManager : MonoBehaviour
         return meetsRequirements;
     }
 
-    private IEnumerator check(){
-        yield return new WaitForSeconds(0.2f);
+    public IEnumerator check(){
+        yield return new WaitForSeconds(0.1f);
         CheckRequirements();
+    }
+
+    private void QuestStepStateChange(string id, int stepIndex, QuestStepState questStepState)
+    {
+        Quest quest = GetQuestById(id);
+        quest.StoreQuestStepState(questStepState, stepIndex);
+        ChangeQuestState(id, quest.state);
+    }
+
+    public void coroutineCheck(Scene scene, LoadSceneMode mode){
+        Debug.Log("Loaded Scene" + scene.name);
+        if(scene.name.Equals("YourRoomUI")){
+            Debug.Log("equals");
+            StartCoroutine(check());
+        };
     }
     private void CheckRequirements()
     {
@@ -128,31 +159,87 @@ public class QuestManager : MonoBehaviour
             if (quest.state == QuestState.REQUIREMENTS_NOT_MET && CheckRequirementsMet(quest))
             {
                 ChangeQuestState(quest.info.id, QuestState.CAN_START);
+            }else if(quest.state == QuestState.CAN_START){
+                ChangeQuestState(quest.info.id, QuestState.CAN_START);
+            }else if(quest.state == QuestState.IN_PROGRESS){
+                ChangeQuestState(quest.info.id, QuestState.IN_PROGRESS);
+            }else if(quest.state == QuestState.CAN_FINISH){
+                ChangeQuestState(quest.info.id, QuestState.CAN_FINISH);
+            }else if(quest.state == QuestState.FINISHED){
+                ChangeQuestState(quest.info.id, QuestState.FINISHED);
             }
+
+            Debug.Log(quest.info.displayName + " " + quest.state);
         }
     }
 
-    private void FinishQuest(string obj)
+
+    private void AdvanceQuest(string id)
     {
-        Debug.Log("Started");
+        Quest quest = GetQuestById(id);
+
+        // move on to the next step
+        quest.MoveToNextStep();
+
+        // if there are more steps, instantiate the next one
+        if (quest.CurrentStepExists())
+        {
+            quest.InstantiateCurrentQuestStep(this.transform);
+        }
+        // if there are no more steps, then we've finished all of them for this quest
+        else
+        {
+            ChangeQuestState(quest.info.id, QuestState.CAN_FINISH);
+        }
     }
 
-    private void AdvanceQuest(string obj)
+    private void FinishQuest(string id)
     {
-        Debug.Log("Started");
+        Quest quest = GetQuestById(id);
+        ChangeQuestState(quest.info.id, QuestState.FINISHED);
+        Debug.Log("Claiming Rewards");
+        GameEventsManager.instance.goldEvents.GoldGained(quest.info.coins);
+        GameEventsManager.instance.playerEvents.ExperienceGained(quest.info.playerExpirience);
     }
-
     private void StartQuest(string obj)
     {
-        Debug.Log("Started");
+        Quest quest = GetQuestById(obj);
+        quest.InstantiateCurrentQuestStep(this.transform);
+        ChangeQuestState(quest.info.id, QuestState.IN_PROGRESS);
     }
 
     private void ChangeQuestState(string id, QuestState state)
     {
         Quest quest = GetQuestById(id);
-        Debug.Log("Change state");
         quest.state = state;
-        Debug.Log(state);
         GameEventsManager.instance.questEvents.QuestStateChange(quest);
     }
+
+    private void OnApplicationQuit()
+    {
+        foreach (Quest quest in questMap.Values)
+        {
+            SaveQuest(quest);
+        }
+    }
+
+    private void SaveQuest(Quest quest)
+    {
+        try 
+        {
+            QuestData questData = quest.GetQuestData();
+            // serialize using JsonUtility, but use whatever you want here (like JSON.NET)
+            string serializedData = JsonUtility.ToJson(questData);
+            // saving to PlayerPrefs is just a quick example for this tutorial video,
+            // you probably don't want to save this info there long-term.
+            // instead, use an actual Save & Load system and write to a file, the cloud, etc..
+            PlayerPrefs.SetString(quest.info.id, serializedData);
+            Debug.Log(serializedData);
+        }
+        catch (System.Exception e)
+        {
+            Debug.LogError("Failed to save quest with id " + quest.info.id + ": " + e);
+        }
+    }
+
 }

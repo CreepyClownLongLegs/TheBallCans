@@ -18,19 +18,21 @@ public class QuestPoint : MonoBehaviour
 
     private QuestIcon questIcon;
 
-    private void OnEnable() 
+    private void Awake() 
     {
         questId = questInfoForPoint.id;
         questIcon = GetComponentInChildren<QuestIcon>();
         Debug.Log("Subscribed");
     }
 
-    private void Start()
+    private void OnEnable()
     {
         GameEventsManager.instance.questEvents.onQuestStateChange += QuestStateChange;
         InputSystem.interactPressed += SubmitPressed;
-        questIcon.SetState(currentQuestState, startPoint, finishPoint);
+
     }
+
+
 
     private void OnDisable()
     {
@@ -49,8 +51,6 @@ public class QuestPoint : MonoBehaviour
         if (currentQuestState.Equals(QuestState.CAN_START) && startPoint)
         {
             GameEventsManager.instance.questEvents.StartQuest(questId);
-            GameEventsManager.instance.questEvents.AdvanceQuest(questId);
-            GameEventsManager.instance.questEvents.FinishQuest(questId);
         }
         else if (currentQuestState.Equals(QuestState.CAN_FINISH) && finishPoint)
         {

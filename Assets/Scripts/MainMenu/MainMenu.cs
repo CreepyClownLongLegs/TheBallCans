@@ -1,12 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
+using Systems.SceneManagement;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
-    [SerializeField] string nameEssentialScene;
-    [SerializeField] string nameNewGameStartScene;
+
 
     public void ExitGame() 
     {
@@ -16,7 +16,6 @@ public class MainMenu : MonoBehaviour
 
     public void StartNewGame()
     {
-        SceneManager.LoadScene(nameNewGameStartScene, LoadSceneMode.Single);
-        SceneManager.LoadScene(nameEssentialScene, LoadSceneMode.Additive);
+           _ = SceneLoader.Instance.LoadSceneGroup(1);
     }
 }

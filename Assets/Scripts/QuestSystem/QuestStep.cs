@@ -4,16 +4,9 @@ using UnityEngine;
 
 public abstract class QuestStep : MonoBehaviour
 {
-private bool isFinished = false;
+    private bool isFinished = false;
     private string questId;
     private int stepIndex;
-
-protected void FinishQuestStep(){
-    if(!isFinished){
-        isFinished = true;
-        Destroy(this.gameObject);
-    }
-}
 
     public void InitializeQuestStep(string questId, int stepIndex, string questStepState)
     {
@@ -23,6 +16,26 @@ protected void FinishQuestStep(){
         {
             SetQuestStepState(questStepState);
         }
+    }
+
+    protected void FinishQuestStep()
+    {
+        if (!isFinished)
+        {
+            isFinished = true;
+            GameEventsManager.instance.questEvents.AdvanceQuest(questId);
+            Debug.Log("Destroying Game Object");
+            Destroy(this.gameObject);
+        }
+    }
+
+    protected void ChangeState(string newState, string newStatus)
+    {
+        GameEventsManager.instance.questEvents.QuestStepStateChange(
+            questId, 
+            stepIndex, 
+            new QuestStepState(newState, newStatus)
+        );
     }
 
     protected abstract void SetQuestStepState(string state);

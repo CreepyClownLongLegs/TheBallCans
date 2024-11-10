@@ -6,6 +6,7 @@ public class GoldEvents
     public event Action<int> onGoldGained;
     public void GoldGained(int gold) 
     {
+        Debug.Log("Gold gained");
         if (onGoldGained != null) 
         {
             onGoldGained(gold);

@@ -37,6 +37,7 @@ public class MiscEvents
     {
         if (onCoinCollected != null) 
         {
+            Debug.Log("Coin collected");
             onCoinCollected();
         }
     }
@@ -51,37 +52,3 @@ public class MiscEvents
     }
 }
 
-public class PlayerEvents
-{
-}
-
-public class QuestEvents
-{
-    public event Action<string> onStartQuest;
-    public void StartQuest(string id)
-    {
-        onStartQuest.Invoke(id);
-    }
-
-    public event Action<string> onAdvanceQuest;
-    public void AdvanceQuest(string id)
-    {
-        onAdvanceQuest.Invoke(id);
-    }
-
-    public event Action<string> onFinishQuest;
-    public void FinishQuest(string id)
-    {
-        onFinishQuest.Invoke(id);
-    }
-
-    public event Action<Quest> onQuestStateChange;
-    public void QuestStateChange(Quest quest)
-    {
-        Debug.Log("From QuestEvents" + quest.info.id);
-        onQuestStateChange(quest);
-        
-    }
-
-
-}

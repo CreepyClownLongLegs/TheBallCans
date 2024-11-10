@@ -35,17 +35,12 @@ public class Coin : MonoBehaviour
     {
         collected = true;
         visual.gameObject.SetActive(false);
-        AudioManager.instance.PlayOneShot(FMODEvents.instance.itemCollected, this.transform.position);
-        GameEventsManager.instance.miscEvents.CoinCollected();
-
-        // TODO: implement collecting coin/item
+        //AudioManager.instance.PlayOneShot(FMODEvents.instance.itemCollected, this.transform.position);
 
         if(collected){
+            GameEventsManager.instance.miscEvents.CoinCollected();
             Destroy(this.gameObject);
         }
     }
 
-    private void CoinCollected(){
-
-    }
 }

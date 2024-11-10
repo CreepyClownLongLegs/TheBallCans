@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ad00d617a413e124596d9928d737f4b6, type: 3}
-  m_Name: CollectCoinsQuest
+  m_Name: CollectCoinsQuestPrerequirement
   m_EditorClassIdentifier: 
-  <id>k__BackingField: CollectCoinsQuest
-  displayName: Collect 10 Coins
+  <id>k__BackingField: CollectCoinsQuestPrerequirement
+  displayName: Collect 5 Coins
   questPrerequirements: []
   questStepPrefabs:
   - {fileID: 6517737308593542963, guid: 82957a02f39bb6249b2a6b7673736992, type: 3}
-  coins: 10
+  coins: 0
   playerExpirience: 10

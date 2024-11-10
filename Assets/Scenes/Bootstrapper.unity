@@ -347,7 +347,7 @@ MonoBehaviour:
     - Reference:
         asset: {fileID: 102900000, guid: 24741aa586b15a3499f0f74f1688354a, type: 3}
         guid: 24741aa586b15a3499f0f74f1688354a
-      SceneType: 6
+      SceneType: 3
     - Reference:
         asset: {fileID: 102900000, guid: 8c9cfa26abfee488c85f1582747f6a02, type: 3}
         guid: 8c9cfa26abfee488c85f1582747f6a02
@@ -388,6 +388,16 @@ MonoBehaviour:
         asset: {fileID: 102900000, guid: 684ab600cdb43534d82105fa5ea21937, type: 3}
         guid: 684ab600cdb43534d82105fa5ea21937
       SceneType: 2
+  - GroupName: MainMenu
+    Scenes:
+    - Reference:
+        asset: {fileID: 102900000, guid: 24741aa586b15a3499f0f74f1688354a, type: 3}
+        guid: 24741aa586b15a3499f0f74f1688354a
+      SceneType: 3
+    - Reference:
+        asset: {fileID: 102900000, guid: e6292eac883fe6348a8586d8cc028307, type: 3}
+        guid: e6292eac883fe6348a8586d8cc028307
+      SceneType: 6
 --- !u!1 &730550718
 GameObject:
   m_ObjectHideFlags: 0

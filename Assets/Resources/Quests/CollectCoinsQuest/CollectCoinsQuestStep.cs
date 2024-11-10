@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class CollectCoinsQuestStep : QuestStep
@@ -7,10 +8,9 @@ public class CollectCoinsQuestStep : QuestStep
     private int coinsCollected = 0;
     private int coinsToComplete = 5;
 
-    private string state;
     private void Start()
     {
-        GameEventsManager.instance.miscEvents.onCoinCollected += CoinCollected;
+        StartCoroutine(coroutineUpdateState());
     }
 
     private void OnDisable()
@@ -23,6 +23,7 @@ public class CollectCoinsQuestStep : QuestStep
         if (coinsCollected < coinsToComplete)
         {
             coinsCollected++;
+            UpdateState();
         }
 
         if (coinsCollected >= coinsToComplete)
@@ -31,8 +32,22 @@ public class CollectCoinsQuestStep : QuestStep
         }
     }
 
+    private IEnumerator coroutineUpdateState(){
+        yield return new WaitForSeconds(0.5f);
+        GameEventsManager.instance.miscEvents.onCoinCollected += CoinCollected;
+        UpdateState();
+    }
+
+    private void UpdateState()
+    {
+        string state = coinsCollected.ToString();
+        string status = "Collected " + coinsCollected + " / " + coinsToComplete + " coins.";
+        ChangeState(state, status);
+    }
+
     protected override void SetQuestStepState(string state)
     {
-        this.state = state;
+        this.coinsCollected = System.Int32.Parse(state);
+        UpdateState();
     }
 }
