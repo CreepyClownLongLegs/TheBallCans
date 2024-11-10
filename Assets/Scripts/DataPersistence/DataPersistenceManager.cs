@@ -24,6 +24,10 @@ public class DataPersistenceManager : MonoBehaviour
         instance = this;
     }
 
+    public int GetExpirience(){
+        return gameData.playerExpirience;
+    }
+
     private void Start()
     {
         this.dataHandler = new FileDataHandler(Application.persistentDataPath, fileName, useEncryption);

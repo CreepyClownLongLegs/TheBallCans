@@ -6,9 +6,9 @@ using UnityEngine;
     public int money = 0;
 }
 
-public class CoinManager : MonoBehaviour,IDataPersistence
+public class CoinManager : PersistentSingleton<CoinManager>,IDataPersistence
 {
-    static PlayerData playerData = new PlayerData();
+    public static PlayerData playerData = new PlayerData();
 
     public void Start(){
         GameEventsManager.instance.goldEvents.onGoldGained += AddMoney;
@@ -28,12 +28,10 @@ public class CoinManager : MonoBehaviour,IDataPersistence
     public static void AddMoney(int amount)
     {
         playerData.money += amount;
-        Debug.Log(playerData.money);
     }
 
     public static void addOneCoin(){
         playerData.money ++;
-        Debug.Log(playerData.money);
     }
 
     public static bool CanSpendMoney(int amount)
