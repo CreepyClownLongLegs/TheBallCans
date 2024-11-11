@@ -197,13 +197,14 @@ public class QuestManager : MonoBehaviour
     {
         Quest quest = GetQuestById(id);
         ChangeQuestState(quest.info.id, QuestState.FINISHED);
-        Debug.Log("Claiming Rewards");
+        NotificationManager.Instance.showNotification("Quest: " + quest.info.name + " is finished ! You earned " + quest.info.coins + "dabloons and " + quest.info.playerExpirience + " XP!", NotificationPanelColor.SUCCSES);
         GameEventsManager.instance.goldEvents.GoldGained(quest.info.coins);
         GameEventsManager.instance.playerEvents.ExperienceGained(quest.info.playerExpirience);
     }
     private void StartQuest(string obj)
     {
         Quest quest = GetQuestById(obj);
+        NotificationManager.Instance.showNotification("Quest: " + quest.info.name + " ha been started!", NotificationPanelColor.INFO);
         quest.InstantiateCurrentQuestStep(this.transform);
         ChangeQuestState(quest.info.id, QuestState.IN_PROGRESS);
     }
