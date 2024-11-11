@@ -167,7 +167,7 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
             ]
         },
         {
-            ""name"": ""Player1"",
+            ""name"": ""Boat"",
             ""id"": ""3b26542a-b0e3-4ef7-99bb-e3c7f1f169dd"",
             ""actions"": [
                 {
@@ -267,10 +267,10 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
         m_Player_Walking = m_Player.FindAction("Walking", throwIfNotFound: true);
         m_Player_Interact = m_Player.FindAction("Interact", throwIfNotFound: true);
         m_Player_Submit = m_Player.FindAction("Submit", throwIfNotFound: true);
-        // Player1
-        m_Player1 = asset.FindActionMap("Player1", throwIfNotFound: true);
-        m_Player1_Jump = m_Player1.FindAction("Jump", throwIfNotFound: true);
-        m_Player1_Walking = m_Player1.FindAction("Walking", throwIfNotFound: true);
+        // Boat
+        m_Boat = asset.FindActionMap("Boat", throwIfNotFound: true);
+        m_Boat_Jump = m_Boat.FindAction("Jump", throwIfNotFound: true);
+        m_Boat_Walking = m_Boat.FindAction("Walking", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -399,26 +399,26 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
     }
     public PlayerActions @Player => new PlayerActions(this);
 
-    // Player1
-    private readonly InputActionMap m_Player1;
-    private List<IPlayer1Actions> m_Player1ActionsCallbackInterfaces = new List<IPlayer1Actions>();
-    private readonly InputAction m_Player1_Jump;
-    private readonly InputAction m_Player1_Walking;
-    public struct Player1Actions
+    // Boat
+    private readonly InputActionMap m_Boat;
+    private List<IBoatActions> m_BoatActionsCallbackInterfaces = new List<IBoatActions>();
+    private readonly InputAction m_Boat_Jump;
+    private readonly InputAction m_Boat_Walking;
+    public struct BoatActions
     {
         private @PlayerInputActions m_Wrapper;
-        public Player1Actions(@PlayerInputActions wrapper) { m_Wrapper = wrapper; }
-        public InputAction @Jump => m_Wrapper.m_Player1_Jump;
-        public InputAction @Walking => m_Wrapper.m_Player1_Walking;
-        public InputActionMap Get() { return m_Wrapper.m_Player1; }
+        public BoatActions(@PlayerInputActions wrapper) { m_Wrapper = wrapper; }
+        public InputAction @Jump => m_Wrapper.m_Boat_Jump;
+        public InputAction @Walking => m_Wrapper.m_Boat_Walking;
+        public InputActionMap Get() { return m_Wrapper.m_Boat; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
         public bool enabled => Get().enabled;
-        public static implicit operator InputActionMap(Player1Actions set) { return set.Get(); }
-        public void AddCallbacks(IPlayer1Actions instance)
+        public static implicit operator InputActionMap(BoatActions set) { return set.Get(); }
+        public void AddCallbacks(IBoatActions instance)
         {
-            if (instance == null || m_Wrapper.m_Player1ActionsCallbackInterfaces.Contains(instance)) return;
-            m_Wrapper.m_Player1ActionsCallbackInterfaces.Add(instance);
+            if (instance == null || m_Wrapper.m_BoatActionsCallbackInterfaces.Contains(instance)) return;
+            m_Wrapper.m_BoatActionsCallbackInterfaces.Add(instance);
             @Jump.started += instance.OnJump;
             @Jump.performed += instance.OnJump;
             @Jump.canceled += instance.OnJump;
@@ -427,7 +427,7 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
             @Walking.canceled += instance.OnWalking;
         }
 
-        private void UnregisterCallbacks(IPlayer1Actions instance)
+        private void UnregisterCallbacks(IBoatActions instance)
         {
             @Jump.started -= instance.OnJump;
             @Jump.performed -= instance.OnJump;
@@ -437,21 +437,21 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
             @Walking.canceled -= instance.OnWalking;
         }
 
-        public void RemoveCallbacks(IPlayer1Actions instance)
+        public void RemoveCallbacks(IBoatActions instance)
         {
-            if (m_Wrapper.m_Player1ActionsCallbackInterfaces.Remove(instance))
+            if (m_Wrapper.m_BoatActionsCallbackInterfaces.Remove(instance))
                 UnregisterCallbacks(instance);
         }
 
-        public void SetCallbacks(IPlayer1Actions instance)
+        public void SetCallbacks(IBoatActions instance)
         {
-            foreach (var item in m_Wrapper.m_Player1ActionsCallbackInterfaces)
+            foreach (var item in m_Wrapper.m_BoatActionsCallbackInterfaces)
                 UnregisterCallbacks(item);
-            m_Wrapper.m_Player1ActionsCallbackInterfaces.Clear();
+            m_Wrapper.m_BoatActionsCallbackInterfaces.Clear();
             AddCallbacks(instance);
         }
     }
-    public Player1Actions @Player1 => new Player1Actions(this);
+    public BoatActions @Boat => new BoatActions(this);
     public interface IPlayerActions
     {
         void OnJump(InputAction.CallbackContext context);
@@ -459,7 +459,7 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
         void OnInteract(InputAction.CallbackContext context);
         void OnSubmit(InputAction.CallbackContext context);
     }
-    public interface IPlayer1Actions
+    public interface IBoatActions
     {
         void OnJump(InputAction.CallbackContext context);
         void OnWalking(InputAction.CallbackContext context);

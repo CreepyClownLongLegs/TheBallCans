@@ -54,7 +54,7 @@ public class Coin : MonoBehaviour, IDataPersistence
     {
         if (!collected) 
         {
-            collectParticle.Play();
+            collectParticle.Emit(100);
             CollectCoin();
         }
     }
