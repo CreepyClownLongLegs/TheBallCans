@@ -7,7 +7,7 @@ public class GameData
 {
     public Vector3 playerPosition;
     public SerializableDictionary<string, bool> itemsCollected;
-    public PlayerData playerMoney;
+    public PlayerData playerMoney = new PlayerData();
     public int playerExpirience;
     internal object playerData;
     public SerializableDictionary<string, bool> coinsCollected;

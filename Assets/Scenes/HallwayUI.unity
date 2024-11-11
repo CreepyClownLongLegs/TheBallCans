@@ -257,7 +257,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9000135015892473131, guid: 9fda0e1eb7ef7864e8183178f316dfa4, type: 3}
       propertyPath: m_Name
-      value: Coin (3)
+      value: Coin3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -319,7 +319,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9000135015892473131, guid: 9fda0e1eb7ef7864e8183178f316dfa4, type: 3}
       propertyPath: m_Name
-      value: Coin (1)
+      value: Coin1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -381,7 +381,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9000135015892473131, guid: 9fda0e1eb7ef7864e8183178f316dfa4, type: 3}
       propertyPath: m_Name
-      value: Coin (4)
+      value: Coin5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -17593,7 +17593,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9000135015892473131, guid: 9fda0e1eb7ef7864e8183178f316dfa4, type: 3}
       propertyPath: m_Name
-      value: Coin (2)
+      value: Coin2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
