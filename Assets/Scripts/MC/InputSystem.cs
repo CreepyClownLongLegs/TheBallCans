@@ -16,6 +16,7 @@ public class InputSystem : PersistentSingleton<InputSystem>
     public static event Action goingDown;
     public static event Action goingUp;
     public static event Action interactPressed;
+    public static event Action inventoryCalled;
 
     bool interactPressedToo = false;
     bool submitPressed = false;
@@ -28,6 +29,7 @@ public class InputSystem : PersistentSingleton<InputSystem>
         inputActions.Player.Walking.performed += Movement;
         inputActions.Player.Walking.canceled += Idle;
         inputActions.Player.Interact.performed += Interact;
+        inputActions.Player.Inventory.performed += Inventory;
     }
     private void OnEnable(){
     }
@@ -35,6 +37,10 @@ public class InputSystem : PersistentSingleton<InputSystem>
     private void Interact(InputAction.CallbackContext context){
         interactPressed?.Invoke();
         InteractButtonPressed(context);
+    }
+
+    private void Inventory(InputAction.CallbackContext context){
+        inventoryCalled?.Invoke();
     }
 
     public void InteractButtonPressed(InputAction.CallbackContext context)
