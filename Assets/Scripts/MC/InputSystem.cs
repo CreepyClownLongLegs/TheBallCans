@@ -17,6 +17,8 @@ public class InputSystem : PersistentSingleton<InputSystem>
     public static event Action goingUp;
     public static event Action interactPressed;
     public static event Action inventoryCalled;
+    public static event Action leftClicked;
+    public static event Action rightClicked;
 
     bool interactPressedToo = false;
     bool submitPressed = false;
@@ -30,8 +32,20 @@ public class InputSystem : PersistentSingleton<InputSystem>
         inputActions.Player.Walking.canceled += Idle;
         inputActions.Player.Interact.performed += Interact;
         inputActions.Player.Inventory.performed += Inventory;
+        inputActions.Player.RightClick.performed += RightClick;
+        inputActions.Player.LeftClick.performed += LeftClick;
     }
     private void OnEnable(){
+    }
+
+    private void LeftClick(InputAction.CallbackContext context)
+    {
+        leftClicked?.Invoke();
+    }
+
+    private void RightClick(InputAction.CallbackContext context)
+    {
+        rightClicked?.Invoke();
     }
 
     private void Interact(InputAction.CallbackContext context){

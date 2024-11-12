@@ -655,7 +655,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inventoryUI: {fileID: 4301191328821313293}
-  inventorySize: 10
+  inventorySize: 5
 --- !u!114 &445036371 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 8489570546982828623, guid: 24686e9e1bce5d542b7da5b34c4946b3, type: 3}
@@ -1754,6 +1754,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2770586883503446144, guid: c3e1a73b803619a418e270223afc6491, type: 3}
+      propertyPath: m_PreferredHeight
+      value: 120
+      objectReference: {fileID: 0}
     - target: {fileID: 3196234426305354926, guid: c3e1a73b803619a418e270223afc6491, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -1837,6 +1841,18 @@ PrefabInstance:
     - target: {fileID: 4414928219909837701, guid: c3e1a73b803619a418e270223afc6491, type: 3}
       propertyPath: m_SizeDelta.x
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4591826123287400213, guid: c3e1a73b803619a418e270223afc6491, type: 3}
+      propertyPath: title
+      value: Sword
+      objectReference: {fileID: 0}
+    - target: {fileID: 4591826123287400213, guid: c3e1a73b803619a418e270223afc6491, type: 3}
+      propertyPath: sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 98c2d2187f5c1344ebcbe0330ab03c16, type: 3}
+    - target: {fileID: 4591826123287400213, guid: c3e1a73b803619a418e270223afc6491, type: 3}
+      propertyPath: description
+      value: ouchie :(
       objectReference: {fileID: 0}
     - target: {fileID: 4888177467205542630, guid: c3e1a73b803619a418e270223afc6491, type: 3}
       propertyPath: m_AnchorMax.y
