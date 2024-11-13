@@ -12,11 +12,13 @@ public class CharacterController2D : MonoBehaviour, IDataPersistence
 {
     Animator animator;
     Rigidbody2D rb;
-    [SerializeField] float speed = 0.3f;
+    [SerializeField] float speed = 7f;
     Vector2 motionVector;
     public bool elevatorPanelIsOpen = false;
-
     string current_anim = "idlemc";
+
+    public float speedX_addOn = 0f;
+    public float speedY_addOn = 0f;
 
     private void OnEnable(){
         InputSystem.onJump += Jump;
@@ -63,7 +65,7 @@ public class CharacterController2D : MonoBehaviour, IDataPersistence
     }
 
     void move(){
-        rb.velocity = motionVector*speed;
+        rb.velocity = new Vector2( motionVector.x*speed + speedX_addOn, motionVector.y*speed + speedY_addOn);
     }
     
     private void Jump(){

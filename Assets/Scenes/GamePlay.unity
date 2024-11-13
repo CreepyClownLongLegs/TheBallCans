@@ -292,6 +292,8 @@ MonoBehaviour:
   target: {fileID: 1408593984}
   offsetX: 0
   offsetY: 2
+  smoothing: 5
+  updateCamera: 1
 --- !u!1 &619394800
 GameObject:
   m_ObjectHideFlags: 0
@@ -806,6 +808,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 7
   elevatorPanelIsOpen: 0
+  speedX_addOn: 0
+  speedY_addOn: 0
 --- !u!114 &1408593988
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1410,10 +1414,10 @@ RectTransform:
   - {fileID: 2017379529}
   m_Father: {fileID: 3138480722652639841}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 280.23004, y: 168.13}
-  m_SizeDelta: {x: -601.87, y: -367.75}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 116.4, y: -45.33}
+  m_SizeDelta: {x: 232.81, y: 90.65}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2144949046
 MonoBehaviour:
