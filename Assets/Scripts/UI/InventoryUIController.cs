@@ -1,33 +1,84 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using Inventory.Model;
+using Inventory.UI;
 using UnityEngine;
 
-public class InventoryUIController : MonoBehaviour
+namespace Inventory
 {
-    [SerializeField]
-    private UIInventoryPage inventoryUI;
-    public int inventorySize = 10;
-    
-    
-    private void Start()
+    public class InventoryUIController : MonoBehaviour
     {
-        inventoryUI.InitializeInventoryUI(inventorySize);
-        InputSystem.inventoryCalled += InventoryCalled;
-    }
+        [SerializeField]
+        private UIInventoryPage inventoryUI;
 
-    private void OnDestroy(){
-        InputSystem.inventoryCalled -= InventoryCalled;
-    }
+        [SerializeField]
+        private InventorySO inventoryData;
 
-    private void InventoryCalled(){
-        if (inventoryUI.isActiveAndEnabled == false)
+        public List<InventoryItem> initialItems = new List<InventoryItem>();
+
+
+        private void Start()
+        {
+            PrepareUI();
+            PrepareInventoryData();
+            InputSystem.inventoryCalled += InventoryCalled;
+        }
+
+        private void PrepareInventoryData()
+        {
+            inventoryData.Initialize();
+            foreach (InventoryItem item in initialItems)
+            {
+                if(item.IsEmpty)
+                    continue;
+                inventoryData.AddItem(item);
+            }
+        }
+
+        private void PrepareUI()
+        {
+            inventoryUI.InitializeInventoryUI(inventoryData.Size);
+            this.inventoryUI.OnDescriptionRequested += HandleDescriptionRequest;
+            this.inventoryUI.OnItemActionRequested += HandleItemActionRequest;
+        }
+
+        private void HandleItemActionRequest(int itemIndex)
+        {
+        }
+
+        private void HandleDescriptionRequest(int itemIndex)
+        {
+            InventoryItem inventoryItem = inventoryData.GetItemAt(itemIndex);
+            if (inventoryItem.IsEmpty)
+            {
+                inventoryUI.ResetSelection();
+                return;
+            }
+            ItemSO item = inventoryItem.item;
+            inventoryUI.UpdateDescription(itemIndex, item.ItemImage, item.Name, item.Description);
+        }
+
+        private void OnDestroy()
+        {
+            InputSystem.inventoryCalled -= InventoryCalled;
+        }
+
+        private void InventoryCalled()
+        {
+            if (inventoryUI.isActiveAndEnabled == false)
             {
                 inventoryUI.Show();
+                foreach (var item in inventoryData.GetCurrentInventoryState())
+                {
+                    inventoryUI.UpdateData(item.Key, item.Value.item.ItemImage);
+                }
             }
             else
             {
                 inventoryUI.Hide();
                 //wont work if we want to freeze time (imo we dont need to freeze time)
             }
+        }
     }
 }
