@@ -62,7 +62,7 @@ public class Coin : MonoBehaviour, IDataPersistence
     private void CollectCoin() 
     {
         collected = true;
-        //AudioManager.instance.PlayOneShot(FMODEvents.instance.itemCollected, this.transform.position);
+        AudioManager.instance.PlayOneShot(FMODEvents.instance.itemCollected, this.transform.position);
         SaveGame(DataPersistenceManager.instance.GetGameData());
         DataPersistenceManager.instance.SaveGame();
         GameEventsManager.instance.miscEvents.CoinCollected();

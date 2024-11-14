@@ -149,9 +149,9 @@ GameObject:
   m_Component:
   - component: {fileID: 519420032}
   - component: {fileID: 519420031}
-  - component: {fileID: 519420029}
   - component: {fileID: 519420030}
   - component: {fileID: 519420033}
+  - component: {fileID: 519420034}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -159,14 +159,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!81 &519420029
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 519420028}
-  m_Enabled: 1
 --- !u!114 &519420030
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -294,6 +286,20 @@ MonoBehaviour:
   offsetY: 2
   smoothing: 5
   updateCamera: 1
+--- !u!114 &519420034
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 519420028}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86c6556701af9e04380698b89f691b6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nonRigidbodyVelocity: 0
+  attenuationObject: {fileID: 0}
 --- !u!1 &619394800
 GameObject:
   m_ObjectHideFlags: 0
@@ -1187,6 +1193,46 @@ PrefabInstance:
     - target: {fileID: 4113237967309744748, guid: b6d3de740a11c4d47b52aa67379b37a5, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6028204992699187070, guid: b6d3de740a11c4d47b52aa67379b37a5, type: 3}
+      propertyPath: <ourRoomTheme>k__BackingField.Path
+      value: event:/New Event
+      objectReference: {fileID: 0}
+    - target: {fileID: 6028204992699187070, guid: b6d3de740a11c4d47b52aa67379b37a5, type: 3}
+      propertyPath: <itemCollected>k__BackingField.Path
+      value: event:/shard
+      objectReference: {fileID: 0}
+    - target: {fileID: 6028204992699187070, guid: b6d3de740a11c4d47b52aa67379b37a5, type: 3}
+      propertyPath: <ourRoomTheme>k__BackingField.Guid.Data1
+      value: 1647906791
+      objectReference: {fileID: 0}
+    - target: {fileID: 6028204992699187070, guid: b6d3de740a11c4d47b52aa67379b37a5, type: 3}
+      propertyPath: <ourRoomTheme>k__BackingField.Guid.Data2
+      value: 1169397599
+      objectReference: {fileID: 0}
+    - target: {fileID: 6028204992699187070, guid: b6d3de740a11c4d47b52aa67379b37a5, type: 3}
+      propertyPath: <ourRoomTheme>k__BackingField.Guid.Data3
+      value: 367316921
+      objectReference: {fileID: 0}
+    - target: {fileID: 6028204992699187070, guid: b6d3de740a11c4d47b52aa67379b37a5, type: 3}
+      propertyPath: <ourRoomTheme>k__BackingField.Guid.Data4
+      value: -583711268
+      objectReference: {fileID: 0}
+    - target: {fileID: 6028204992699187070, guid: b6d3de740a11c4d47b52aa67379b37a5, type: 3}
+      propertyPath: <itemCollected>k__BackingField.Guid.Data1
+      value: 2047793008
+      objectReference: {fileID: 0}
+    - target: {fileID: 6028204992699187070, guid: b6d3de740a11c4d47b52aa67379b37a5, type: 3}
+      propertyPath: <itemCollected>k__BackingField.Guid.Data2
+      value: 1096631692
+      objectReference: {fileID: 0}
+    - target: {fileID: 6028204992699187070, guid: b6d3de740a11c4d47b52aa67379b37a5, type: 3}
+      propertyPath: <itemCollected>k__BackingField.Guid.Data3
+      value: -530410086
+      objectReference: {fileID: 0}
+    - target: {fileID: 6028204992699187070, guid: b6d3de740a11c4d47b52aa67379b37a5, type: 3}
+      propertyPath: <itemCollected>k__BackingField.Guid.Data4
+      value: -587543648
       objectReference: {fileID: 0}
     - target: {fileID: 8464921483845542393, guid: b6d3de740a11c4d47b52aa67379b37a5, type: 3}
       propertyPath: m_Name
