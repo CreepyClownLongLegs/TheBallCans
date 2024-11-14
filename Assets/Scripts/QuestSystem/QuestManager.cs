@@ -204,7 +204,6 @@ public class QuestManager : PersistentSingleton<QuestManager>
     private void StartQuest(string obj)
     {
         Quest quest = GetQuestById(obj);
-        NotificationManager.Instance.showNotification("Quest: [" + quest.info.displayName + "] has been started!", NotificationPanelColor.INFO);
         quest.InstantiateCurrentQuestStep(this.transform);
         ChangeQuestState(quest.info.id, QuestState.IN_PROGRESS);
     }

@@ -7,7 +7,7 @@ public class ConfigureWifiQuest : QuestStep
 
     private int memoriesCollected = 0;
     private int memoriesToComplete = 3;
-
+    bool talkedWithFatima = false;
     private void Start()
     {
         StartCoroutine(coroutineUpdateState());
@@ -26,6 +26,8 @@ public class ConfigureWifiQuest : QuestStep
             UpdateState();
         }
 
+        talkedWithFatima = DialogueManager.Instance.GotPasswordFromFatima;
+
         if (memoriesCollected >= memoriesToComplete)
         {
             FinishQuestStep();
@@ -33,7 +35,7 @@ public class ConfigureWifiQuest : QuestStep
     }
 
     private IEnumerator coroutineUpdateState(){
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(0.5f);  
         KayakingGameManager.MemoryCollectedAction += MemoryCollected;
         UpdateState();
     }
@@ -47,7 +49,7 @@ public class ConfigureWifiQuest : QuestStep
 
     protected override void SetQuestStepState(string state)
     {
-        this.memoriesCollected = System.Int32.Parse(state);
+        //this.memoriesCollected = System.Int32.Parse(state);
         UpdateState();
     }
 }

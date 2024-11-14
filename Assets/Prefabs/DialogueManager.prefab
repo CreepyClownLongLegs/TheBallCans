@@ -46,10 +46,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   UnparentOnAwake: 0
   typingSpeed: 0.04
-  loadGlobalsJSON: {fileID: 0}
+  loadGlobalsJSON: {fileID: 4900000, guid: 630562438b93e7a40a2ad9ffee46beb9, type: 3}
   dialoguePanel: {fileID: 0}
   continueIcon: {fileID: 0}
   dialogueText: {fileID: 0}
+  layoutAnimator: {fileID: 0}
+  displayNameText: {fileID: 0}
+  portraitAnimator: {fileID: 0}
   choices:
   - {fileID: 0}
   - {fileID: 0}

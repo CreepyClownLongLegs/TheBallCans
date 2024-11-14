@@ -34,6 +34,8 @@ public static KayakingGameManager Instance { get; private set; }
     void Awake(){
 
         Instance = this; 
+        DialogueManager.Instance.EpisodeOneKayakingGameFinished = false;
+        StartCoroutine(DialogueManager.Instance.ExitDialogueMode());
     } 
     
     void Start()
@@ -58,6 +60,7 @@ public static KayakingGameManager Instance { get; private set; }
             NotificationManager.Instance.showNotification("Fatima : Was it Cazin...no no , Mostar ??", NotificationPanelColor.INFO);
         }
         if(memory >= 3){
+            DialogueManager.Instance.EpisodeOneKayakingGameFinished = true;
             NotificationManager.Instance.showNotification("Fatima : I GOT IT !1!!1", NotificationPanelColor.SUCCSES);
             GameOverCalled();
         }

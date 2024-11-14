@@ -42,6 +42,9 @@ public class QuestPoint : MonoBehaviour
 
     private void SubmitPressed()
     {
+        if(finishPoint && currentQuestState.Equals(QuestState.CAN_START)){
+            return;
+        }
         if (!playerIsNear)
         {
             return;
@@ -50,14 +53,17 @@ public class QuestPoint : MonoBehaviour
         // start or finish a quest
         if (currentQuestState.Equals(QuestState.CAN_START) && startPoint)
         {
+            NotificationManager.Instance.showNotification("Quest: [" + questInfoForPoint.displayName + "] has been started!", NotificationPanelColor.INFO);
             GameEventsManager.instance.questEvents.StartQuest(questId);
-
-        }
-        else if (currentQuestState.Equals(QuestState.CAN_FINISH) && finishPoint)
+            //return so it doesnt check the other else ifs
+            return;
+        } else if (currentQuestState.Equals(QuestState.CAN_FINISH) && finishPoint)
         {
             GameEventsManager.instance.questEvents.FinishQuest(questId);
+            return;
         } 
-        else if (currentQuestState.Equals(QuestState.IN_PROGRESS))
+        
+        if (currentQuestState.Equals(QuestState.IN_PROGRESS) && finishPoint)
         {
             NotificationManager.Instance.showNotification(quest.GetFullStatusText(), NotificationPanelColor.INFO);
         }

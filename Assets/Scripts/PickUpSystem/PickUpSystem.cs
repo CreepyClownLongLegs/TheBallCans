@@ -24,6 +24,7 @@ public class PickUpSystem : MonoBehaviour
         if (item != null)
         {
             Debug.Log("Item picked up!");
+            NotificationManager.Instance.showNotification("You've picked up a " + item.InventoryItem.name, NotificationPanelColor.INFO);
             inventoryData.AddItem(item.InventoryItem);
             item.DestroyItem();
         }

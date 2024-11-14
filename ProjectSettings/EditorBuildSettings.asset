@@ -44,4 +44,5 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/KayakingMiniGameUI.unity
     guid: 165595adbc1f21e42a9252695f36ac8b
-  m_configObjects: {}
+  m_configObjects:
+    com.unity.addressableassets: {fileID: 11400000, guid: fc7deffcbc9346747a0ae4e38bce99f2, type: 2}

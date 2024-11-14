@@ -2,7 +2,9 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using Ink.Runtime;
+using JetBrains.Annotations;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
@@ -27,6 +29,9 @@ public class DialogueManager : PersistentSingleton<DialogueManager>
     [SerializeField] private GameObject[] choices;
     private TextMeshProUGUI[] choicesText;
 
+    //just some variables
+    public bool EpisodeOneKayakingGameFinished = false;
+    public bool GotPasswordFromFatima = false;
 
     private const string SPEAKER_TAG = "speaker";
     private const string PORTRAIT_TAG = "portrait";
@@ -35,13 +40,18 @@ public class DialogueManager : PersistentSingleton<DialogueManager>
     private const string ITEM_TAG = "item";
 
     private Story currentStory;
-    public bool dialogueIsPlaying { get; private set; }
+    public bool dialogueIsPlaying { get; set; }
 
     private bool canContinueToNextLine = false;
 
     private Coroutine displayLineCoroutine;
+    private DialogueVariables dialogueVariables;
+    private InkExternalFunctions inkExternalFunctions;
 
-    private void Awake(){}
+    private void Awake(){
+        dialogueVariables = new DialogueVariables(loadGlobalsJSON);
+        inkExternalFunctions = new InkExternalFunctions();
+    }
 
     private void Update(){
         if(!dialogueIsPlaying) return;
@@ -67,22 +77,30 @@ public class DialogueManager : PersistentSingleton<DialogueManager>
             choicesText[index] = choice.GetComponentInChildren<TextMeshProUGUI>();
             index++;
         }
+
+        //remove later
+        NotificationManager.Instance.showNotification("You've just moved in. So you obviously have to connect you PC to the Wifi first.", NotificationPanelColor.INFO);
     }
 
 
     public void EnterDialogueMode(TextAsset inkJSONText){
         currentStory = new Story(inkJSONText.text);
+
+        
         dialogueIsPlaying = true;
         dialoguePanel.SetActive(true);
+        dialogueVariables.StartListening(currentStory);
+        inkExternalFunctions.Bind(currentStory);
+
         ContinueStory();
     }
 
 
-    private IEnumerator ExitDialogueMode() 
+    public IEnumerator ExitDialogueMode() 
     {
         yield return new WaitForSeconds(0.1f);
-
-
+        dialogueVariables.StopListening(currentStory);
+        inkExternalFunctions.Unbind(currentStory);
         dialogueIsPlaying = false;
         dialoguePanel.SetActive(false);
         dialogueText.text = "";
@@ -94,6 +112,10 @@ public class DialogueManager : PersistentSingleton<DialogueManager>
     private void ContinueStory(){
         if(dialogueIsPlaying){
             if(currentStory.canContinue){
+                    if(EpisodeOneKayakingGameFinished){
+                    Debug.Log("Finished Kayaking Game " + EpisodeOneKayakingGameFinished);
+                    TrySetInkStoryVariable("EPISODE_ONE_FINISHED_KAYAKING_GAME","true");
+                    }
                 dialogueText.text = currentStory.Continue();
                 DisplayChoices();
                 HandleTags(currentStory.currentTags);
@@ -132,6 +154,33 @@ public class DialogueManager : PersistentSingleton<DialogueManager>
         StartCoroutine(SelectFirstChoice());
     }
 
+    public void changeVariable(string name, object value){
+        dialogueVariables.SetVariable(name,value, new Story(loadGlobalsJSON.text));
+    }
+
+        public bool TrySetInkStoryVariable(string variable, object value, bool log = true ){
+
+            if(!currentStory){
+                Debug.Log("Current story istn loaded");
+                return false;
+            }
+
+            if( currentStory != null &&
+                currentStory.variablesState.GlobalVariableExistsWithName( variable ) )
+            {
+                if( log )
+                {
+                    Debug.Log( $"[Ink] Set variable: {variable} = {value}" );
+                }
+
+                currentStory.variablesState[variable] = value;
+
+                return true;
+            }
+
+            return false;
+        }
+
         private void HandleTags(List<string> currentTags)
     {
         // loop through each tag and handle it accordingly
@@ -151,7 +200,6 @@ public class DialogueManager : PersistentSingleton<DialogueManager>
             {
                 case SPEAKER_TAG:
                     displayNameText.text = tagValue;
-                    Debug.Log(tagValue);
                     break;
                 case PORTRAIT_TAG:
                     portraitAnimator.Play(tagValue);
