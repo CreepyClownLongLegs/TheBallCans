@@ -20,25 +20,22 @@ public class KayakingGameManager : MonoBehaviour
 public CameraController camera;
 private Vector2 playerInitialPosition;
 private CharacterController2D characterController2D;
-public static event Action GameOver;
-public static event Action GameStart;
 public int score = 0;
 private bool gameIsOver = false;
 private bool gameHasBeenStarted = false;
 private GameObject[] hearts;
+public int memory = 0;
+public static event Action GameOver;
+public static event Action GameStart;
+public static event Action MemoryCollectedAction;
 
 public static KayakingGameManager Instance { get; private set; }
 
     void Awake(){
-            if (Instance != null && Instance != this) 
-    { 
-        Destroy(this); 
-    } 
-    else 
-    { 
+
         Instance = this; 
     } 
-    }
+    
     void Start()
     {
         this.door.SetActive(false);
@@ -52,17 +49,35 @@ public static KayakingGameManager Instance { get; private set; }
         this.hearts = oldHearts;
     }
 
+    public void MemoryCollected(){
+        memory++;
+        MemoryCollectedAction?.Invoke();
+        if(memory == 1){
+            NotificationManager.Instance.showNotification("Fatima : AH I THINK IM STARTING TO R3M3MB3R !1!!1", NotificationPanelColor.INFO);
+        } if (memory == 2){
+            NotificationManager.Instance.showNotification("Fatima : Was it Cazin...no no , Mostar ??", NotificationPanelColor.INFO);
+        }
+        if(memory >= 3){
+            NotificationManager.Instance.showNotification("Fatima : I GOT IT !1!!1", NotificationPanelColor.SUCCSES);
+            GameOverCalled();
+        }
+    }
+
     public void DamageTaken(){
         if(hearts.Length == 0){
             //died
+            GameOverCalled();
+            return;
+        }
+        makeNewListwithOneLessGameObject();
+    }
+
+    public void GameOverCalled(){
             camera.offsetX = 0;
             this.characterController2D.speedX_addOn = 0f;
             GameOver?.Invoke();
             SetGameOverPanel();
             gameIsOver = true;
-            return;
-        }
-        makeNewListwithOneLessGameObject();
     }
 
     private void makeNewListwithOneLessGameObject(){
@@ -75,7 +90,7 @@ public static KayakingGameManager Instance { get; private set; }
     }
 
     private void SetGameOverPanel(){
-        string text = "Your final score is: " + score + "<br> You've collected 0 memories <br> Press 'E' to return";
+        string text = "Your final score is: " + score + "<br> You've collected " + memory +  " memories <br> Press 'E' to return";
         this.GameOverScoreText.text = text;
         this.gameOverPanel.SetActive(true);
     }
@@ -85,7 +100,6 @@ public static KayakingGameManager Instance { get; private set; }
             this.gameIsOver = false;
             this.gameOverPanel.SetActive(false);
             InputSystem.interactPressed -= ReturnToRoom;
-            Destroy(this);
             this.door.SetActive(true);}
     }
 

@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class QuestManager : MonoBehaviour
+public class QuestManager : PersistentSingleton<QuestManager>
 {
     [Header("Config")]
     [SerializeField] private bool loadQuestState = true;
@@ -66,7 +66,7 @@ public class QuestManager : MonoBehaviour
         return idToQuestMap;
     }
 
-    private Quest GetQuestById(string id)
+    public Quest GetQuestById(string id)
     {
         Quest quest = questMap[id];
         if (quest == null)
@@ -197,14 +197,14 @@ public class QuestManager : MonoBehaviour
     {
         Quest quest = GetQuestById(id);
         ChangeQuestState(quest.info.id, QuestState.FINISHED);
-        NotificationManager.Instance.showNotification("Quest: " + quest.info.name + " is finished ! You earned " + quest.info.coins + "dabloons and " + quest.info.playerExpirience + " XP!", NotificationPanelColor.SUCCSES);
+        NotificationManager.Instance.showNotification("Quest: [" + quest.info.displayName + "] is finished ! You earned " + quest.info.coins + "dabloons and " + quest.info.playerExpirience + " XP!", NotificationPanelColor.SUCCSES);
         GameEventsManager.instance.goldEvents.GoldGained(quest.info.coins);
         GameEventsManager.instance.playerEvents.ExperienceGained(quest.info.playerExpirience);
     }
     private void StartQuest(string obj)
     {
         Quest quest = GetQuestById(obj);
-        NotificationManager.Instance.showNotification("Quest: " + quest.info.name + " ha been started!", NotificationPanelColor.INFO);
+        NotificationManager.Instance.showNotification("Quest: [" + quest.info.displayName + "] has been started!", NotificationPanelColor.INFO);
         quest.InstantiateCurrentQuestStep(this.transform);
         ChangeQuestState(quest.info.id, QuestState.IN_PROGRESS);
     }

@@ -41,7 +41,7 @@ public class CollectCoinsQuestStep : QuestStep
     private void UpdateState()
     {
         string state = coinsCollected.ToString();
-        string status = "Collected " + coinsCollected + " / " + coinsToComplete + " coins.";
+        string status = "Collected " + coinsCollected + " / " + coinsToComplete + " coins for completion.";
         ChangeState(state, status);
     }
 

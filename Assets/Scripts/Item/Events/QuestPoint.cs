@@ -46,15 +46,20 @@ public class QuestPoint : MonoBehaviour
         {
             return;
         }
-        Debug.Log(currentQuestState);
+        Quest quest = QuestManager.Instance.GetQuestById(questInfoForPoint.id);
         // start or finish a quest
         if (currentQuestState.Equals(QuestState.CAN_START) && startPoint)
         {
             GameEventsManager.instance.questEvents.StartQuest(questId);
+
         }
         else if (currentQuestState.Equals(QuestState.CAN_FINISH) && finishPoint)
         {
             GameEventsManager.instance.questEvents.FinishQuest(questId);
+        } 
+        else if (currentQuestState.Equals(QuestState.IN_PROGRESS))
+        {
+            NotificationManager.Instance.showNotification(quest.GetFullStatusText(), NotificationPanelColor.INFO);
         }
     }
 

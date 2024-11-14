@@ -629,6 +629,7 @@ Transform:
   - {fileID: 1748357402}
   - {fileID: 1614758861}
   - {fileID: 1780644842}
+  - {fileID: 1686284611}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1246770358 stripped
@@ -908,7 +909,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 0.0000042915344, y: 354.6}
+  m_AnchoredPosition: {x: 0.0000042915344, y: 432}
   m_SizeDelta: {x: 307.63, y: 109.24}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1426859453
@@ -1187,6 +1188,51 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4113237967309744748, guid: b6d3de740a11c4d47b52aa67379b37a5, type: 3}
   m_PrefabInstance: {fileID: 1677165238}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1686284610
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1686284611}
+  - component: {fileID: 1686284612}
+  m_Layer: 0
+  m_Name: ExpirienceManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1686284611
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1686284610}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1142544884}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1686284612
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1686284610}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d2303a327e10420489472412b9c6a99a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  UnparentOnAwake: 0
 --- !u!4 &1748357402 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6197002395358415657, guid: 4e74c101c7468074abfacbc20d74a7b3, type: 3}
@@ -1416,7 +1462,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 116.4, y: -45.33}
+  m_AnchoredPosition: {x: 116.400024, y: -45.329987}
   m_SizeDelta: {x: 232.81, y: 90.65}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2144949046
