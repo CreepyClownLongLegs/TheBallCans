@@ -9,9 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 69ec597dc9219cc429ab617df6c6a511, type: 3}
-  m_Name: Sword
+  m_Script: {fileID: 11500000, guid: 9747d9fdd4e7eb5489105eb40951caab, type: 3}
+  m_Name: PlaceChairRoom1
   m_EditorClassIdentifier: 
-  <Name>k__BackingField: Sword
-  <Description>k__BackingField: ouchie :(
-  <ItemImage>k__BackingField: {fileID: 21300000, guid: 98c2d2187f5c1344ebcbe0330ab03c16, type: 3}
+  chair: {fileID: 561145537650728152, guid: f143b21a18d72c843a22070c2e4f26a3, type: 3}

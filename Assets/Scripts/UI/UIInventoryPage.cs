@@ -53,6 +53,15 @@ namespace Inventory.UI
             listOfUIItems[itemIndex].Select();
         }
 
+        internal void ResetAllItems()
+        {
+            foreach (var item in listOfUIItems)
+            {
+                item.ResetData();
+                item.Deselect();
+            }
+        }
+
         public void UpdateData(int itemIndex, Sprite itemImage)
         {
             if (listOfUIItems.Count > itemIndex)
@@ -60,6 +69,7 @@ namespace Inventory.UI
                 listOfUIItems[itemIndex].SetData(itemImage);
             }
         }
+
         private void OnLeftClicked(UIInventoryItem uiInventoryItem)
         {
             int index = listOfUIItems.IndexOf(uiInventoryItem);
@@ -70,6 +80,10 @@ namespace Inventory.UI
 
         private void OnRightClicked(UIInventoryItem uiInventoryItem)
         {
+            int index = listOfUIItems.IndexOf(uiInventoryItem);
+            if (index == -1)
+                return;
+            OnItemActionRequested?.Invoke(index);
             Debug.Log(uiInventoryItem.name);
         }
 

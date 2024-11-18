@@ -22,18 +22,31 @@ namespace Systems.SceneManagement{
         float targetProgress;
         public bool isLoading;
 
+        public List<string> loadedScenes;
+
         public readonly SceneGroupManager manager = new SceneGroupManager();
         CharacterController2D characterController;
         
         void Awake() {
             // TODO can remove
             manager.OnSceneLoaded += sceneName => Debug.Log("Loaded: " + sceneName);
+            manager.OnSceneLoaded += SaveSceneNames;
             manager.OnSceneUnloaded += sceneName => Debug.Log("Unloaded: " + sceneName);
+            manager.OnSceneUnloaded += DeleteSceneName;
             manager.OnSceneGroupLoaded += () => Debug.Log("Scene group loaded");
         }
 
+
         async void Start() {
             await LoadSceneGroup(0);
+        }
+
+        void SaveSceneNames(string sceneName){
+            loadedScenes.Add(sceneName);
+        }
+
+        void DeleteSceneName(string sceneName){
+            loadedScenes.Remove(sceneName);
         }
         
         void Update() {

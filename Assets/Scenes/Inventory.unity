@@ -170,9 +170,7 @@ MonoBehaviour:
   inventoryUI: {fileID: 4301191328821313293}
   inventoryData: {fileID: 11400000, guid: 5ef8bbe8ece78914c9143b8c6f9851a2, type: 2}
   initialItems:
-  - item: {fileID: 11400000, guid: ca3a604cb780aa94ba1be3cccbdc4ace, type: 2}
   - item: {fileID: 0}
-  - item: {fileID: 11400000, guid: 9b67dce914ebbcf4d86b08ced90be11c, type: 2}
   - item: {fileID: 0}
 --- !u!224 &474279200 stripped
 RectTransform:

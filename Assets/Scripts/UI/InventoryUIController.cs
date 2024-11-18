@@ -28,11 +28,21 @@ namespace Inventory
         private void PrepareInventoryData()
         {
             inventoryData.Initialize();
+            inventoryData.OnInventoryUpdated += UpdateInventoryUI;
             foreach (InventoryItem item in initialItems)
             {
                 if(item.IsEmpty)
                     continue;
                 inventoryData.AddItem(item);
+            }
+        }
+
+        private void UpdateInventoryUI(Dictionary<int, InventoryItem> inventoryState)
+        {
+            inventoryUI.ResetAllItems();
+            foreach (var item in inventoryState)
+            {
+                inventoryUI.UpdateData(item.Key, item.Value.item.ItemImage);
             }
         }
 
@@ -45,6 +55,19 @@ namespace Inventory
 
         private void HandleItemActionRequest(int itemIndex)
         {
+            InventoryItem inventoryItem = inventoryData.GetItemAt(itemIndex);
+            if(inventoryItem.IsEmpty)
+                return;
+            IItemAction itemAction = inventoryItem.item as IItemAction;
+            if (itemAction != null)
+            {
+                itemAction.PerformAction(gameObject);
+            }
+            IDestroyableItem destroyableItem = inventoryItem.item as IDestroyableItem;
+            if (destroyableItem != null)
+            {
+                inventoryData.RemoveItem(itemIndex, 1);
+            }
         }
 
         private void HandleDescriptionRequest(int itemIndex)
