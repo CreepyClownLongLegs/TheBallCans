@@ -107,6 +107,15 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""Phone"",
+                    ""type"": ""Button"",
+                    ""id"": ""785955a8-655e-4294-9eb8-ab8963bd139a"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -296,6 +305,17 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
                     ""action"": ""Point"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""12d1ba55-9cc7-4ce9-850a-094bd3e66204"",
+                    ""path"": ""<Keyboard>/m"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Phone"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         },
@@ -405,6 +425,7 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
         m_Player_RightClick = m_Player.FindAction("RightClick", throwIfNotFound: true);
         m_Player_Pointer = m_Player.FindAction("Pointer", throwIfNotFound: true);
         m_Player_Point = m_Player.FindAction("Point", throwIfNotFound: true);
+        m_Player_Phone = m_Player.FindAction("Phone", throwIfNotFound: true);
         // Boat
         m_Boat = asset.FindActionMap("Boat", throwIfNotFound: true);
         m_Boat_Jump = m_Boat.FindAction("Jump", throwIfNotFound: true);
@@ -479,6 +500,7 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
     private readonly InputAction m_Player_RightClick;
     private readonly InputAction m_Player_Pointer;
     private readonly InputAction m_Player_Point;
+    private readonly InputAction m_Player_Phone;
     public struct PlayerActions
     {
         private @PlayerInputActions m_Wrapper;
@@ -492,6 +514,7 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
         public InputAction @RightClick => m_Wrapper.m_Player_RightClick;
         public InputAction @Pointer => m_Wrapper.m_Player_Pointer;
         public InputAction @Point => m_Wrapper.m_Player_Point;
+        public InputAction @Phone => m_Wrapper.m_Player_Phone;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -528,6 +551,9 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
             @Point.started += instance.OnPoint;
             @Point.performed += instance.OnPoint;
             @Point.canceled += instance.OnPoint;
+            @Phone.started += instance.OnPhone;
+            @Phone.performed += instance.OnPhone;
+            @Phone.canceled += instance.OnPhone;
         }
 
         private void UnregisterCallbacks(IPlayerActions instance)
@@ -559,6 +585,9 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
             @Point.started -= instance.OnPoint;
             @Point.performed -= instance.OnPoint;
             @Point.canceled -= instance.OnPoint;
+            @Phone.started -= instance.OnPhone;
+            @Phone.performed -= instance.OnPhone;
+            @Phone.canceled -= instance.OnPhone;
         }
 
         public void RemoveCallbacks(IPlayerActions instance)
@@ -641,6 +670,7 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
         void OnRightClick(InputAction.CallbackContext context);
         void OnPointer(InputAction.CallbackContext context);
         void OnPoint(InputAction.CallbackContext context);
+        void OnPhone(InputAction.CallbackContext context);
     }
     public interface IBoatActions
     {

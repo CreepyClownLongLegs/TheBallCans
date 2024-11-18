@@ -19,6 +19,7 @@ public class InputSystem : PersistentSingleton<InputSystem>
     public static event Action inventoryCalled;
     public static event Action leftClicked;
     public static event Action rightClicked;
+    public static event Action phoneCalled;
 
     bool interactPressedToo = false;
     bool submitPressed = false;
@@ -34,6 +35,7 @@ public class InputSystem : PersistentSingleton<InputSystem>
         inputActions.Player.Inventory.performed += Inventory;
         inputActions.Player.RightClick.performed += RightClick;
         inputActions.Player.LeftClick.performed += LeftClick;
+        inputActions.Player.Phone.performed += phoneIsCalled;
     }
     private void OnEnable(){
     }
@@ -42,7 +44,10 @@ public class InputSystem : PersistentSingleton<InputSystem>
     {
         leftClicked?.Invoke();
     }
-
+    private void phoneIsCalled(InputAction.CallbackContext context)
+    {
+        phoneCalled?.Invoke();
+    }
     private void RightClick(InputAction.CallbackContext context)
     {
         rightClicked?.Invoke();
