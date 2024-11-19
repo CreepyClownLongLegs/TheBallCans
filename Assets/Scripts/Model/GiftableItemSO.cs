@@ -7,9 +7,11 @@ namespace Inventory.Model
     [CreateAssetMenu]
     public class GiftableItemSO : ItemSO, IItemAction, IDestroyableItem
     {
+        [field: SerializeField]
         private List<GiftableData> giftModifier = new List<GiftableData>();
         public string ActionName => "Gift";
 
+        [field: SerializeField]
         public AudioClip actionSFX {get; private set;}
 
         public bool PerformAction(GameObject character)

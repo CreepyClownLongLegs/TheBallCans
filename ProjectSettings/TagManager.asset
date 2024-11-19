@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Item
   - FinishPoint
+  - ChairParent
   layers:
   - Default
   - TransparentFX

@@ -1106,6 +1106,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Grid
       objectReference: {fileID: 0}
+    - target: {fileID: 554622309751017274, guid: 461937e8d3b31534fbfca6803dbe08c4, type: 3}
+      propertyPath: m_TagString
+      value: ChairParent
+      objectReference: {fileID: 0}
     - target: {fileID: 8912470875013510538, guid: 461937e8d3b31534fbfca6803dbe08c4, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0

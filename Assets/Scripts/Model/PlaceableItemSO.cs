@@ -8,10 +8,11 @@ namespace Inventory.Model
     [CreateAssetMenu]
     public class PlaceableItemSO : ItemSO, IItemAction, IDestroyableItem
     {
-        [SerializeField]
+        [field: SerializeField]
         private List<PlaceableData> modifiersData = new List<PlaceableData>();
         public string ActionName => "Place Item";
 
+        [field: SerializeField]
         public AudioClip actionSFX {get; private set;}
 
         public bool PerformAction(GameObject character)

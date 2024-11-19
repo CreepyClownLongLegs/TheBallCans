@@ -15,3 +15,4 @@ MonoBehaviour:
   <Name>k__BackingField: Stick
   <Description>k__BackingField: This stick can be gifted to X
   <ItemImage>k__BackingField: {fileID: 21300000, guid: 2764730dd1e2f964f916933cfa198177, type: 3}
+  <actionSFX>k__BackingField: {fileID: 8300000, guid: 567ade667c7e0cc45a80a6bd39cf609a, type: 3}
