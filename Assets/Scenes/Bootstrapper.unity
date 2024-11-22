@@ -428,7 +428,18 @@ MonoBehaviour:
         asset: {fileID: 102900000, guid: 165595adbc1f21e42a9252695f36ac8b, type: 3}
         guid: 165595adbc1f21e42a9252695f36ac8b
       SceneType: 2
+  - GroupName: The Cooking Game
+    Scenes:
+    - Reference:
+        asset: {fileID: 102900000, guid: 8c9cfa26abfee488c85f1582747f6a02, type: 3}
+        guid: 8c9cfa26abfee488c85f1582747f6a02
+      SceneType: 0
+    - Reference:
+        asset: {fileID: 102900000, guid: cc9e9732ebe033e47837f494280a9b6e, type: 3}
+        guid: cc9e9732ebe033e47837f494280a9b6e
+      SceneType: 2
   isLoading: 0
+  loadedScenes: []
 --- !u!1 &730550718
 GameObject:
   m_ObjectHideFlags: 0
