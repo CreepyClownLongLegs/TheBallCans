@@ -15,7 +15,7 @@ public class FoodSpawner : MonoBehaviour
     private float randomSpawningTime;
     public float timer = 0f;
     public float foodTimer = 0f;
-    private bool spawn = true;
+    private bool spawn = false;
     private List<FoodSC> allFoods;
 
     // Update is called once per frame
@@ -44,8 +44,6 @@ public class FoodSpawner : MonoBehaviour
             randomiseFoodSpawning();
             foodTimer = 0f;
             int score = CookingGameManager.instance.pointsCollected ++;
-            //TODO: make later
-            //CookingGameManager.instance.scoreText.text = "Score : " + score; 
         }
         foodTimer += 0.01f;
     }
