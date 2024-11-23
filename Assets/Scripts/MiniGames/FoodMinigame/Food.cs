@@ -14,7 +14,8 @@ public class Food : MonoBehaviour
     
     private SpriteRenderer sr;
 
-    private void Start(){
+    private void Start()
+    {
         StartCoroutine(die());
     }
 
@@ -25,12 +26,12 @@ public class Food : MonoBehaviour
             //picking up the right food will add points and remove it from the inventory list
             if (type.Equals(FoodType.GOOD))
             {
-                CookingGameManager.instance.addScorePoints(points);
                 FoodInventory.instance.AddFood(this.food);
             }
             else if (type.Equals(FoodType.BAD))
             {
                 //Lose health/points
+                FoodInventory.instance.AddFood(this.food);
                 CookingGameManager.instance.addScorePoints(points);
 
             }
@@ -46,7 +47,8 @@ public class Food : MonoBehaviour
         }
     }
 
-    private IEnumerator die(){
+    private IEnumerator die()
+    {
         yield return new WaitForSeconds(7f);
         Destroy(this.gameObject);
     }

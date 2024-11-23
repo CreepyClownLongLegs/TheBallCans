@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
- 
+using Unity.VisualScripting;
+
 public class HUDManager : MonoBehaviour
 {
     public Image foodsContainer;
@@ -13,7 +14,6 @@ public class HUDManager : MonoBehaviour
     {
         scoreText.text = "Score: 0";
         CookingGameManager.instance.onScoreChangedCallback += UpdateScore;
-        FoodInventory.instance.onFoodChangedCallback    += UpdateInvItems;
     }
  
     private void UpdateScore()
@@ -46,7 +46,11 @@ public class HUDManager : MonoBehaviour
                 if (FoodInventory.instance.foods[i] != null)
                 {
                     foodsContainer.transform.GetChild(i).GetComponent<Image>().sprite = FoodInventory.instance.foods[i].icon;
-                    foodsContainer.transform.GetChild(i).GetComponent<Image>().color = new Color(1, 1, 1, 1);
+                    if(FoodInventory.instance.foods[i].GetComponent<Food>().food.type==FoodType.BAD){
+                        foodsContainer.transform.GetChild(i).GetComponent<Image>().color = new Color(0, 1, 0, 1);
+                    }else{
+                        foodsContainer.transform.GetChild(i).GetComponent<Image>().color = new Color(1, 1, 1, 1);
+                    }
                 }
                 else
                 {

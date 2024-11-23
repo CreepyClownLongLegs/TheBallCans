@@ -19,23 +19,28 @@ public class FoodSpawner : MonoBehaviour
     private List<FoodSC> allFoods;
 
     // Update is called once per frame
-    void Start(){
+    void Start()
+    {
+        FoodInventory.instance.badFoods = badFoods;
         CookingGameManager.GameOver += dontSpawn;
         CookingGameManager.GameStart += startToSpawn;
         allFoods = CookingGameManager.instance.recipeFirstRound.GetFoods();
-        foreach(FoodSC food in badFoods){
+        foreach(FoodSC food in badFoods)
+        {
             allFoods.Add(food);
         }
     }
 
-    private void OnDestroy(){
+    private void OnDestroy()
+    {
         CookingGameManager.GameOver -= dontSpawn;
         CookingGameManager.GameStart -= startToSpawn;
     }
 
     void FixedUpdate()
     {
-        if(foodTimer > randomSpawningTime && spawn){
+        if(foodTimer > randomSpawningTime && spawn)
+        {
             randomiseFoodSpawning();
             foodTimer = 0f;
             int score = CookingGameManager.instance.pointsCollected ++;
@@ -45,16 +50,24 @@ public class FoodSpawner : MonoBehaviour
         foodTimer += 0.01f;
     }
 
-    private void dontSpawn(){
+    public void dontSpawn()
+    {
         this.spawn = false;
     }
 
-    private void startToSpawn(){
+    private void startToSpawn()
+    {
         this.spawn = true;
     }
 
+    public void GetChildArray()
+    {
+        GetComponentsInChildren<FoodSpawner>();
+    }
 
-    private void SpawnFood(FoodSC foodSC){
+
+    private void SpawnFood(FoodSC foodSC)
+    {
         float randomX = Random.Range(minX, maxX);
         this.randomSpawningTime = Random.Range(minSpawningTime,maxSpawningTime);
         GameObject obj = Instantiate(foodSpawnPrefab, this.transform);
@@ -63,13 +76,15 @@ public class FoodSpawner : MonoBehaviour
         obj.GetComponent<Food>().food = foodSC;
         obj.GetComponent<SpriteRenderer>().sprite = foodSC.icon;
         //setting visual cue
-        if(foodSC.type == FoodType.BAD){
+        if(foodSC.type == FoodType.BAD)
+        {
             obj.GetComponent<SpriteRenderer>().color = Color.green;
         }
         obj.transform.position = new Vector3(randomX, valueY, 0f);
     }
 
-    private void randomiseFoodSpawning(){
+    private void randomiseFoodSpawning()
+    {
         int indexOfFood = Random.Range(0,allFoods.Count-1);
         SpawnFood(allFoods[indexOfFood]);
     }
