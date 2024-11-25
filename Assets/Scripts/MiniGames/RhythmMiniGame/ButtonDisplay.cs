@@ -14,30 +14,43 @@ public class ButtonDisplay : MonoBehaviour
     private Collider2D Collider2D;
     public int missScoreMinusPoints = 5;
     public int hitScorePlusPoints = 10;
+    private Animator animator;
+    private Coroutine playParticles;
     // Start is called before the first frame update
+
+    void Awake(){
+        animator = GetComponent<Animator>();
+    }
     void Start()
     {
-        sr = GetComponent<Image>();
+        sr = GetComponentInChildren<Image>();
         if(arrowType == ButtonArrowType.LEFT){
             InputSystem.leftArrowClicked += ButtonCanceled;
             InputSystem.leftArrowCanceled += ButtonClicked;
+
         }
         if(arrowType == ButtonArrowType.RIGHT){
             InputSystem.rightArrowClicked += ButtonCanceled;
             InputSystem.rightArrowCanceled += ButtonClicked;
+
         }
         if(arrowType == ButtonArrowType.UP){
             InputSystem.upArrowClicked += ButtonCanceled;
             InputSystem.upArrowCanceled += ButtonClicked;
+
         }
         if(arrowType == ButtonArrowType.DOWN){
             InputSystem.downArrowClicked += ButtonCanceled;
             InputSystem.downArrowCanceled += ButtonClicked;
+
         }
+        animator.Play("leftArrow");
     }
 
     private void ButtonClicked(){
         this.sr.color = new Color(0.5f,0.5f,0.5f,1f);
+        AudioManager.instance.PlayOneShot(FMODEvents.instance.kick, this.transform.position);
+        animator.Play("leftArrow");
         if(Collider2D!=null){
             Destroy(Collider2D.gameObject);
             AddPointsToScore();
@@ -74,6 +87,7 @@ public class ButtonDisplay : MonoBehaviour
     void updateScoreText(){
         RhythmGameManager.Instance.scoreText.text = "Score : " + RhythmGameManager.Instance.score;
     }
+
 
 }
 

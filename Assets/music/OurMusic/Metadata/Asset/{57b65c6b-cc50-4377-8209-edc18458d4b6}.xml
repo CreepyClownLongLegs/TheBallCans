@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="EncodableAsset" id="{57b65c6b-cc50-4377-8209-edc18458d4b6}">
+		<property name="assetPath">
+			<value>SFX- The Ultimate 2017 16 bit Mini pack/</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{58154428-f8e7-4f3d-898f-e22766795eee}</destination>
+		</relationship>
+	</object>
+</objects>

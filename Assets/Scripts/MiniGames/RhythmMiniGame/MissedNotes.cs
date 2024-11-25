@@ -6,6 +6,7 @@ public class MissedNotes : MonoBehaviour
 {
     // Start is called before the first frame update
     void OnTriggerEnter2D(Collider2D collider2D){
+        AudioManager.instance.PlayOneShot(FMODEvents.instance.snare, this.transform.position);
         Destroy(collider2D.gameObject);
         SubstractPointsFromScore();
         RhythmGameManager.Instance.resetMultiplier();

@@ -1494,6 +1494,46 @@ PrefabInstance:
       value: 0.088
       objectReference: {fileID: 0}
     - target: {fileID: 6028204992699187070, guid: b6d3de740a11c4d47b52aa67379b37a5, type: 3}
+      propertyPath: <kick>k__BackingField.Path
+      value: event:/kick
+      objectReference: {fileID: 0}
+    - target: {fileID: 6028204992699187070, guid: b6d3de740a11c4d47b52aa67379b37a5, type: 3}
+      propertyPath: <snare>k__BackingField.Path
+      value: event:/snare
+      objectReference: {fileID: 0}
+    - target: {fileID: 6028204992699187070, guid: b6d3de740a11c4d47b52aa67379b37a5, type: 3}
+      propertyPath: <kick>k__BackingField.Guid.Data1
+      value: -938639505
+      objectReference: {fileID: 0}
+    - target: {fileID: 6028204992699187070, guid: b6d3de740a11c4d47b52aa67379b37a5, type: 3}
+      propertyPath: <kick>k__BackingField.Guid.Data2
+      value: 1097907244
+      objectReference: {fileID: 0}
+    - target: {fileID: 6028204992699187070, guid: b6d3de740a11c4d47b52aa67379b37a5, type: 3}
+      propertyPath: <kick>k__BackingField.Guid.Data3
+      value: 120804532
+      objectReference: {fileID: 0}
+    - target: {fileID: 6028204992699187070, guid: b6d3de740a11c4d47b52aa67379b37a5, type: 3}
+      propertyPath: <kick>k__BackingField.Guid.Data4
+      value: -980607557
+      objectReference: {fileID: 0}
+    - target: {fileID: 6028204992699187070, guid: b6d3de740a11c4d47b52aa67379b37a5, type: 3}
+      propertyPath: <snare>k__BackingField.Guid.Data1
+      value: -19069267
+      objectReference: {fileID: 0}
+    - target: {fileID: 6028204992699187070, guid: b6d3de740a11c4d47b52aa67379b37a5, type: 3}
+      propertyPath: <snare>k__BackingField.Guid.Data2
+      value: 1165790707
+      objectReference: {fileID: 0}
+    - target: {fileID: 6028204992699187070, guid: b6d3de740a11c4d47b52aa67379b37a5, type: 3}
+      propertyPath: <snare>k__BackingField.Guid.Data3
+      value: 1458541459
+      objectReference: {fileID: 0}
+    - target: {fileID: 6028204992699187070, guid: b6d3de740a11c4d47b52aa67379b37a5, type: 3}
+      propertyPath: <snare>k__BackingField.Guid.Data4
+      value: -304915230
+      objectReference: {fileID: 0}
+    - target: {fileID: 6028204992699187070, guid: b6d3de740a11c4d47b52aa67379b37a5, type: 3}
       propertyPath: <ourRoomTheme>k__BackingField.Path
       value: event:/ourRoom
       objectReference: {fileID: 0}
