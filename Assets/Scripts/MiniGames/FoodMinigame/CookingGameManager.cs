@@ -13,7 +13,6 @@ public class CookingGameManager : MonoBehaviour
     public OnScoreChangedCallback onScoreChangedCallback;
     [SerializeField]
     public Recipe recipeFirstRound;
-
     [SerializeField] private GameObject recipePanel;
     [SerializeField] private GameObject inventoryPanel;
     [SerializeField] private GameObject foodIconPrefab;

@@ -16,18 +16,25 @@ public class FoodSpawner : MonoBehaviour
     public float timer = 0f;
     public float foodTimer = 0f;
     private bool spawn = false;
-    private List<FoodSC> allFoods;
+    private List<FoodSC> allFoods = new List<FoodSC>();
+
+    private List<FoodSC> cookingManagerList = new List<FoodSC>();
 
     // Update is called once per frame
     void Start()
     {
+        cookingManagerList = CookingGameManager.instance.recipeFirstRound.GetFoods();
         FoodInventory.instance.badFoods = badFoods;
         CookingGameManager.GameOver += dontSpawn;
         CookingGameManager.GameStart += startToSpawn;
-        allFoods = CookingGameManager.instance.recipeFirstRound.GetFoods();
+        foreach(FoodSC foodSC in cookingManagerList){
+            allFoods.Add(foodSC);
+            Debug.Log("Food " + foodSC.name + "added");
+        }
         foreach(FoodSC food in badFoods)
         {
             allFoods.Add(food);
+            Debug.Log("Food " + food.name + "added");
         }
     }
 
