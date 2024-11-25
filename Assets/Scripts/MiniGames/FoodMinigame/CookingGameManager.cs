@@ -22,6 +22,7 @@ public class CookingGameManager : MonoBehaviour
     [SerializeField] public TextMeshPro collectedPointsVisulsCue;
     [SerializeField] public GameObject gameStartPanel;
     [SerializeField] public GameObject gameOverPanel;
+    [SerializeField] public GameObject gameLostPanel;
     [SerializeField] public TextMeshProUGUI GameOverScoreText;
     [SerializeField] public GameObject door;
 
@@ -64,6 +65,7 @@ public class CookingGameManager : MonoBehaviour
         this.door.SetActive(false);
         CreateRecipePanel();
         initialPosition = GameObject.FindGameObjectWithTag("Player").transform.position;
+        gameLostPanel.SetActive(false);
         gameOverPanel.SetActive(false);
         gameStartPanel.SetActive(true);
         collectedPointsVisulsCue.gameObject.transform.position = new Vector3(initialPosition.x+2,initialPosition.y+1,0);
@@ -80,7 +82,7 @@ public class CookingGameManager : MonoBehaviour
         {
             GameObject obj = Instantiate(foodIconPrefab, recipePanel.transform);
             obj.GetComponent<Image>().sprite = foodSC.icon;
-            obj.transform.position = new Vector3(obj.transform.position.x, (obj.transform.position.y + i*100) - YRecipeOffset, 0);
+            obj.transform.position = new Vector3(obj.transform.position.x, (obj.transform.position.y - i*100) + YRecipeOffset, 0);
             obj.GetComponentInChildren<TextMeshProUGUI>().text = foodSC.name;
             i++;
         }
@@ -187,6 +189,7 @@ public class CookingGameManager : MonoBehaviour
         if(lost)
         {
             //lost
+            gameLostPanel.SetActive(true);
             GameLost();
         } 
         else 

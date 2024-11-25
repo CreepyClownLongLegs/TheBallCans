@@ -80,7 +80,6 @@ public class FoodInventory : MonoBehaviour
     {
         if(foods.Count == 5)
         {
-            //FoodSpawner.GetChildArray();
             //won
             if(CheckIfEnoughFoodsCollected())
             {
