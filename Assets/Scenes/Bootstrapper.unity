@@ -437,7 +437,17 @@ MonoBehaviour:
     - Reference:
         asset: {fileID: 102900000, guid: cc9e9732ebe033e47837f494280a9b6e, type: 3}
         guid: cc9e9732ebe033e47837f494280a9b6e
-      SceneType: 2
+      SceneType: 3
+  - GroupName: The Rhythm Game
+    Scenes:
+    - Reference:
+        asset: {fileID: 102900000, guid: 8c9cfa26abfee488c85f1582747f6a02, type: 3}
+        guid: 8c9cfa26abfee488c85f1582747f6a02
+      SceneType: 0
+    - Reference:
+        asset: {fileID: 102900000, guid: 2e5f8b8ba6ec80a49a0c3a8d6a5fabd8, type: 3}
+        guid: 2e5f8b8ba6ec80a49a0c3a8d6a5fabd8
+      SceneType: 3
   isLoading: 0
   loadedScenes: []
 --- !u!1 &730550718

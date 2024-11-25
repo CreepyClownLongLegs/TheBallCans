@@ -6,7 +6,10 @@ TagManager:
   tags:
   - Item
   - FinishPoint
-  - ChairParent
+  - rightArrow
+  - downArrow
+  - leftArrow
+  - upArrow
   layers:
   - Default
   - TransparentFX

@@ -4175,15 +4175,6 @@ PrefabInstance:
       propertyPath: minSpawningTimeMemory
       value: 5
       objectReference: {fileID: 0}
-    - target: {fileID: 3537165224544390693, guid: 2bf93751b3d827646a2f16d074c4b571, type: 3}
-      propertyPath: m_text
-      value: 'Your final score is:
-
-        You''ve collected 0 memories
-
-        Press
-        ''E'' to return'
-      objectReference: {fileID: 0}
     - target: {fileID: 3935585671549626430, guid: 2bf93751b3d827646a2f16d074c4b571, type: 3}
       propertyPath: m_Name
       value: KayakingGameManager

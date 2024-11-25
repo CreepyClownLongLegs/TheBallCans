@@ -11,7 +11,7 @@ public class DialogueTrugger : MonoBehaviour
 [SerializeField]private TextAsset inkJSON;
 
 private bool playerInRangeOnce;
-public bool playerCloseEnough;
+private bool playerCloseEnough;
 private void Awake(){
     visualCue.SetActive(false);
 }

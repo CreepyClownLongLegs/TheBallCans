@@ -17,12 +17,6 @@ namespace Inventory
 
         public List<InventoryItem> initialItems = new List<InventoryItem>();
 
-        [SerializeField]
-        private AudioClip dropClip;
-
-        [SerializeField]
-        private AudioSource audioSource;
-        private ItemActionPanel actionPanel;
 
         private void Start()
         {
@@ -67,44 +61,13 @@ namespace Inventory
             IItemAction itemAction = inventoryItem.item as IItemAction;
             if (itemAction != null)
             {
-                inventoryUI.ShowItemAction(itemIndex);
-                inventoryUI.AddAction(itemAction.ActionName, () => PerformAction(itemIndex));
+                itemAction.PerformAction(gameObject);
             }
-            IDestroyableItem destroyableItem = inventoryItem.item as IDestroyableItem;
-            if (destroyableItem != null)
-            {
-                inventoryUI.AddAction("Drop", () => DropItem(itemIndex, inventoryItem.quantity));
-            }
-        }
-
-        public void PerformAction(int itemIndex)
-        {
-            InventoryItem inventoryItem = inventoryData.GetItemAt(itemIndex);
-            if(inventoryItem.IsEmpty)
-                return;
             IDestroyableItem destroyableItem = inventoryItem.item as IDestroyableItem;
             if (destroyableItem != null)
             {
                 inventoryData.RemoveItem(itemIndex, 1);
             }
-            IItemAction itemAction = inventoryItem.item as IItemAction;
-            if (itemAction != null)
-            {
-                itemAction.PerformAction(gameObject);
-                audioSource.PlayOneShot(itemAction.actionSFX);
-                if(inventoryData.GetItemAt(itemIndex).IsEmpty)
-                {
-                    inventoryUI.ResetSelection();
-                    actionPanel.Toggle(false);
-                }
-            }
-        }
-
-        private void DropItem(int itemIndex, int quantity) // for the sake of testing here - should be commented out before User Testing!
-        {
-            inventoryData.RemoveItem(itemIndex, 1);
-            inventoryUI.ResetSelection();
-            audioSource.PlayOneShot(dropClip);
         }
 
         private void HandleDescriptionRequest(int itemIndex)

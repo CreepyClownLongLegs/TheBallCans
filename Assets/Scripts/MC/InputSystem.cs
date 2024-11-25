@@ -21,6 +21,18 @@ public class InputSystem : PersistentSingleton<InputSystem>
     public static event Action rightClicked;
     public static event Action phoneCalled;
 
+    public static event Action leftArrowClicked;
+    public static event Action leftArrowCanceled;
+
+    public static event Action rightArrowClicked;
+    public static event Action rightArrowCanceled;
+
+    public static event Action downArrowClicked;
+    public static event Action downArrowCanceled;
+
+    public static event Action upArrowClicked;
+    public static event Action upArrowCanceled;
+
     bool interactPressedToo = false;
     bool submitPressed = false;
 
@@ -36,9 +48,57 @@ public class InputSystem : PersistentSingleton<InputSystem>
         inputActions.Player.RightClick.performed += RightClick;
         inputActions.Player.LeftClick.performed += LeftClick;
         inputActions.Player.Phone.performed += phoneIsCalled;
+        inputActions.Player.leftArrow.performed += LeftArrowClicked;
+        inputActions.Player.leftArrow.canceled += LeftArrowCanceled;
+        inputActions.Player.rightArrow.performed += RightArrowClicked;
+        inputActions.Player.rightArrow.canceled += RightArrowCanceled;
+        inputActions.Player.upArrow.performed += UpArrowClicked;
+        inputActions.Player.upArrow.canceled += UpArrowCanceled;
+        inputActions.Player.downArrow.performed += DownArrowClicked;
+        inputActions.Player.downArrow.canceled += DownArrowCanceled;
     }
-    private void OnEnable(){
+
+    private void DownArrowCanceled(InputAction.CallbackContext context)
+    {
+        downArrowClicked?.Invoke();
     }
+
+    private void DownArrowClicked(InputAction.CallbackContext context)
+    {
+        downArrowCanceled?.Invoke();
+    }
+
+    private void UpArrowCanceled(InputAction.CallbackContext context)
+    {
+        upArrowClicked?.Invoke();
+    }
+
+    private void UpArrowClicked(InputAction.CallbackContext context)
+    {
+        upArrowCanceled?.Invoke();
+    }
+
+    private void LeftArrowCanceled(InputAction.CallbackContext context)
+    {
+        leftArrowClicked?.Invoke();
+    }
+
+    private void LeftArrowClicked(InputAction.CallbackContext context)
+    {
+        leftArrowCanceled?.Invoke();
+    }
+
+    private void RightArrowCanceled(InputAction.CallbackContext context)
+    {
+        rightArrowClicked?.Invoke();
+    }
+
+    private void RightArrowClicked(InputAction.CallbackContext context)
+    {
+        rightArrowCanceled?.Invoke();
+    }
+
+
 
     private void LeftClick(InputAction.CallbackContext context)
     {

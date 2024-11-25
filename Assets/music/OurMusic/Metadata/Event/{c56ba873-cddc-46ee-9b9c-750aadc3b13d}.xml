@@ -54,7 +54,7 @@
 			<destination>{c6d21d0b-7ab3-49f3-96c6-e4658b982bb8}</destination>
 		</relationship>
 		<relationship name="output">
-			<destination>{865b5bab-f4a5-47c1-b528-aceb67f7dff6}</destination>
+			<destination>{c711d9c0-1d08-4e58-87fe-4630eebf0a74}</destination>
 		</relationship>
 	</object>
 	<object class="EventAutomatableProperties" id="{d454f6ae-f55f-4e2b-8876-a4d5b4f8c4be}" />
@@ -111,7 +111,11 @@
 			<destination>{5a070904-e812-4545-be01-1d9f9c99a2fc}</destination>
 		</relationship>
 	</object>
-	<object class="MixerBusPanner" id="{eacadfed-67c2-4bd3-ab62-11a4b9ec8bb7}" />
+	<object class="MixerBusPanner" id="{eacadfed-67c2-4bd3-ab62-11a4b9ec8bb7}">
+		<property name="stereoPan">
+			<value>-2</value>
+		</property>
+	</object>
 	<object class="MixerBusFader" id="{d45f4b5d-a7c1-4c11-9eec-019020ca5ac3}" />
 	<object class="MixerBusFader" id="{5a070904-e812-4545-be01-1d9f9c99a2fc}" />
 </objects>

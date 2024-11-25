@@ -913,9 +913,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 30d53281ae8df8040b0bbc5e690f07dd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  UnparentOnAwake: 1
+  UnparentOnAwake: 0
   Phone: {fileID: 624697875}
-  QuestLog: {fileID: 970786354}
 --- !u!114 &1219000164
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1490,9 +1489,13 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5794951897511533969, guid: b6d3de740a11c4d47b52aa67379b37a5, type: 3}
+      propertyPath: masterVolume
+      value: 0.088
+      objectReference: {fileID: 0}
     - target: {fileID: 6028204992699187070, guid: b6d3de740a11c4d47b52aa67379b37a5, type: 3}
       propertyPath: <ourRoomTheme>k__BackingField.Path
-      value: event:/New Event
+      value: event:/ourRoom
       objectReference: {fileID: 0}
     - target: {fileID: 6028204992699187070, guid: b6d3de740a11c4d47b52aa67379b37a5, type: 3}
       propertyPath: <itemCollected>k__BackingField.Path
@@ -1500,19 +1503,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6028204992699187070, guid: b6d3de740a11c4d47b52aa67379b37a5, type: 3}
       propertyPath: <ourRoomTheme>k__BackingField.Guid.Data1
-      value: 1647906791
+      value: -982800269
       objectReference: {fileID: 0}
     - target: {fileID: 6028204992699187070, guid: b6d3de740a11c4d47b52aa67379b37a5, type: 3}
       propertyPath: <ourRoomTheme>k__BackingField.Guid.Data2
-      value: 1169397599
+      value: 1190055388
       objectReference: {fileID: 0}
     - target: {fileID: 6028204992699187070, guid: b6d3de740a11c4d47b52aa67379b37a5, type: 3}
       propertyPath: <ourRoomTheme>k__BackingField.Guid.Data3
-      value: 367316921
+      value: 175479963
       objectReference: {fileID: 0}
     - target: {fileID: 6028204992699187070, guid: b6d3de740a11c4d47b52aa67379b37a5, type: 3}
       propertyPath: <ourRoomTheme>k__BackingField.Guid.Data4
-      value: -583711268
+      value: 1035060141
       objectReference: {fileID: 0}
     - target: {fileID: 6028204992699187070, guid: b6d3de740a11c4d47b52aa67379b37a5, type: 3}
       propertyPath: <itemCollected>k__BackingField.Guid.Data1

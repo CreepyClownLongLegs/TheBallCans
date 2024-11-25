@@ -71,7 +71,8 @@ namespace Inventory.Model
                 if (reminder <= 0)
                     inventoryItems[itemIndex] = InventoryItem.GetEmptyItem();
                 else
-                    inventoryItems[itemIndex] = inventoryItems[itemIndex].ChangeQuantity(reminder);
+                    inventoryItems[itemIndex] = inventoryItems[itemIndex]
+                        .ChangeQuantity(reminder);
                 
                 InformAboutChange();
             }

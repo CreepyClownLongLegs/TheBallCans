@@ -116,6 +116,42 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""rightArrow"",
+                    ""type"": ""Value"",
+                    ""id"": ""49cac6c4-a479-4b77-badd-96c0bc195b37"",
+                    ""expectedControlType"": ""Vector2"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""leftArrow"",
+                    ""type"": ""Value"",
+                    ""id"": ""4a39eb35-44df-4c2b-b4ed-16243c373f25"",
+                    ""expectedControlType"": ""Vector2"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""upArrow"",
+                    ""type"": ""Value"",
+                    ""id"": ""6d8ae45a-3be0-46af-8d7c-4f675c68005f"",
+                    ""expectedControlType"": ""Vector2"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""downArrow"",
+                    ""type"": ""Value"",
+                    ""id"": ""613b6504-3c81-4b0b-93d1-f91c9337c0a3"",
+                    ""expectedControlType"": ""Vector2"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
                 }
             ],
             ""bindings"": [
@@ -316,6 +352,50 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
                     ""action"": ""Phone"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""dcb98216-2417-4c9d-9c3a-13408704985e"",
+                    ""path"": ""<Keyboard>/rightArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""rightArrow"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""88c246c0-7f29-441c-a165-ae7c89279f88"",
+                    ""path"": ""<Keyboard>/leftArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""leftArrow"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""d03b8cfb-f5dd-486a-b9b6-5d58267efff0"",
+                    ""path"": ""<Keyboard>/upArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""upArrow"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""ea42db13-9dd4-4bdb-aa63-a4f12ba3a01c"",
+                    ""path"": ""<Keyboard>/downArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""downArrow"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         },
@@ -426,6 +506,10 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
         m_Player_Pointer = m_Player.FindAction("Pointer", throwIfNotFound: true);
         m_Player_Point = m_Player.FindAction("Point", throwIfNotFound: true);
         m_Player_Phone = m_Player.FindAction("Phone", throwIfNotFound: true);
+        m_Player_rightArrow = m_Player.FindAction("rightArrow", throwIfNotFound: true);
+        m_Player_leftArrow = m_Player.FindAction("leftArrow", throwIfNotFound: true);
+        m_Player_upArrow = m_Player.FindAction("upArrow", throwIfNotFound: true);
+        m_Player_downArrow = m_Player.FindAction("downArrow", throwIfNotFound: true);
         // Boat
         m_Boat = asset.FindActionMap("Boat", throwIfNotFound: true);
         m_Boat_Jump = m_Boat.FindAction("Jump", throwIfNotFound: true);
@@ -501,6 +585,10 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
     private readonly InputAction m_Player_Pointer;
     private readonly InputAction m_Player_Point;
     private readonly InputAction m_Player_Phone;
+    private readonly InputAction m_Player_rightArrow;
+    private readonly InputAction m_Player_leftArrow;
+    private readonly InputAction m_Player_upArrow;
+    private readonly InputAction m_Player_downArrow;
     public struct PlayerActions
     {
         private @PlayerInputActions m_Wrapper;
@@ -515,6 +603,10 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
         public InputAction @Pointer => m_Wrapper.m_Player_Pointer;
         public InputAction @Point => m_Wrapper.m_Player_Point;
         public InputAction @Phone => m_Wrapper.m_Player_Phone;
+        public InputAction @rightArrow => m_Wrapper.m_Player_rightArrow;
+        public InputAction @leftArrow => m_Wrapper.m_Player_leftArrow;
+        public InputAction @upArrow => m_Wrapper.m_Player_upArrow;
+        public InputAction @downArrow => m_Wrapper.m_Player_downArrow;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -554,6 +646,18 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
             @Phone.started += instance.OnPhone;
             @Phone.performed += instance.OnPhone;
             @Phone.canceled += instance.OnPhone;
+            @rightArrow.started += instance.OnRightArrow;
+            @rightArrow.performed += instance.OnRightArrow;
+            @rightArrow.canceled += instance.OnRightArrow;
+            @leftArrow.started += instance.OnLeftArrow;
+            @leftArrow.performed += instance.OnLeftArrow;
+            @leftArrow.canceled += instance.OnLeftArrow;
+            @upArrow.started += instance.OnUpArrow;
+            @upArrow.performed += instance.OnUpArrow;
+            @upArrow.canceled += instance.OnUpArrow;
+            @downArrow.started += instance.OnDownArrow;
+            @downArrow.performed += instance.OnDownArrow;
+            @downArrow.canceled += instance.OnDownArrow;
         }
 
         private void UnregisterCallbacks(IPlayerActions instance)
@@ -588,6 +692,18 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
             @Phone.started -= instance.OnPhone;
             @Phone.performed -= instance.OnPhone;
             @Phone.canceled -= instance.OnPhone;
+            @rightArrow.started -= instance.OnRightArrow;
+            @rightArrow.performed -= instance.OnRightArrow;
+            @rightArrow.canceled -= instance.OnRightArrow;
+            @leftArrow.started -= instance.OnLeftArrow;
+            @leftArrow.performed -= instance.OnLeftArrow;
+            @leftArrow.canceled -= instance.OnLeftArrow;
+            @upArrow.started -= instance.OnUpArrow;
+            @upArrow.performed -= instance.OnUpArrow;
+            @upArrow.canceled -= instance.OnUpArrow;
+            @downArrow.started -= instance.OnDownArrow;
+            @downArrow.performed -= instance.OnDownArrow;
+            @downArrow.canceled -= instance.OnDownArrow;
         }
 
         public void RemoveCallbacks(IPlayerActions instance)
@@ -671,6 +787,10 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
         void OnPointer(InputAction.CallbackContext context);
         void OnPoint(InputAction.CallbackContext context);
         void OnPhone(InputAction.CallbackContext context);
+        void OnRightArrow(InputAction.CallbackContext context);
+        void OnLeftArrow(InputAction.CallbackContext context);
+        void OnUpArrow(InputAction.CallbackContext context);
+        void OnDownArrow(InputAction.CallbackContext context);
     }
     public interface IBoatActions
     {

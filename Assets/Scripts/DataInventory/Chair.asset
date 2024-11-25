@@ -19,4 +19,3 @@ MonoBehaviour:
   - roomModifier: {fileID: 11400000, guid: 4adb8d5d74abd80479b2823a99c328c4, type: 2}
     item: {fileID: 11400000}
     coords: {x: -3.5, y: 0.5, z: 0}
-  <actionSFX>k__BackingField: {fileID: 8300000, guid: 567ade667c7e0cc45a80a6bd39cf609a, type: 3}
