@@ -167,6 +167,7 @@ public class CookingGameManager : MonoBehaviour
         {
             this.gameIsOver = false;
             this.gameOverPanel.SetActive(false);
+            this.gameLostPanel.SetActive(false);
             InputSystem.interactPressed -= ReturnToRoom;
             this.door.SetActive(true);
         }
@@ -181,19 +182,20 @@ public class CookingGameManager : MonoBehaviour
 
     public void GameOverCalled(bool lost)
     {
-        SetGameOverPanel();
-        gameIsOver = true;
         //checkIf Won or Lost#
         GameOver?.Invoke();
         if(lost)
         {
             //lost
             gameLostPanel.SetActive(true);
+            gameIsOver = true;
             GameLost();
         } 
         else 
         {
             //win
+            SetGameOverPanel();
+            gameIsOver = true;
             GameWon();
         }
     }
