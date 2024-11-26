@@ -5863,7 +5863,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 549cc105787eb4c4981ed31795d1d9e0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+<<<<<<< Updated upstream
   beatTempoFirstRound: 227.5
+=======
+  beatTempoFirstRound: 226
+>>>>>>> Stashed changes
 --- !u!1 &1472444020
 GameObject:
   m_ObjectHideFlags: 0
