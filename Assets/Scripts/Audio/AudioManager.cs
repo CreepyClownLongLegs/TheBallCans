@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using FMODUnity;
 using FMOD.Studio;
+using System.Xml.Serialization;
 
 public class AudioManager : MonoBehaviour
 {
@@ -23,9 +24,9 @@ public class AudioManager : MonoBehaviour
 
     private List<EventInstance> eventInstances;
     private List<StudioEventEmitter> eventEmitters;
-
     private EventInstance ambienceEventInstance;
-    private EventInstance musicEventInstance;
+    public EventInstance musicEventInstance;
+    public EventInstance suadaEventInstance;
 
     public static AudioManager instance { get; private set; }
 
@@ -72,6 +73,12 @@ public class AudioManager : MonoBehaviour
         musicEventInstance.start();
     }
 
+    public EventInstance InitializeSuada()
+    {
+        suadaEventInstance = CreateInstance(FMODEvents.instance.suada);
+        return suadaEventInstance;
+    }
+
     public void SetAmbienceParameter(string parameterName, float parameterValue)
     {
         ambienceEventInstance.setParameterByName(parameterName, parameterValue);
@@ -111,6 +118,10 @@ public class AudioManager : MonoBehaviour
         {
             emitter.Stop();
         }
+    }
+
+    public void StopSong(EventInstance  eventInstance){
+            eventInstance.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
     }
 
     private void OnDestroy()

@@ -46,11 +46,39 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <itemCollected>k__BackingField:
     Guid:
-      Data1: -824327623
-      Data2: 1201107720
-      Data3: 1151594939
-      Data4: 232312403
-    Path: event:/ItemCollected
+      Data1: 2047793008
+      Data2: 1096631692
+      Data3: -530410086
+      Data4: -587543648
+    Path: event:/shard
+  <kick>k__BackingField:
+    Guid:
+      Data1: -938639505
+      Data2: 1097907244
+      Data3: 120804532
+      Data4: -980607557
+    Path: event:/kick
+  <snare>k__BackingField:
+    Guid:
+      Data1: -19069267
+      Data2: 1165790707
+      Data3: 1458541459
+      Data4: -304915230
+    Path: event:/snare
+  <ourRoomTheme>k__BackingField:
+    Guid:
+      Data1: -982800269
+      Data2: 1190055388
+      Data3: 175479963
+      Data4: 1035060141
+    Path: event:/ourRoom
+  <suada>k__BackingField:
+    Guid:
+      Data1: 493066431
+      Data2: 1262600354
+      Data3: -353657185
+      Data4: -1211751046
+    Path: event:/suada
 --- !u!1 &8464921483845542393
 GameObject:
   m_ObjectHideFlags: 0
@@ -96,3 +124,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b23647a07bd3e245b8bfa1930d6b01c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  masterVolume: 1
+  musicVolume: 1
+  ambienceVolume: 1
+  SFXVolume: 1
