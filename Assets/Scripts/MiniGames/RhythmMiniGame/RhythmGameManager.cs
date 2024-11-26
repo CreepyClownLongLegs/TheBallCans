@@ -41,7 +41,7 @@ public class RhythmGameManager : MonoBehaviour
     }
 
     public void updateMultipliersText(){
-        multipliersText.text = "X" + currentMultiplierts;
+        multipliersText.text = "Combo X" + currentMultiplierts;
     }
 
     private void StartScrolling(){

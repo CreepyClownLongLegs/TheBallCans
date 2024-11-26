@@ -131,6 +131,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 831725977339449649, guid: 516d29fb94fc5cc4a92282dd5ed1b3d4, type: 3}
+      propertyPath: position.y
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 831725977339449649, guid: 516d29fb94fc5cc4a92282dd5ed1b3d4, type: 3}
+      propertyPath: nextSceneToLoad
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 1266358357496825846, guid: 516d29fb94fc5cc4a92282dd5ed1b3d4, type: 3}
       propertyPath: m_Tiles.Array.size
       value: 30
@@ -2922,6 +2930,10 @@ PrefabInstance:
     - target: {fileID: 4080013483894162447, guid: 516d29fb94fc5cc4a92282dd5ed1b3d4, type: 3}
       propertyPath: m_Tiles.Array.data[166].second.m_TileObjectToInstantiateIndex
       value: 65535
+      objectReference: {fileID: 0}
+    - target: {fileID: 4429894193294846352, guid: 516d29fb94fc5cc4a92282dd5ed1b3d4, type: 3}
+      propertyPath: m_Name
+      value: Serbia
       objectReference: {fileID: 0}
     - target: {fileID: 4576586145624225306, guid: 516d29fb94fc5cc4a92282dd5ed1b3d4, type: 3}
       propertyPath: m_LocalPosition.x
@@ -6550,6 +6562,14 @@ PrefabInstance:
     - target: {fileID: 5191764973716055854, guid: 516d29fb94fc5cc4a92282dd5ed1b3d4, type: 3}
       propertyPath: m_Tiles.Array.data[781].second.m_TileSpriteIndex
       value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5388975478274575641, guid: 516d29fb94fc5cc4a92282dd5ed1b3d4, type: 3}
+      propertyPath: m_Name
+      value: Romania
+      objectReference: {fileID: 0}
+    - target: {fileID: 5388975478274575641, guid: 516d29fb94fc5cc4a92282dd5ed1b3d4, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7453834580904232618, guid: 516d29fb94fc5cc4a92282dd5ed1b3d4, type: 3}
       propertyPath: m_CompositePaths.m_Paths.Array.size

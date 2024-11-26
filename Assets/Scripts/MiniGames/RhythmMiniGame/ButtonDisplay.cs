@@ -8,6 +8,9 @@ using UnityEngine.UI;
 
 public class ButtonDisplay : MonoBehaviour
 {
+    [SerializeField] private GameObject hitEffect;
+    [SerializeField] private GameObject perfectEffect;
+    [SerializeField] private GameObject missEffect;
     public ButtonArrowType arrowType;
     public ArrowType arrowTag;
     private Image sr;
@@ -15,7 +18,7 @@ public class ButtonDisplay : MonoBehaviour
     public int missScoreMinusPoints = 5;
     public int hitScorePlusPoints = 10;
     private Animator animator;
-    private Coroutine playParticles;
+    private Coroutine showHitEffect;
     // Start is called before the first frame update
 
     void Awake(){
@@ -52,6 +55,11 @@ public class ButtonDisplay : MonoBehaviour
         AudioManager.instance.PlayOneShot(FMODEvents.instance.kick, this.transform.position);
         animator.Play("leftArrow");
         if(Collider2D!=null){
+            if(RhythmGameManager.Instance.currentMultiplierts > 2){
+                showEffectText(perfectEffect);
+            }else{
+                showEffectText(hitEffect);
+            }
             Destroy(Collider2D.gameObject);
             AddPointsToScore();
             Debug.Log("Note hit");
@@ -86,6 +94,11 @@ public class ButtonDisplay : MonoBehaviour
 
     void updateScoreText(){
         RhythmGameManager.Instance.scoreText.text = "Score : " + RhythmGameManager.Instance.score;
+    }
+
+    private void showEffectText(GameObject hitEffect){
+        GameObject effect = Instantiate(hitEffect, this.transform);
+        effect.transform.position = new Vector3(this.transform.position.x, this.transform.position.y + 10f, 0f);
     }
 
 

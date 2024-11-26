@@ -284,6 +284,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a3bfbdd36f389b4408cf85bb4fab8ace, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hitEffect: {fileID: 1052670509054822857, guid: 00c561a0a7d84b04e9b781eaa902e900, type: 3}
+  perfectEffect: {fileID: 6260419190814620111, guid: f28c2146d88841f4389748049ed4e504, type: 3}
+  missEffect: {fileID: 3776957152221987999, guid: eea0ba783f9d7f142a070eab76585fc3, type: 3}
   arrowType: 3
   arrowTag: 3
   missScoreMinusPoints: 5
@@ -473,6 +476,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a3bfbdd36f389b4408cf85bb4fab8ace, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hitEffect: {fileID: 1052670509054822857, guid: 00c561a0a7d84b04e9b781eaa902e900, type: 3}
+  perfectEffect: {fileID: 6260419190814620111, guid: f28c2146d88841f4389748049ed4e504, type: 3}
+  missEffect: {fileID: 3776957152221987999, guid: eea0ba783f9d7f142a070eab76585fc3, type: 3}
   arrowType: 1
   arrowTag: 1
   missScoreMinusPoints: 5
@@ -738,6 +744,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a3bfbdd36f389b4408cf85bb4fab8ace, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hitEffect: {fileID: 1052670509054822857, guid: 00c561a0a7d84b04e9b781eaa902e900, type: 3}
+  perfectEffect: {fileID: 6260419190814620111, guid: f28c2146d88841f4389748049ed4e504, type: 3}
+  missEffect: {fileID: 3776957152221987999, guid: eea0ba783f9d7f142a070eab76585fc3, type: 3}
   arrowType: 2
   arrowTag: 2
   missScoreMinusPoints: 5
@@ -1243,7 +1252,7 @@ Transform:
   m_GameObject: {fileID: 1189629340}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -15, y: -579, z: 4.7957497}
+  m_LocalPosition: {x: 0, y: -579, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1333,6 +1342,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f7d552e8a3601444e946f21a87b72cec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hitEffect: {fileID: 3776957152221987999, guid: eea0ba783f9d7f142a070eab76585fc3, type: 3}
 --- !u!1 &1217597215
 GameObject:
   m_ObjectHideFlags: 0
@@ -1365,9 +1375,9 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 48508287}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 1, y: 1}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -805, y: -176}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 125, y: 415}
   m_SizeDelta: {x: 377.77686, y: 74.023926}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1217597217
@@ -1390,7 +1400,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: X3
+  m_text: Combo X3
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1424,8 +1434,8 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 1
-  m_HorizontalAlignment: 1
-  m_VerticalAlignment: 256
+  m_HorizontalAlignment: 2
+  m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
@@ -1453,7 +1463,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: -125.39038, w: 0}
+  m_margin: {x: -359.54395, y: 0, z: -125.39038, w: -78.16174}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -1833,6 +1843,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a3bfbdd36f389b4408cf85bb4fab8ace, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hitEffect: {fileID: 1052670509054822857, guid: 00c561a0a7d84b04e9b781eaa902e900, type: 3}
+  perfectEffect: {fileID: 6260419190814620111, guid: f28c2146d88841f4389748049ed4e504, type: 3}
+  missEffect: {fileID: 3776957152221987999, guid: eea0ba783f9d7f142a070eab76585fc3, type: 3}
   arrowType: 0
   arrowTag: 0
   missScoreMinusPoints: 5
@@ -1955,7 +1968,7 @@ Transform:
   m_GameObject: {fileID: 1916202028}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -358, z: 3.7367978}
+  m_LocalPosition: {x: 0, y: -358, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -2454,7 +2467,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5812669660603152785, guid: b017f55c200356c478d3c9cd2fcd3fff, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -6.785756
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5812669660603152785, guid: b017f55c200356c478d3c9cd2fcd3fff, type: 3}
       propertyPath: m_LocalRotation.w

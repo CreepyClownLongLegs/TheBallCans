@@ -408,7 +408,7 @@ MonoBehaviour:
         asset: {fileID: 102900000, guid: 3091b86e1d0b4f64d8cc41e3a3b76914, type: 3}
         guid: 3091b86e1d0b4f64d8cc41e3a3b76914
       SceneType: 2
-  - GroupName: The Lobby
+  - GroupName: First Floor
     Scenes:
     - Reference:
         asset: {fileID: 102900000, guid: 8c9cfa26abfee488c85f1582747f6a02, type: 3}
@@ -447,6 +447,26 @@ MonoBehaviour:
     - Reference:
         asset: {fileID: 102900000, guid: 2e5f8b8ba6ec80a49a0c3a8d6a5fabd8, type: 3}
         guid: 2e5f8b8ba6ec80a49a0c3a8d6a5fabd8
+      SceneType: 3
+  - GroupName: The Second Floor
+    Scenes:
+    - Reference:
+        asset: {fileID: 102900000, guid: 8c9cfa26abfee488c85f1582747f6a02, type: 3}
+        guid: 8c9cfa26abfee488c85f1582747f6a02
+      SceneType: 0
+    - Reference:
+        asset: {fileID: 102900000, guid: 8203f96ebe0267145ab2ea6ce996ec0e, type: 3}
+        guid: 8203f96ebe0267145ab2ea6ce996ec0e
+      SceneType: 3
+  - GroupName: Serbia Room
+    Scenes:
+    - Reference:
+        asset: {fileID: 102900000, guid: 8c9cfa26abfee488c85f1582747f6a02, type: 3}
+        guid: 8c9cfa26abfee488c85f1582747f6a02
+      SceneType: 0
+    - Reference:
+        asset: {fileID: 102900000, guid: c7e0e3883e4c93444a84d1e5a2d71de0, type: 3}
+        guid: c7e0e3883e4c93444a84d1e5a2d71de0
       SceneType: 3
   isLoading: 0
   loadedScenes: []
