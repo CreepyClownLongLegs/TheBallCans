@@ -468,6 +468,16 @@ MonoBehaviour:
         asset: {fileID: 102900000, guid: c7e0e3883e4c93444a84d1e5a2d71de0, type: 3}
         guid: c7e0e3883e4c93444a84d1e5a2d71de0
       SceneType: 3
+  - GroupName: Kitchen
+    Scenes:
+    - Reference:
+        asset: {fileID: 102900000, guid: 8c9cfa26abfee488c85f1582747f6a02, type: 3}
+        guid: 8c9cfa26abfee488c85f1582747f6a02
+      SceneType: 0
+    - Reference:
+        asset: {fileID: 102900000, guid: 38290769886a58448b620576ffb251f8, type: 3}
+        guid: 38290769886a58448b620576ffb251f8
+      SceneType: 3
   isLoading: 0
   loadedScenes: []
 --- !u!1 &730550718

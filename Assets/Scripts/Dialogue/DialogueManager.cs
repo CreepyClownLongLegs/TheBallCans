@@ -161,7 +161,7 @@ public class DialogueManager : PersistentSingleton<DialogueManager>
         public bool TrySetInkStoryVariable(string variable, object value, bool log = true ){
 
             if(!currentStory){
-                Debug.Log("Current story istn loaded");
+                Debug.Log("Current story isnt loaded");
                 return false;
             }
 
