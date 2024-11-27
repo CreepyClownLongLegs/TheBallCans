@@ -478,6 +478,16 @@ MonoBehaviour:
         asset: {fileID: 102900000, guid: 38290769886a58448b620576ffb251f8, type: 3}
         guid: 38290769886a58448b620576ffb251f8
       SceneType: 3
+  - GroupName: Romania Room
+    Scenes:
+    - Reference:
+        asset: {fileID: 102900000, guid: 8c9cfa26abfee488c85f1582747f6a02, type: 3}
+        guid: 8c9cfa26abfee488c85f1582747f6a02
+      SceneType: 0
+    - Reference:
+        asset: {fileID: 102900000, guid: 3f47c0e2eda788a43b107e8a24aa598e, type: 3}
+        guid: 3f47c0e2eda788a43b107e8a24aa598e
+      SceneType: 3
   isLoading: 0
   loadedScenes: []
 --- !u!1 &730550718

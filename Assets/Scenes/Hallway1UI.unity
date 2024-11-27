@@ -6569,7 +6569,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5388975478274575641, guid: 516d29fb94fc5cc4a92282dd5ed1b3d4, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7453834580904232618, guid: 516d29fb94fc5cc4a92282dd5ed1b3d4, type: 3}
       propertyPath: m_CompositePaths.m_Paths.Array.size
@@ -9534,6 +9534,18 @@ PrefabInstance:
     - target: {fileID: 7859392504827890056, guid: 516d29fb94fc5cc4a92282dd5ed1b3d4, type: 3}
       propertyPath: m_Tiles.Array.data[135].second.m_TileObjectToInstantiateIndex
       value: 65535
+      objectReference: {fileID: 0}
+    - target: {fileID: 8951392132518065592, guid: 516d29fb94fc5cc4a92282dd5ed1b3d4, type: 3}
+      propertyPath: position.x
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8951392132518065592, guid: 516d29fb94fc5cc4a92282dd5ed1b3d4, type: 3}
+      propertyPath: position.y
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8951392132518065592, guid: 516d29fb94fc5cc4a92282dd5ed1b3d4, type: 3}
+      propertyPath: nextSceneToLoad
+      value: 12
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:
