@@ -7379,6 +7379,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Elevator
       objectReference: {fileID: 0}
+    - target: {fileID: 2790659730940892642, guid: 9d0e09810d6d3f9489dc727695e95d53, type: 3}
+      propertyPath: m_Interactable
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2790659730940892642, guid: 9d0e09810d6d3f9489dc727695e95d53, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6063090390018623129, guid: 9d0e09810d6d3f9489dc727695e95d53, type: 3}
       propertyPath: position.x
       value: -7.5

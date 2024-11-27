@@ -57,14 +57,15 @@ public class RhythmGameManager : MonoBehaviour
         endPanel.SetActive(true);
         addExpirience();
         setEndPanelText(endPanel.GetComponentInChildren<TextMeshProUGUI>());
-        InputSystem.interactPressed += LoadNextScene;
+        InputSystem.interactPressed += LoadRoom;
     }
 
-    public void LoadNextScene(){
+    private void LoadRoom(){
         Suada.stop(STOP_MODE.IMMEDIATE);
         playerRenderer = GameObject.FindGameObjectWithTag("Player").GetComponent<SpriteRenderer>();
         playerController.elevatorPanelIsOpen = false;
         playerRenderer.enabled = true;
+        InputSystem.interactPressed -= LoadRoom;
         this.door.SetActive(true);
     }
 
@@ -123,11 +124,6 @@ public class RhythmGameManager : MonoBehaviour
         this.currentMultiplierts = 0;
         updateMultipliersText();
         multipliersText.gameObject.SetActive(false);
-    }
-
-    public void OnDestroy(){
-        Suada.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
-        InputSystem.interactPressed -= LoadNextScene;
     }
 
 }

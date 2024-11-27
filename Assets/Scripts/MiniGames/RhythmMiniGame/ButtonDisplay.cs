@@ -101,6 +101,21 @@ public class ButtonDisplay : MonoBehaviour
         effect.transform.position = new Vector3(this.transform.position.x, this.transform.position.y + 10f, 0f);
     }
 
+    private void OnDestroy(){
+            InputSystem.leftArrowClicked -= ButtonCanceled;
+            InputSystem.leftArrowCanceled -= ButtonClicked;
+
+            InputSystem.rightArrowClicked -= ButtonCanceled;
+            InputSystem.rightArrowCanceled -= ButtonClicked;
+
+            InputSystem.upArrowClicked -= ButtonCanceled;
+            InputSystem.upArrowCanceled -= ButtonClicked;
+
+
+            InputSystem.downArrowClicked -= ButtonCanceled;
+            InputSystem.downArrowCanceled -= ButtonClicked;
+    }
+
 
 }
 
