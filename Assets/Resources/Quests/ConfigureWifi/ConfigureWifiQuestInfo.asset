@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: ConfigureWifiQuestInfo
   m_EditorClassIdentifier: 
   <id>k__BackingField: ConfigureWifiQuestInfo
-  displayName: Ask your Neighboar for the Password
+  displayName: Ask your Neighbour for the Password
   questPrerequirements: []
   questStepPrefabs:
   - {fileID: 2233480869180428782, guid: a288ab22c275236489e4cbb5ca179624, type: 3}

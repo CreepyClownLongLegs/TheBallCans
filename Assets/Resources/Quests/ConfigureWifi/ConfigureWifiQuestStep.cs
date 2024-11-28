@@ -46,7 +46,7 @@ public class ConfigureWifiQuest : QuestStep
         string status = "Collected " + memoriesCollected+ " / " + memoriesToComplete + " memories for completion.";
         if(QuestManager.Instance.GetQuestById("ConfigureWifiQuestInfo").GetQuestData().state == QuestState.IN_PROGRESS){
             EpisodeManager.instance.ChangeDoorValue("Bosnia", true);
-            NotificationManager.Instance.showNotification("Fatimas Room has been unclocked", NotificationPanelColor.INFO);
+            NotificationManager.Instance.showNotification("Fatimas Room has been unlocked", NotificationPanelColor.INFO);
         }
         ChangeState(state, status);
     }

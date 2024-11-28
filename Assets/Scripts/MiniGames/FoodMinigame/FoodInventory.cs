@@ -49,7 +49,7 @@ public class FoodInventory : MonoBehaviour
         if(badFoods.Contains(foodSC))
         {
             Debug.Log("Wrong Food");
-            NotificationManager.Instance.showNotification("Wrong item Collected!!",NotificationPanelColor.WARNING);
+            NotificationManager.Instance.showNotification("Wrong item collected!!",NotificationPanelColor.WARNING);
             CookingGameManager.instance.addScorePoints(-foodSC.points);
             CookingGameManager.instance.startCoroutinePointsText(-foodSC.points);
         }

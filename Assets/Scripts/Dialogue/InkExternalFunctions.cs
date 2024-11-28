@@ -30,7 +30,7 @@ public class InkExternalFunctions
 
     public void UnlockSerbiaRoom(){
         EpisodeManager.instance.ChangeDoorValue("Serbia", true);
-        NotificationManager.Instance.showNotification("U've unclocked Zorans Room!", NotificationPanelColor.SUCCSES);
+        NotificationManager.Instance.showNotification("You've unlocked Zorans Room!", NotificationPanelColor.SUCCSES);
     }
 
     public void StartEpisodeOneCookingGame(){
