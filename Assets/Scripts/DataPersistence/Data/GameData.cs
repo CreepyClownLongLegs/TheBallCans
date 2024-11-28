@@ -1,23 +1,41 @@
 using System.Collections;
 using System.Collections.Generic;
+using Inventory.Model;
 using UnityEngine;
 
 [System.Serializable]
 public class GameData 
 {
+    public bool firstEpisode;
+    public bool secondEpisode;
+    public bool EpisodeOneKayakingGameFinished;
+    public bool EpisodeOneCookingGameFinished;
     public Vector3 playerPosition;
-    public SerializableDictionary<string, bool> itemsCollected;
     public PlayerData playerMoney = new PlayerData();
     public int playerExpirience;
     internal object playerData;
+    public SerializableDictionary<string,bool> doors;
     public SerializableDictionary<string, bool> coinsCollected;
+    public SerializableDictionary<string, bool> itemsCollected;
+    public SerializableDictionary<string, string> questMap;
 
     public GameData()
     {
+        firstEpisode = true;
+        secondEpisode = false;
+        EpisodeOneKayakingGameFinished = false;
+        EpisodeOneCookingGameFinished = false;
         playerPosition = Vector3.zero;
-        itemsCollected = new SerializableDictionary<string, bool>();
         playerMoney.money = 0;
         playerExpirience = 0;
+        doors = new SerializableDictionary<string, bool>();
         coinsCollected = new SerializableDictionary<string, bool>();
+        itemsCollected = new SerializableDictionary<string, bool>();
+        questMap = new SerializableDictionary<string, string>();
+
+        //setting initial Data
+        doors.Add("Romania", false);
+        doors.Add("Bosnia", false);
+        doors.Add("Serbia", false);
     }
 }

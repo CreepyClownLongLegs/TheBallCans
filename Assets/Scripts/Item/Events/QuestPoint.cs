@@ -32,6 +32,10 @@ public class QuestPoint : MonoBehaviour
 
     }
 
+    void Start(){
+        questIcon.SetState(QuestManager.Instance.GetQuestById(questInfoForPoint.id).state, startPoint, finishPoint);
+    }
+
 
 
     private void OnDisable()

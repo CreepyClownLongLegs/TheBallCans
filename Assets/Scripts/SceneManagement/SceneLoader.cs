@@ -23,6 +23,7 @@ namespace Systems.SceneManagement{
         public bool isLoading;
 
         public List<string> loadedScenes;
+        public static event Action newSceneGrouploaded;
 
         public readonly SceneGroupManager manager = new SceneGroupManager();
         CharacterController2D characterController;
@@ -75,6 +76,7 @@ namespace Systems.SceneManagement{
             EnableLoadingCanvas();
             await manager.LoadScenes(sceneGroups[index], progress);
             EnableLoadingCanvas(false);
+            newSceneGrouploaded?.Invoke();
         }
     
         void EnableLoadingCanvas(bool enable = true) {

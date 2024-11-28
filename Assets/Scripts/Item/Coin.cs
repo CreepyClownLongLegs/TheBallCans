@@ -9,7 +9,6 @@ public class Coin : MonoBehaviour, IDataPersistence
     private SpriteRenderer visual;
     private ParticleSystem collectParticle;
     private bool collected = false;
-
     private CircleCollider2D collider2D;
 
     private void Awake() 

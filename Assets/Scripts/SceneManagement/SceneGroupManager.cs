@@ -15,15 +15,18 @@ using UnityEngine.ResourceManagement.ResourceProviders;
 
 
 namespace Systems.SceneManagement{
-    public class SceneGroupManager {
+    public class SceneGroupManager : MonoBehaviour{
         public event Action<string> OnSceneLoaded = delegate { };
         public event Action<string> OnSceneUnloaded = delegate { };
         public event Action OnSceneGroupLoaded = delegate { };
+        public static SceneGroupManager instance {private set; get;}
         
         readonly AsyncOperationHandleGroup handleGroup = new AsyncOperationHandleGroup(10);
-        
         SceneGroup ActiveSceneGroup;
         
+        private void Start(){
+            instance = this;
+        }
         public async Task LoadScenes(SceneGroup group, IProgress<float> progress, bool reloadDupScenes = false) { 
             ActiveSceneGroup = group;
             var loadedScenes = new List<string>();

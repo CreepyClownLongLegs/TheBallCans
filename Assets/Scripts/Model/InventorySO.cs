@@ -6,7 +6,7 @@ using UnityEngine;
 namespace Inventory.Model
 {
     [CreateAssetMenu]
-    public class InventorySO : ScriptableObject
+    public class InventorySO : ScriptableObject,IDataPersistence
     {
         [SerializeField]
         private List<InventoryItem> inventoryItems;
@@ -22,6 +22,10 @@ namespace Inventory.Model
             {
                 inventoryItems.Add(InventoryItem.GetEmptyItem());
             }
+        }
+
+        public List<InventoryItem> GetInventoryItems(){
+            return this.inventoryItems;
         }
 
         public void AddItem(InventoryItem item)
@@ -81,6 +85,37 @@ namespace Inventory.Model
         private void InformAboutChange()
         {
             OnInventoryUpdated?.Invoke(GetCurrentInventoryState());
+        }
+
+        public void LoadGame(GameData data)
+        {
+            SerializableDictionary<string, bool> itemsCollectedJSON = data.itemsCollected;
+            InventoryItem inventoryItem;
+            foreach(KeyValuePair<string,bool> item in itemsCollectedJSON){
+                Debug.Log("Loading item: " + item.Key);
+                inventoryItem = JsonUtility.FromJson<InventoryItem>(item.Key);
+                if(inventoryItem.item!=null){
+                    inventoryItem.quantity = 1;
+                }
+                if(!inventoryItems.Contains(inventoryItem)){
+                    this.AddItem(inventoryItem);
+                }
+            }
+        }
+        
+
+        public void SaveGame(GameData data)
+        {
+            SerializableDictionary<string, bool> itemsCollected = new SerializableDictionary<string, bool>();
+            itemsCollected = data.itemsCollected;
+            foreach(InventoryItem item in inventoryItems){
+                string serializedData = JsonUtility.ToJson(item);
+                if(!data.itemsCollected.ContainsKey(serializedData) && !itemsCollected.ContainsKey(serializedData)){
+                itemsCollected.Add(serializedData, true);
+                Debug.Log(serializedData);  
+                }
+            }
+            data.itemsCollected = itemsCollected;
         }
     }
 

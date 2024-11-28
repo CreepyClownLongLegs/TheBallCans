@@ -16,7 +16,7 @@ public class QuestLogUI : MonoBehaviour
     [SerializeField] private TextMeshProUGUI experienceRewardsText;
 
     private Button firstSelectedButton;
-    private void OnEnable()
+    private void Start()
     {
         GameEventsManager.instance.questEvents.onQuestStateChange += QuestStateChange;
         ShowUI();

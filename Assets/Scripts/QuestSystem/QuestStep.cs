@@ -6,7 +6,8 @@ public abstract class QuestStep : MonoBehaviour
 {
     private bool isFinished = false;
     private string questId;
-    private int stepIndex;
+    public int stepIndex;
+    public string newState = "";
 
     public void InitializeQuestStep(string questId, int stepIndex, string questStepState)
     {

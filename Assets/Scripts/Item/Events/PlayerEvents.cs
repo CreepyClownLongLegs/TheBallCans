@@ -33,6 +33,12 @@ public class PlayerEvents
         }
     }
 
+    public event Action wonCookingGame;
+
+    public void WonCookingGame(){
+        wonCookingGame?.Invoke();
+    }
+
 
     public event Action<int> onPlayerExperienceChange;
     public void PlayerExperienceChange(int experience) 

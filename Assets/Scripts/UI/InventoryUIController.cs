@@ -12,7 +12,6 @@ namespace Inventory
         [SerializeField]
         private UIInventoryPage inventoryUI;
 
-        [SerializeField]
         private InventorySO inventoryData;
 
         public List<InventoryItem> initialItems = new List<InventoryItem>();
@@ -20,6 +19,7 @@ namespace Inventory
 
         private void Start()
         {
+            inventoryData = PickUpSystem.instance.inventoryData;
             PrepareUI();
             PrepareInventoryData();
             InputSystem.inventoryCalled += InventoryCalled;
@@ -27,7 +27,7 @@ namespace Inventory
 
         private void PrepareInventoryData()
         {
-            inventoryData.Initialize();
+            
             inventoryData.OnInventoryUpdated += UpdateInventoryUI;
             foreach (InventoryItem item in initialItems)
             {

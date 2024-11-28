@@ -11351,7 +11351,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 181293916363835508, guid: 1e93ce31111ae2e44b767f78f2d030fd, type: 3}
       propertyPath: m_Name
-      value: Door
+      value: Hallway1
       objectReference: {fileID: 0}
     - target: {fileID: 2911179525729014537, guid: 1e93ce31111ae2e44b767f78f2d030fd, type: 3}
       propertyPath: m_LocalPosition.x

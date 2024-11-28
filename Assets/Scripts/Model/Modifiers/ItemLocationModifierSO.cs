@@ -12,6 +12,8 @@ public class ItemLocationModifierSO : RoomModifierSO
     public readonly SceneGroupManager manager = new SceneGroupManager();
     [SerializeField] GameObject chair;
 
+    GameObject chairParent;
+
     public override void AffectRoom(GameObject character, PlaceableItemSO item, Vector3 coords)
     {
         //TODO: code position where to place item
@@ -19,8 +21,10 @@ public class ItemLocationModifierSO : RoomModifierSO
         
         if (SceneLoader.Instance.loadedScenes.Contains("YourRoomUI"))
         {
+            chairParent = GameObject.FindGameObjectWithTag("chairParent");
+            chairParent.transform.position = coords;
             //place item in the scene
-            Instantiate(chair, coords, Quaternion.identity);
+            Instantiate(chair, chairParent.transform);
         }
         else
         {

@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Inventory.Model;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class Item : MonoBehaviour
 {
@@ -14,10 +15,23 @@ public class Item : MonoBehaviour
 
     [SerializeField]
     private float duration = 0.3f;
+    public bool isCollected = false;
 
     private void Start()
     {
         GetComponent<SpriteRenderer>().sprite = InventoryItem.ItemImage; 
+        foreach(InventoryItem item in PickUpSystem.instance.GetInventoryItems()){
+            if(item.item!=null){
+                if(item.item?.name == InventoryItem.name){
+                    Debug.Log("they are the same");
+                    isCollected = true;
+                }
+            }
+        }
+
+        if(isCollected){
+            this.gameObject.SetActive(false);
+        }
     }
 
     public void DestroyItem()

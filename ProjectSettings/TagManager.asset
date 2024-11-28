@@ -10,6 +10,7 @@ TagManager:
   - downArrow
   - leftArrow
   - upArrow
+  - chairParent
   layers:
   - Default
   - TransparentFX

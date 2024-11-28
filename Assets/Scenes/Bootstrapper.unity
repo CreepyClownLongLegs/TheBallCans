@@ -418,6 +418,10 @@ MonoBehaviour:
         asset: {fileID: 102900000, guid: 6e1e8b6bdd71a0a4b8bc069458490a71, type: 3}
         guid: 6e1e8b6bdd71a0a4b8bc069458490a71
       SceneType: 2
+    - Reference:
+        asset: {fileID: 102900000, guid: 0f77f5f29aabcdf4d8bc0afff3b5b749, type: 3}
+        guid: 0f77f5f29aabcdf4d8bc0afff3b5b749
+      SceneType: 2
   - GroupName: The River
     Scenes:
     - Reference:
@@ -428,6 +432,10 @@ MonoBehaviour:
         asset: {fileID: 102900000, guid: 165595adbc1f21e42a9252695f36ac8b, type: 3}
         guid: 165595adbc1f21e42a9252695f36ac8b
       SceneType: 2
+    - Reference:
+        asset: {fileID: 102900000, guid: 0f77f5f29aabcdf4d8bc0afff3b5b749, type: 3}
+        guid: 0f77f5f29aabcdf4d8bc0afff3b5b749
+      SceneType: 6
   - GroupName: The Cooking Game
     Scenes:
     - Reference:
@@ -438,6 +446,10 @@ MonoBehaviour:
         asset: {fileID: 102900000, guid: cc9e9732ebe033e47837f494280a9b6e, type: 3}
         guid: cc9e9732ebe033e47837f494280a9b6e
       SceneType: 3
+    - Reference:
+        asset: {fileID: 102900000, guid: 0f77f5f29aabcdf4d8bc0afff3b5b749, type: 3}
+        guid: 0f77f5f29aabcdf4d8bc0afff3b5b749
+      SceneType: 6
   - GroupName: The Rhythm Game
     Scenes:
     - Reference:
@@ -448,6 +460,10 @@ MonoBehaviour:
         asset: {fileID: 102900000, guid: 2e5f8b8ba6ec80a49a0c3a8d6a5fabd8, type: 3}
         guid: 2e5f8b8ba6ec80a49a0c3a8d6a5fabd8
       SceneType: 3
+    - Reference:
+        asset: {fileID: 102900000, guid: 0f77f5f29aabcdf4d8bc0afff3b5b749, type: 3}
+        guid: 0f77f5f29aabcdf4d8bc0afff3b5b749
+      SceneType: 6
   - GroupName: The Second Floor
     Scenes:
     - Reference:
@@ -458,6 +474,10 @@ MonoBehaviour:
         asset: {fileID: 102900000, guid: 8203f96ebe0267145ab2ea6ce996ec0e, type: 3}
         guid: 8203f96ebe0267145ab2ea6ce996ec0e
       SceneType: 3
+    - Reference:
+        asset: {fileID: 102900000, guid: 0f77f5f29aabcdf4d8bc0afff3b5b749, type: 3}
+        guid: 0f77f5f29aabcdf4d8bc0afff3b5b749
+      SceneType: 6
   - GroupName: Serbia Room
     Scenes:
     - Reference:
@@ -468,6 +488,10 @@ MonoBehaviour:
         asset: {fileID: 102900000, guid: c7e0e3883e4c93444a84d1e5a2d71de0, type: 3}
         guid: c7e0e3883e4c93444a84d1e5a2d71de0
       SceneType: 3
+    - Reference:
+        asset: {fileID: 102900000, guid: 0f77f5f29aabcdf4d8bc0afff3b5b749, type: 3}
+        guid: 0f77f5f29aabcdf4d8bc0afff3b5b749
+      SceneType: 6
   - GroupName: Kitchen
     Scenes:
     - Reference:
@@ -478,6 +502,10 @@ MonoBehaviour:
         asset: {fileID: 102900000, guid: 38290769886a58448b620576ffb251f8, type: 3}
         guid: 38290769886a58448b620576ffb251f8
       SceneType: 3
+    - Reference:
+        asset: {fileID: 102900000, guid: 0f77f5f29aabcdf4d8bc0afff3b5b749, type: 3}
+        guid: 0f77f5f29aabcdf4d8bc0afff3b5b749
+      SceneType: 6
   - GroupName: Romania Room
     Scenes:
     - Reference:
@@ -488,6 +516,10 @@ MonoBehaviour:
         asset: {fileID: 102900000, guid: 3f47c0e2eda788a43b107e8a24aa598e, type: 3}
         guid: 3f47c0e2eda788a43b107e8a24aa598e
       SceneType: 3
+    - Reference:
+        asset: {fileID: 102900000, guid: 0f77f5f29aabcdf4d8bc0afff3b5b749, type: 3}
+        guid: 0f77f5f29aabcdf4d8bc0afff3b5b749
+      SceneType: 6
   isLoading: 0
   loadedScenes: []
 --- !u!1 &730550718

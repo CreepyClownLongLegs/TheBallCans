@@ -1,33 +1,38 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Systems.SceneManagement;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class QuestManager : PersistentSingleton<QuestManager>
+public class QuestManager :MonoBehaviour, IDataPersistence
 {
     [Header("Config")]
     [SerializeField] private bool loadQuestState = true;
-
+    public static QuestManager Instance {private set; get;}
     private Dictionary<string, Quest> questMap;
 
     // quest start requirements
     private int currentPlayerLevel;
 
-    private void Awake()
-    {
-        questMap = CreateQuestMap();
+    private void Awake(){
+        if(!Instance){
+            Destroy(Instance);
+        }
+        Instance = this;
     }
-
     private void Start()
     {
         GameEventsManager.instance.questEvents.onStartQuest += StartQuest;
         GameEventsManager.instance.questEvents.onAdvanceQuest += AdvanceQuest;
         GameEventsManager.instance.questEvents.onFinishQuest += FinishQuest;
-        StartCoroutine(check());
-        SceneManager.sceneLoaded += coroutineCheck;
         GameEventsManager.instance.questEvents.onQuestStepStateChange += QuestStepStateChange;
 
+        StartCoroutine(check());
+    }
+
+
+    public void UpdateOnScenesLoaded(){
         foreach (Quest quest in questMap.Values)
         {
             // initialize any loaded quest steps
@@ -47,9 +52,10 @@ public class QuestManager : PersistentSingleton<QuestManager>
         GameEventsManager.instance.questEvents.onAdvanceQuest -= AdvanceQuest;
         GameEventsManager.instance.questEvents.onFinishQuest -= FinishQuest;
         GameEventsManager.instance.questEvents.onQuestStepStateChange -= QuestStepStateChange;
+                SceneLoader.newSceneGrouploaded -= UpdateOnScenesLoaded;
     }
 
-    private Dictionary<string, Quest> CreateQuestMap()
+    private Dictionary<string, Quest> CreateQuestMap(GameData gameData)
     {
         // loads all QuestInfoSO Scriptable Objects under the Assets/Resources/Quests folder
         QuestInfoSO[] allQuests = Resources.LoadAll<QuestInfoSO>("Quests");
@@ -61,7 +67,7 @@ public class QuestManager : PersistentSingleton<QuestManager>
             {
                 Debug.LogWarning("Duplicate ID found when creating quest map: " + questInfo.id);
             }
-            idToQuestMap.Add(questInfo.id, LoadQuest(questInfo));
+            idToQuestMap.Add(questInfo.id, LoadQuest(questInfo,gameData));
         }
         return idToQuestMap;
     }
@@ -76,16 +82,17 @@ public class QuestManager : PersistentSingleton<QuestManager>
         return quest;
     }
 
-    private Quest LoadQuest(QuestInfoSO questInfo)
+    private Quest LoadQuest(QuestInfoSO questInfo,GameData data)
     {
         Quest quest = null;
 
         try 
         {
             // load quest from saved data
-            if (PlayerPrefs.HasKey(questInfo.id) && loadQuestState)
+            if (data.questMap.ContainsKey(questInfo.id) && loadQuestState)
             {
-                string serializedData = PlayerPrefs.GetString(questInfo.id);
+                string serializedData;
+                data.questMap.TryGetValue(questInfo.id, out serializedData);
                 QuestData questData = JsonUtility.FromJson<QuestData>(serializedData);
                 quest = new Quest(questInfo, questData.state, questData.questStepIndex, questData.questStepStates);
                 if (quest.state == QuestState.IN_PROGRESS)
@@ -94,21 +101,17 @@ public class QuestManager : PersistentSingleton<QuestManager>
                 }
                 Debug.Log(serializedData);
             }
-            // otherwise, initialize a new quest
             else 
             {
                 quest = new Quest(questInfo);
-
-
-          GameEventsManager.instance.questEvents.QuestStateChange(quest);
             }
+          GameEventsManager.instance.questEvents.QuestStateChange(quest);
         }
         catch (System.Exception e)
         {
-            Debug.LogError("Failed to load quest with id " + quest.info.id + ": " + e);
+            Debug.LogError("Failed to load quest with id " + quest.info?.id + ": " + e);
         }
         
-        quest = new Quest(questInfo);
         return quest;
     }
 
@@ -133,7 +136,10 @@ public class QuestManager : PersistentSingleton<QuestManager>
 
     public IEnumerator check(){
         yield return new WaitForSeconds(0.1f);
+        LoadGame(DataPersistenceManager.instance.GetGameData());
         CheckRequirements();
+        UpdateOnScenesLoaded();
+        SceneLoader.newSceneGrouploaded += UpdateOnScenesLoaded;
     }
 
     private void QuestStepStateChange(string id, int stepIndex, QuestStepState questStepState)
@@ -217,13 +223,11 @@ public class QuestManager : PersistentSingleton<QuestManager>
 
     private void OnApplicationQuit()
     {
-        foreach (Quest quest in questMap.Values)
-        {
-            SaveQuest(quest);
-        }
+        SaveGame(DataPersistenceManager.instance.GetGameData());
+        DataPersistenceManager.instance.SaveGame();
     }
 
-    private void SaveQuest(Quest quest)
+    private void SaveQuest(Quest quest, GameData data)
     {
         try 
         {
@@ -233,8 +237,12 @@ public class QuestManager : PersistentSingleton<QuestManager>
             // saving to PlayerPrefs is just a quick example for this tutorial video,
             // you probably don't want to save this info there long-term.
             // instead, use an actual Save & Load system and write to a file, the cloud, etc..
-            PlayerPrefs.SetString(quest.info.id, serializedData);
-            Debug.Log(serializedData);
+            if(data.questMap.ContainsKey(quest.info.id)){
+                data.questMap[quest.info.id] = serializedData;
+            }else {
+                data.questMap.Add(quest.info.id, serializedData);
+                Debug.Log(serializedData);
+            }
         }
         catch (System.Exception e)
         {
@@ -242,4 +250,16 @@ public class QuestManager : PersistentSingleton<QuestManager>
         }
     }
 
+    public void LoadGame(GameData data)
+    {
+        questMap = CreateQuestMap(data);
+    }
+
+    public void SaveGame(GameData data)
+    {
+        foreach (Quest quest in questMap.Values)
+        {
+            SaveQuest(quest,data);
+        }
+    }
 }

@@ -144,6 +144,10 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2625708801133291038, guid: 2bf93751b3d827646a2f16d074c4b571, type: 3}
+      propertyPath: m_Name
+      value: BackToBosnia
+      objectReference: {fileID: 0}
+    - target: {fileID: 2625708801133291038, guid: 2bf93751b3d827646a2f16d074c4b571, type: 3}
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
@@ -4181,7 +4185,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5119098658528870866, guid: 2bf93751b3d827646a2f16d074c4b571, type: 3}
       propertyPath: m_text
-      value: "Avoid obstacles \nCollect 3 Memory Items \nPress 'E' to start"
+      value: "Avoid obstacles \nCollect 3 Memory Items \nOh ye, beware of the river
+        current :)\nPress 'E' to start"
       objectReference: {fileID: 0}
     - target: {fileID: 7489763983358771780, guid: 2bf93751b3d827646a2f16d074c4b571, type: 3}
       propertyPath: m_LocalPosition.x

@@ -109,7 +109,10 @@ public class CookingGameManager : MonoBehaviour
         if(pointsCollected > 0)
         {
             GameEventsManager.instance.playerEvents.ExperienceGained(pointsCollected);
-            NotificationManager.Instance.showNotification("Yipie!! <br> You wonzzz! :D", NotificationPanelColor.SUCCSES);
+            NotificationManager.Instance.showNotification("Yipie!! <br> You've unlocked Romanias room! :D", NotificationPanelColor.SUCCSES);
+            GameEventsManager.instance.playerEvents.WonCookingGame();
+            EpisodeManager.instance.ChangeDoorValue("Romania", true);
+            DialogueManager.Instance.EpisodeOneCookingGameFinished = true;
         }
         NotificationManager.Instance.showNotification("Yipie!! <br> You wonzzz! :D", NotificationPanelColor.SUCCSES);
     }

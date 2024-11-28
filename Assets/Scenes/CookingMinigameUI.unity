@@ -732,7 +732,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 181293916363835508, guid: 1e93ce31111ae2e44b767f78f2d030fd, type: 3}
       propertyPath: m_Name
-      value: Door
+      value: EndGame
       objectReference: {fileID: 0}
     - target: {fileID: 181293916363835508, guid: 1e93ce31111ae2e44b767f78f2d030fd, type: 3}
       propertyPath: m_IsActive
@@ -780,7 +780,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3779877751471845589, guid: 1e93ce31111ae2e44b767f78f2d030fd, type: 3}
       propertyPath: position.x
-      value: 8
+      value: -5
       objectReference: {fileID: 0}
     - target: {fileID: 3779877751471845589, guid: 1e93ce31111ae2e44b767f78f2d030fd, type: 3}
       propertyPath: position.y
