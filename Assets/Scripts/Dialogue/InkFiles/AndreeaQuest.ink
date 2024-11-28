@@ -23,7 +23,6 @@ Please help with cookint, I'm dying :(  #portrait:Andreea_Happyy #speaker:Andree
 === already_played ===
 You were a great help traveller! :)#portrait:Andreea_Happy #speaker:Andreea #layout:right
 You were a great help traveller! :)#portrait:Andreea_Happy #speaker:Andreea #layout:right
-~UnlockSerbiaRoom()
 Collect Your pay at the tezga :D
 
     -> END
