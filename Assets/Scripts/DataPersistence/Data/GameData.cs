@@ -18,6 +18,7 @@ public class GameData
     public SerializableDictionary<string, bool> coinsCollected;
     public SerializableDictionary<string, bool> itemsCollected;
     public SerializableDictionary<string, string> questMap;
+    public SerializableDictionary<string,bool> npcs;
 
     public GameData()
     {
@@ -29,13 +30,17 @@ public class GameData
         playerMoney.money = 0;
         playerExpirience = 0;
         doors = new SerializableDictionary<string, bool>();
+        npcs = new SerializableDictionary<string, bool>();
         coinsCollected = new SerializableDictionary<string, bool>();
         itemsCollected = new SerializableDictionary<string, bool>();
         questMap = new SerializableDictionary<string, string>();
 
-        //setting initial Data
+        //setting initial Data For Doors
         doors.Add("Romania", false);
         doors.Add("Bosnia", false);
         doors.Add("Serbia", false);
+
+        //setting initial Data For NPCS
+        
     }
 }

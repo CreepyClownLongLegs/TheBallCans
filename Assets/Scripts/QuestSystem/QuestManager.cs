@@ -33,6 +33,7 @@ public class QuestManager :MonoBehaviour, IDataPersistence
 
 
     public void UpdateOnScenesLoaded(){
+        CheckRequirements();
         foreach (Quest quest in questMap.Values)
         {
             // initialize any loaded quest steps
@@ -52,7 +53,7 @@ public class QuestManager :MonoBehaviour, IDataPersistence
         GameEventsManager.instance.questEvents.onAdvanceQuest -= AdvanceQuest;
         GameEventsManager.instance.questEvents.onFinishQuest -= FinishQuest;
         GameEventsManager.instance.questEvents.onQuestStepStateChange -= QuestStepStateChange;
-                SceneLoader.newSceneGrouploaded -= UpdateOnScenesLoaded;
+        SceneLoader.newSceneGrouploaded -= UpdateOnScenesLoaded;
     }
 
     private Dictionary<string, Quest> CreateQuestMap(GameData gameData)
@@ -137,7 +138,6 @@ public class QuestManager :MonoBehaviour, IDataPersistence
     public IEnumerator check(){
         yield return new WaitForSeconds(0.1f);
         LoadGame(DataPersistenceManager.instance.GetGameData());
-        CheckRequirements();
         UpdateOnScenesLoaded();
         SceneLoader.newSceneGrouploaded += UpdateOnScenesLoaded;
     }

@@ -5,6 +5,7 @@ using UnityEngine;
 public class EpisodeManager : MonoBehaviour, IDataPersistence
 {
     SerializableDictionary<string,bool> doors;
+    public SerializableDictionary<string,bool> npcs;
     public bool firstEpisode = true;
     public bool secondEpisode = false;
     public bool EpisodeOneKayakingGameFinished = false;
@@ -14,6 +15,7 @@ public class EpisodeManager : MonoBehaviour, IDataPersistence
     public void LoadGame(GameData data)
     {
         doors = data.doors;
+        npcs = data.npcs;
         firstEpisode = data.firstEpisode;
         secondEpisode = data.secondEpisode;
         EpisodeOneKayakingGameFinished = data.EpisodeOneKayakingGameFinished;
@@ -25,10 +27,19 @@ public class EpisodeManager : MonoBehaviour, IDataPersistence
     public void SaveGame(GameData data)
     {
         data.doors = this.doors;
+        data.npcs = this.npcs;
         data.firstEpisode = firstEpisode;
         data.secondEpisode = secondEpisode;
         data.EpisodeOneKayakingGameFinished = EpisodeOneCookingGameFinished;
         data.EpisodeOneCookingGameFinished = EpisodeOneCookingGameFinished;
+    }
+
+    public void saveNPCShowVariable(string ID, bool Value){
+        if(npcs.ContainsKey(ID)){
+            npcs[ID] = Value;
+        } else {
+            npcs.Add(ID,Value);
+        }
     }
 
     void Awake(){
@@ -53,10 +64,6 @@ public class EpisodeManager : MonoBehaviour, IDataPersistence
         SaveGame(DataPersistenceManager.instance.GetGameData());
         DataPersistenceManager.instance.SaveGame();
     }
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+
 
 }

@@ -15,6 +15,7 @@ public class WinCookingGame : QuestStep
     {
         this.winCookingGame = System.Boolean.Parse(state);
         UpdateState();
+        EpisodeManager.instance.saveNPCShowVariable("BosniaNPC", false);
     }
 
     private void WonCookingGame(){
