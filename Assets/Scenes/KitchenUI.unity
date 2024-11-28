@@ -15190,7 +15190,7 @@ PrefabInstance:
       objectReference: {fileID: 4900000, guid: cb01d0ab5d06d6146bcf46f6010a11e8, type: 3}
     - target: {fileID: 8905870757479828209, guid: 4edb65a5af8515e408166dd70ea934cc, type: 3}
       propertyPath: m_Name
-      value: NPC
+      value: RomaniaNPCKitchen
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

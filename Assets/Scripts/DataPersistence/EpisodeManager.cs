@@ -10,6 +10,7 @@ public class EpisodeManager : MonoBehaviour, IDataPersistence
     public bool secondEpisode = false;
     public bool EpisodeOneKayakingGameFinished = false;
     public bool EpisodeOneCookingGameFinished = false;
+    public bool CookingQuestAcceptedEpisodeOne = false;
     public static EpisodeManager instance {private set; get;}
 
     public void LoadGame(GameData data)
@@ -18,14 +19,17 @@ public class EpisodeManager : MonoBehaviour, IDataPersistence
         npcs = data.npcs;
         firstEpisode = data.firstEpisode;
         secondEpisode = data.secondEpisode;
+        CookingQuestAcceptedEpisodeOne = data.CookingQuestAcceptedEpisodeOne;
         EpisodeOneKayakingGameFinished = data.EpisodeOneKayakingGameFinished;
         EpisodeOneCookingGameFinished = data.EpisodeOneCookingGameFinished;
         DialogueManager.Instance.EpisodeOneCookingGameFinished = EpisodeOneCookingGameFinished;
         DialogueManager.Instance.EpisodeOneKayakingGameFinished = EpisodeOneKayakingGameFinished;
+        DialogueManager.Instance.CookingQuestAccepted = CookingQuestAcceptedEpisodeOne;
     }
 
     public void SaveGame(GameData data)
     {
+        data.CookingQuestAcceptedEpisodeOne = CookingQuestAcceptedEpisodeOne;
         data.doors = this.doors;
         data.npcs = this.npcs;
         data.firstEpisode = firstEpisode;

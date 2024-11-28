@@ -30,6 +30,8 @@ public class InkExternalFunctions
 
     public void UnlockSerbiaRoom(){
         EpisodeManager.instance.ChangeDoorValue("Serbia", true);
+        EpisodeManager.instance.saveNPCShowVariable("RomaniaNPCKitchen", false);
+        EpisodeManager.instance.saveNPCShowVariable("RomaniaNPCRoom", true);
         NotificationManager.Instance.showNotification("You've unlocked Zorans Room!", NotificationPanelColor.SUCCSES);
     }
 

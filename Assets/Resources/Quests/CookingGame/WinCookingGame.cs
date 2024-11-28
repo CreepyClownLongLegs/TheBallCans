@@ -15,7 +15,7 @@ public class WinCookingGame : QuestStep
     {
         this.winCookingGame = System.Boolean.Parse(state);
         UpdateState();
-        EpisodeManager.instance.saveNPCShowVariable("BosniaNPC", false);
+        //checkign if its in progress
     }
 
     private void WonCookingGame(){
@@ -33,6 +33,12 @@ public class WinCookingGame : QuestStep
             status = "You've been a great help lil fella :)";
         }else{
             status = "Go help the lil romanian cook!";
+        }
+        
+        if(QuestManager.Instance.GetQuestById(questId).state==QuestState.IN_PROGRESS){
+            Debug.Log("its in progress the cooking");
+            EpisodeManager.instance.saveNPCShowVariable("BosniaNPC", false);
+            DialogueManager.Instance.CookingQuestAccepted = true;
         }
 
         ChangeState(state, status);
