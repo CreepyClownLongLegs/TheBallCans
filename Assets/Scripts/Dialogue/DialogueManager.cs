@@ -32,6 +32,7 @@ public class DialogueManager : PersistentSingleton<DialogueManager>
     //just some variables
     public bool EpisodeOneKayakingGameFinished = false;
     public bool EpisodeOneCookingGameFinished = false;
+    public bool CookingQuestAccepted = false;
     public bool GotPasswordFromFatima = false;
 
     private const string SPEAKER_TAG = "speaker";
@@ -121,6 +122,10 @@ public class DialogueManager : PersistentSingleton<DialogueManager>
                     if(EpisodeOneCookingGameFinished){
                     TrySetInkStoryVariable("EPISODE_ONE_FINISHED_COOKING_GAME","true");     
                     EpisodeManager.instance.EpisodeOneCookingGameFinished = true;                  
+                    }
+                    if(CookingQuestAccepted){
+                    TrySetInkStoryVariable("ACCEPTED_QUEST_YET","true");
+                    EpisodeManager.instance.CookingQuestAcceptedEpisodeOne = true;
                     }
                 dialogueText.text = currentStory.Continue();
                 DisplayChoices();

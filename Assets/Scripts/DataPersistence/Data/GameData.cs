@@ -10,6 +10,7 @@ public class GameData
     public bool secondEpisode;
     public bool EpisodeOneKayakingGameFinished;
     public bool EpisodeOneCookingGameFinished;
+    public bool CookingQuestAcceptedEpisodeOne;
     public Vector3 playerPosition;
     public PlayerData playerMoney = new PlayerData();
     public int playerExpirience;
@@ -26,6 +27,7 @@ public class GameData
         secondEpisode = false;
         EpisodeOneKayakingGameFinished = false;
         EpisodeOneCookingGameFinished = false;
+        CookingQuestAcceptedEpisodeOne = false;
         playerPosition = Vector3.zero;
         playerMoney.money = 0;
         playerExpirience = 0;
@@ -41,6 +43,7 @@ public class GameData
         doors.Add("Serbia", false);
 
         //setting initial Data For NPCS
-        
+        npcs.Add("RomaniaNPCRoom", false);
+
     }
 }
