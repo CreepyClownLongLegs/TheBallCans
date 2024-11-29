@@ -11,6 +11,7 @@ public class GameData
     public bool EpisodeOneKayakingGameFinished;
     public bool EpisodeOneCookingGameFinished;
     public bool CookingQuestAcceptedEpisodeOne;
+    public bool EpisodeOneRhytmGameFinished;
     public Vector3 playerPosition;
     public PlayerData playerMoney = new PlayerData();
     public int playerExpirience;
@@ -28,6 +29,7 @@ public class GameData
         EpisodeOneKayakingGameFinished = false;
         EpisodeOneCookingGameFinished = false;
         CookingQuestAcceptedEpisodeOne = false;
+        EpisodeOneRhytmGameFinished = false;
         playerPosition = Vector3.zero;
         playerMoney.money = 0;
         playerExpirience = 0;

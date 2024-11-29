@@ -27,7 +27,7 @@ public class MissedNotes : MonoBehaviour
     }
 
     private void SubstractPointsFromScore(){
-        RhythmGameManager.Instance.score -= 8;
+        RhythmGameManager.Instance.score -= 0;
         updateScoreText();
     }
 

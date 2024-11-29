@@ -65,6 +65,8 @@ public class RhythmGameManager : MonoBehaviour
         playerRenderer = GameObject.FindGameObjectWithTag("Player").GetComponent<SpriteRenderer>();
         playerController.elevatorPanelIsOpen = false;
         playerRenderer.enabled = true;
+        GameEventsManager.instance.playerEvents.RhytmGamePlayed();
+        EpisodeManager.instance.EpisodeOneRhytmGameFinished = true;
         InputSystem.interactPressed -= LoadRoom;
         this.door.SetActive(true);
     }

@@ -10,6 +10,7 @@ public class EpisodeManager : MonoBehaviour, IDataPersistence
     public bool secondEpisode = false;
     public bool EpisodeOneKayakingGameFinished = false;
     public bool EpisodeOneCookingGameFinished = false;
+    public bool EpisodeOneRhytmGameFinished = false;
     public bool CookingQuestAcceptedEpisodeOne = false;
     public static EpisodeManager instance {private set; get;}
 
@@ -22,6 +23,7 @@ public class EpisodeManager : MonoBehaviour, IDataPersistence
         CookingQuestAcceptedEpisodeOne = data.CookingQuestAcceptedEpisodeOne;
         EpisodeOneKayakingGameFinished = data.EpisodeOneKayakingGameFinished;
         EpisodeOneCookingGameFinished = data.EpisodeOneCookingGameFinished;
+        EpisodeOneRhytmGameFinished = data.EpisodeOneRhytmGameFinished;
         DialogueManager.Instance.EpisodeOneCookingGameFinished = EpisodeOneCookingGameFinished;
         DialogueManager.Instance.EpisodeOneKayakingGameFinished = EpisodeOneKayakingGameFinished;
         DialogueManager.Instance.CookingQuestAccepted = CookingQuestAcceptedEpisodeOne;
@@ -36,6 +38,7 @@ public class EpisodeManager : MonoBehaviour, IDataPersistence
         data.secondEpisode = secondEpisode;
         data.EpisodeOneKayakingGameFinished = EpisodeOneCookingGameFinished;
         data.EpisodeOneCookingGameFinished = EpisodeOneCookingGameFinished;
+        data.EpisodeOneRhytmGameFinished = EpisodeOneRhytmGameFinished;
     }
 
     public void saveNPCShowVariable(string ID, bool Value){

@@ -39,6 +39,12 @@ public class PlayerEvents
         wonCookingGame?.Invoke();
     }
 
+    public event Action rhytmGamePlayed;
+
+    public void RhytmGamePlayed(){
+        rhytmGamePlayed?.Invoke();
+    }
+
 
     public event Action<int> onPlayerExperienceChange;
     public void PlayerExperienceChange(int experience) 
