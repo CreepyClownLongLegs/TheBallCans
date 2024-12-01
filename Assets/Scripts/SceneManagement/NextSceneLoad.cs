@@ -24,6 +24,22 @@ private void OnTriggerEnter2D(Collider2D collider2D){
         }
     }
     if(collider2D.gameObject.CompareTag("Player")){
+        //TODO: find actual media sources
+        if(ID == "Serbia" && !EpisodeManager.instance.FirstTimeInSerbiaRoom){
+            EpisodeManager.instance.FirstTimeInSerbiaRoom = true;
+            NewsLogScrollingList.instance.CreateNewsWithoutVideo("Serbians at it again", "3 Austrians killed by a gang of serbians", "trustmebro.com");
+            NotificationManager.Instance.showNotification("You've got news ! :) " , NotificationPanelColor.INFO);
+        }
+        if(ID == "Romania" && !EpisodeManager.instance.FirstTimeInRomaniaRoom){
+            EpisodeManager.instance.FirstTimeInRomaniaRoom = true;
+            NewsLogScrollingList.instance.CreateNewsWithoutVideo("Romanins stealing again", "Comes as new surprise to anyone", "trsumebro.com");
+            NotificationManager.Instance.showNotification("You've got news ! :) " , NotificationPanelColor.INFO);
+        }
+        if(ID == "Bosnia" && !EpisodeManager.instance.FirstTimeInBosniaRoom){
+            EpisodeManager.instance.FirstTimeInBosniaRoom = true;
+            NewsLogScrollingList.instance.CreateNewsWithoutVideo("Bosnians in need again", "They done need our help again", "trsumebro.com");
+            NotificationManager.Instance.showNotification("You've got news ! :) " , NotificationPanelColor.INFO);
+        }
             _ = SceneLoader.Instance.LoadSceneGroup(nextSceneToLoad);
          GameObject.FindGameObjectWithTag("Player").transform.position = this.position;
     }

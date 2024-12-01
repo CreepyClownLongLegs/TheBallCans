@@ -44,6 +44,7 @@ public class Memory : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collider2D){
         if(collider2D.gameObject.CompareTag("Player") && !this.collected){
             this.collected = true;
+            AudioManager.instance.PlayOneShot(FMODEvents.instance.itemCollected, this.transform.position);
             KayakingGameManager.Instance.MemoryCollected();
             StartCoroutine(particleCoroutine());
         }

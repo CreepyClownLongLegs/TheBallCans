@@ -152,6 +152,15 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""shoot"",
+                    ""type"": ""Button"",
+                    ""id"": ""455f6f71-1cb3-4304-b433-a94118f1ca81"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -396,6 +405,17 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
                     ""action"": ""downArrow"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""2db651f6-2ae3-4c64-a0ec-1289d3f8a23c"",
+                    ""path"": ""<Keyboard>/space"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""shoot"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         },
@@ -510,6 +530,7 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
         m_Player_leftArrow = m_Player.FindAction("leftArrow", throwIfNotFound: true);
         m_Player_upArrow = m_Player.FindAction("upArrow", throwIfNotFound: true);
         m_Player_downArrow = m_Player.FindAction("downArrow", throwIfNotFound: true);
+        m_Player_shoot = m_Player.FindAction("shoot", throwIfNotFound: true);
         // Boat
         m_Boat = asset.FindActionMap("Boat", throwIfNotFound: true);
         m_Boat_Jump = m_Boat.FindAction("Jump", throwIfNotFound: true);
@@ -589,6 +610,7 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
     private readonly InputAction m_Player_leftArrow;
     private readonly InputAction m_Player_upArrow;
     private readonly InputAction m_Player_downArrow;
+    private readonly InputAction m_Player_shoot;
     public struct PlayerActions
     {
         private @PlayerInputActions m_Wrapper;
@@ -607,6 +629,7 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
         public InputAction @leftArrow => m_Wrapper.m_Player_leftArrow;
         public InputAction @upArrow => m_Wrapper.m_Player_upArrow;
         public InputAction @downArrow => m_Wrapper.m_Player_downArrow;
+        public InputAction @shoot => m_Wrapper.m_Player_shoot;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -658,6 +681,9 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
             @downArrow.started += instance.OnDownArrow;
             @downArrow.performed += instance.OnDownArrow;
             @downArrow.canceled += instance.OnDownArrow;
+            @shoot.started += instance.OnShoot;
+            @shoot.performed += instance.OnShoot;
+            @shoot.canceled += instance.OnShoot;
         }
 
         private void UnregisterCallbacks(IPlayerActions instance)
@@ -704,6 +730,9 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
             @downArrow.started -= instance.OnDownArrow;
             @downArrow.performed -= instance.OnDownArrow;
             @downArrow.canceled -= instance.OnDownArrow;
+            @shoot.started -= instance.OnShoot;
+            @shoot.performed -= instance.OnShoot;
+            @shoot.canceled -= instance.OnShoot;
         }
 
         public void RemoveCallbacks(IPlayerActions instance)
@@ -791,6 +820,7 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
         void OnLeftArrow(InputAction.CallbackContext context);
         void OnUpArrow(InputAction.CallbackContext context);
         void OnDownArrow(InputAction.CallbackContext context);
+        void OnShoot(InputAction.CallbackContext context);
     }
     public interface IBoatActions
     {

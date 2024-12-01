@@ -9,6 +9,7 @@ public class QuestLogUI : MonoBehaviour
 {
     [Header("Components")]
     [SerializeField] private GameObject contentParent;
+    [SerializeField] private NewsLogUi newsLogUi;
     [SerializeField] private QuestLogScrollingList scrollingList;
     [SerializeField] private TextMeshProUGUI questDisplayNameText;
     [SerializeField] private TextMeshProUGUI questStatusText;
@@ -37,9 +38,10 @@ public class QuestLogUI : MonoBehaviour
         }
     }
 
-    private void ShowUI()
+    public void ShowUI()
     {
         contentParent.SetActive(true);
+        newsLogUi.HideNewsLogUI();
         GameEventsManager.instance.playerEvents.DisablePlayerMovement();
         // note - this needs to happen after the content parent is set active,
         // or else the onSelectAction won't work as expected
@@ -49,7 +51,7 @@ public class QuestLogUI : MonoBehaviour
         }
     }
 
-    private void HideUI()
+    public void HideUI()
     {
         contentParent.SetActive(false);
         GameEventsManager.instance.playerEvents.EnablePlayerMovement();

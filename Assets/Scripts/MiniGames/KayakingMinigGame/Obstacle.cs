@@ -13,12 +13,14 @@ public class Obstacle : MonoBehaviour
     [SerializeField] float speedY;
     [SerializeField] float lifeSpanInSeconds = 5f;
     private float randomXSpeed;
+    int lifePoints;
     // Start is called before the first frame update
     void Start()
     {
+        lifePoints = 2;
         rb = GetComponentInChildren<Rigidbody2D>();
         randomXSpeed = Random.Range(speedXmin, speedXmax);
-        StartCoroutine(die());
+        StartCoroutine(die(lifeSpanInSeconds));
     }
 
     // Update is called once per frame
@@ -31,8 +33,8 @@ public class Obstacle : MonoBehaviour
         rb.velocity = new Vector2( randomXSpeed, speedY);
     }
 
-    private IEnumerator die(){
-        yield return new WaitForSeconds(lifeSpanInSeconds);
+    private IEnumerator die(float seconds){
+        yield return new WaitForSeconds(seconds);
         Destroy(this.gameObject);
     }
 
@@ -40,6 +42,18 @@ public class Obstacle : MonoBehaviour
         if(collider2D.gameObject.CompareTag("Player")){
             KayakingGameManager.Instance.DamageTaken();
             Destroy(this.gameObject);
+        }
+        if(collider2D.gameObject.CompareTag("Bullet")){
+            this.lifePoints --;
+            this.GetComponentInChildren<SpriteRenderer>().color = Color.red;
+            AudioManager.instance.PlayOneShot(FMODEvents.instance.kick, this.transform.position);
+            if(lifePoints == 0){
+                this.GetComponent<ParticleSystem>().Play();
+                this.GetComponentInChildren<SpriteRenderer>().enabled = false;
+                this.GetComponent<CircleCollider2D>().enabled = false;
+                ExpirienceManager.Instance.addExpirience(3);
+                StartCoroutine(die(0.4f));
+            }
         }
     }
 }

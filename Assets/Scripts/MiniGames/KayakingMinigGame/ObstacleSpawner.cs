@@ -8,6 +8,8 @@ public class ObstacleSpawner : MonoBehaviour
 {
     [SerializeField] private GameObject spawnPrefab;
     [SerializeField] private GameObject memorySpawnPrefab;
+    [SerializeField] private GameObject bulletPrefab;
+    private GameObject player;
     public float minY;
     public float maxY;
     public float valueX;
@@ -25,11 +27,14 @@ public class ObstacleSpawner : MonoBehaviour
     void Start(){
         KayakingGameManager.GameOver += dontSpawn;
         KayakingGameManager.GameStart += startToSpawn;
+        InputSystem.spacePressed += SpawnBullet;
+        player = GameObject.FindGameObjectWithTag("Player");
     }
 
     private void OnDestroy(){
         KayakingGameManager.GameOver -= dontSpawn;
         KayakingGameManager.GameStart -= startToSpawn;
+        InputSystem.spacePressed -= SpawnBullet;
     }
 
     void FixedUpdate()
@@ -48,6 +53,8 @@ public class ObstacleSpawner : MonoBehaviour
         memoryTimer += 0.01f;
         timer += 0.01f;
     }
+
+
 
     private void dontSpawn(){
         this.spawn = false;
@@ -69,5 +76,9 @@ public class ObstacleSpawner : MonoBehaviour
         this.randomSpawningTimeMemory = Random.Range(minSpawningTimeMemory,maxSpawningTimeMemory);
         GameObject obj = Instantiate(memorySpawnPrefab, this.transform);
         obj.transform.position = new Vector3(valueX, randomY, 0f);
+    }
+
+    private void SpawnBullet(){
+        GameObject bullet = Instantiate(bulletPrefab, player.transform);
     }
 }

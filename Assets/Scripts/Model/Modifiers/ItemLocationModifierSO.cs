@@ -1,8 +1,5 @@
-using System.Collections;
-using System.Collections.Generic;
 using Inventory.Model;
 using Systems.SceneManagement;
-using UnityEditor.SearchService;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 

@@ -8,6 +8,7 @@ using Systems.SceneManagement;
 using TMPro;
 using UnityEngine;
 using UnityEngine.Rendering;
+using UnityEngine.Video;
 
 public class RhythmGameManager : MonoBehaviour
 {
@@ -23,9 +24,11 @@ public class RhythmGameManager : MonoBehaviour
     [SerializeField] private GameObject countDown;
     [SerializeField] private GameObject endPanel;
     [SerializeField] private GameObject door; 
+    [SerializeField] public VideoPlayer suadaVideo;
     private EventInstance Suada;
     public int score = 0;
     public int currentMultiplierts = 0;
+
 
     void Awake(){
         if(Instance != null){
@@ -65,14 +68,18 @@ public class RhythmGameManager : MonoBehaviour
         playerRenderer = GameObject.FindGameObjectWithTag("Player").GetComponent<SpriteRenderer>();
         playerController.elevatorPanelIsOpen = false;
         playerRenderer.enabled = true;
+        startPanel.SetActive(false);
+        endPanel.SetActive(false);
+        scoreText.gameObject.SetActive(false);
+        suadaVideo.Stop();
         GameEventsManager.instance.playerEvents.RhytmGamePlayed();
         EpisodeManager.instance.EpisodeOneRhytmGameFinished = true;
-        InputSystem.interactPressed -= LoadRoom;
         this.door.SetActive(true);
+        InputSystem.interactPressed -= LoadRoom;
     }
 
     public void addExpirience(){
-        expirience = (int)Math.Sqrt(score);
+        expirience = (int)(score/10);
         GameEventsManager.instance.playerEvents.ExperienceGained(expirience);
     }
 

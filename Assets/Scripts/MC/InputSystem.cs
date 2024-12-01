@@ -1,8 +1,4 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Xml.Serialization;
-using UnityEditorInternal;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -16,6 +12,7 @@ public class InputSystem : PersistentSingleton<InputSystem>
     public static event Action goingDown;
     public static event Action goingUp;
     public static event Action interactPressed;
+    public static event Action spacePressed;
     public static event Action inventoryCalled;
     public static event Action leftClicked;
     public static event Action rightClicked;
@@ -56,6 +53,7 @@ public class InputSystem : PersistentSingleton<InputSystem>
         inputActions.Player.upArrow.canceled += UpArrowCanceled;
         inputActions.Player.downArrow.performed += DownArrowClicked;
         inputActions.Player.downArrow.canceled += DownArrowCanceled;
+        inputActions.Player.shoot.performed += SpaceBar;
     }
 
     private void DownArrowCanceled(InputAction.CallbackContext context)
@@ -143,6 +141,10 @@ public class InputSystem : PersistentSingleton<InputSystem>
 
     public void Jump(InputAction.CallbackContext context){
         onJump.Invoke();
+    }
+
+    public void SpaceBar(InputAction.CallbackContext context){
+        spacePressed.Invoke();
     }
 
     public void Idle(InputAction.CallbackContext context){

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{0b4c3ae4-3ce4-4174-877f-45e9fc78f44d}">
+		<property name="assetPath">
+			<value>Buy Something! (Radio Edit).mp3</value>
+		</property>
+		<property name="isStreaming">
+			<value>true</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>88.032653061224494</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{58154428-f8e7-4f3d-898f-e22766795eee}</destination>
+		</relationship>
+	</object>
+</objects>

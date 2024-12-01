@@ -4,6 +4,7 @@ using UnityEngine;
 using FMODUnity;
 using FMOD.Studio;
 using System.Xml.Serialization;
+using Systems.SceneManagement;
 
 public class AudioManager : MonoBehaviour
 {
@@ -49,8 +50,8 @@ public class AudioManager : MonoBehaviour
 
     private void Start()
     {
-        //InitializeAmbience(FMODEvents.instance.ourRoomTheme);
         InitializeMusic(FMODEvents.instance.ourRoomTheme);
+        SceneLoader.newSceneGrouploaded += SetCurrentSceneSound;
     }
 
     private void Update()
@@ -67,8 +68,9 @@ public class AudioManager : MonoBehaviour
         ambienceEventInstance.start();
     }
 
-    private void InitializeMusic(EventReference musicEventReference)
+    public void InitializeMusic(EventReference musicEventReference)
     {
+        StopSong(musicEventInstance);
         musicEventInstance = CreateInstance(musicEventReference);
         musicEventInstance.start();
     }
@@ -120,12 +122,54 @@ public class AudioManager : MonoBehaviour
         }
     }
 
+    public void SetCurrentSceneSound(){
+        foreach(string scene in SceneLoader.Instance.loadedScenes){
+            if(scene == "YourRoomUI"){
+                StopSong(musicEventInstance);
+                InitializeMusic(FMODEvents.instance.ourRoomTheme);
+            }
+            if(scene=="SerbiaRoomUI"){
+                StopSong(musicEventInstance);
+                InitializeMusic(FMODEvents.instance.serbiaTheme);
+            }
+            if(scene=="RomaniaRoom"){
+                StopSong(musicEventInstance);
+                InitializeMusic(FMODEvents.instance.romaniaTheme);
+            }
+            if(scene=="HallwayUI"){
+                StopSong(musicEventInstance);
+                InitializeMusic(FMODEvents.instance.HallwayTheme);
+            }
+            if(scene=="Hallway1UI"){
+                StopSong(musicEventInstance);
+                InitializeMusic(FMODEvents.instance.HallwayTheme);
+            }
+            if(scene=="TheLobbyUI"){
+                StopSong(musicEventInstance);
+                InitializeMusic(FMODEvents.instance.LobbyTheme);
+            }
+            if(scene=="KitchenUI"){
+                StopSong(musicEventInstance);
+                InitializeMusic(FMODEvents.instance.restaurantTheme);
+            }
+            if(scene=="ElevatorUI"){
+                StopSong(musicEventInstance);
+                InitializeMusic(FMODEvents.instance.ElevatorTheme);
+            }
+            if(scene=="KayakingMiniGameUI"){
+                StopSong(musicEventInstance);
+                InitializeMusic(FMODEvents.instance.kayakingMiniGameTheme);
+            }
+        }
+    }
+
     public void StopSong(EventInstance  eventInstance){
             eventInstance.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
     }
 
     private void OnDestroy()
     {
+        SceneLoader.newSceneGrouploaded -= SetCurrentSceneSound;
         CleanUp();
     }
 }

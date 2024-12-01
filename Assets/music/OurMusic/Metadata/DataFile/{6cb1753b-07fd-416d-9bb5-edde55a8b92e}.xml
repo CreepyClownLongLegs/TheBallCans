@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="DataFile" id="{6cb1753b-07fd-416d-9bb5-edde55a8b92e}">
+		<property name="assetPath">
+			<value>fighMusic.wav</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{58154428-f8e7-4f3d-898f-e22766795eee}</destination>
+		</relationship>
+	</object>
+</objects>

@@ -67,6 +67,7 @@ public static KayakingGameManager Instance { get; private set; }
     }
 
     public void DamageTaken(){
+        AudioManager.instance.PlayOneShot(FMODEvents.instance.ouch, this.transform.position);
         if(hearts.Length == 0){
             //died
             GameOverCalled();

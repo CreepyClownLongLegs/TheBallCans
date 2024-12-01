@@ -7,6 +7,7 @@ public class BeatScroller : MonoBehaviour
     public float beatTempoFirstRound = 120f;
     private float scrollSpeed;
     public float GoalLine = -10000f;
+    public bool endCalled = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -21,7 +22,8 @@ public class BeatScroller : MonoBehaviour
         }
         this.transform.position -= new Vector3(0f, scrollSpeed*Time.unscaledDeltaTime, 0f);
 
-        if(this.transform.position.y < GoalLine){
+        if(this.transform.position.y < GoalLine && !endCalled){
+            endCalled = true;
             RhythmGameManager.Instance.EndGame();
         }
     }

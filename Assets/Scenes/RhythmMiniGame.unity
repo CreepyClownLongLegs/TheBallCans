@@ -487,6 +487,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   incrementTimer: 0.035
+--- !u!328 &1137689392 stripped
+VideoPlayer:
+  m_CorrespondingSourceObject: {fileID: 4847779911968537852, guid: c2e7f5d508ad87c41b44e1394cf3eb51, type: 3}
+  m_PrefabInstance: {fileID: 840282077}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1176121391
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -555,6 +560,10 @@ PrefabInstance:
       propertyPath: startPanel
       value: 
       objectReference: {fileID: 1574351669}
+    - target: {fileID: 2730426367560947289, guid: f2bfff518c22a8c41ae43e334e01edb4, type: 3}
+      propertyPath: suadaVideo
+      value: 
+      objectReference: {fileID: 1137689392}
     - target: {fileID: 2730426367560947289, guid: f2bfff518c22a8c41ae43e334e01edb4, type: 3}
       propertyPath: multipliersText
       value: 

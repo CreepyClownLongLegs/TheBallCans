@@ -12,6 +12,9 @@ public class EpisodeManager : MonoBehaviour, IDataPersistence
     public bool EpisodeOneCookingGameFinished = false;
     public bool EpisodeOneRhytmGameFinished = false;
     public bool CookingQuestAcceptedEpisodeOne = false;
+    public bool FirstTimeInRomaniaRoom = false;
+    public bool FirstTimeInBosniaRoom = false;
+    public bool FirstTimeInSerbiaRoom = false;
     public static EpisodeManager instance {private set; get;}
 
     public void LoadGame(GameData data)
@@ -24,6 +27,9 @@ public class EpisodeManager : MonoBehaviour, IDataPersistence
         EpisodeOneKayakingGameFinished = data.EpisodeOneKayakingGameFinished;
         EpisodeOneCookingGameFinished = data.EpisodeOneCookingGameFinished;
         EpisodeOneRhytmGameFinished = data.EpisodeOneRhytmGameFinished;
+        FirstTimeInBosniaRoom = data.FirstTimeInBosniaRoom;
+        FirstTimeInRomaniaRoom = data.FirstTimeInRomaniaRoom;
+        FirstTimeInSerbiaRoom = data.FirstTimeInSerbiaRoom;
         DialogueManager.Instance.EpisodeOneCookingGameFinished = EpisodeOneCookingGameFinished;
         DialogueManager.Instance.EpisodeOneKayakingGameFinished = EpisodeOneKayakingGameFinished;
         DialogueManager.Instance.CookingQuestAccepted = CookingQuestAcceptedEpisodeOne;
@@ -39,6 +45,9 @@ public class EpisodeManager : MonoBehaviour, IDataPersistence
         data.EpisodeOneKayakingGameFinished = EpisodeOneCookingGameFinished;
         data.EpisodeOneCookingGameFinished = EpisodeOneCookingGameFinished;
         data.EpisodeOneRhytmGameFinished = EpisodeOneRhytmGameFinished;
+        data.FirstTimeInBosniaRoom = FirstTimeInBosniaRoom;
+        data.FirstTimeInRomaniaRoom = FirstTimeInRomaniaRoom;
+        data.FirstTimeInSerbiaRoom = FirstTimeInSerbiaRoom;
     }
 
     public void saveNPCShowVariable(string ID, bool Value){

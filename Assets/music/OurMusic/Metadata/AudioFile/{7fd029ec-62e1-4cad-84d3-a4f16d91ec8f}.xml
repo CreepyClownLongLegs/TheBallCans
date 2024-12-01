@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{7fd029ec-62e1-4cad-84d3-a4f16d91ec8f}">
+		<property name="assetPath">
+			<value>Ouch__006.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>1</value>
+		</property>
+		<property name="length">
+			<value>0.10512471655328798</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{58154428-f8e7-4f3d-898f-e22766795eee}</destination>
+		</relationship>
+	</object>
+</objects>
