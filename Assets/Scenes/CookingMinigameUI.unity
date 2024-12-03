@@ -1282,7 +1282,7 @@ RectTransform:
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: -100, y: -175}
-  m_SizeDelta: {x: 185, y: 550}
+  m_SizeDelta: {x: 185, y: 800}
   m_Pivot: {x: 1, y: 1}
 --- !u!114 &1274430233
 MonoBehaviour:
@@ -1895,9 +1895,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   foodSpawnPrefab: {fileID: 6239386834406783517, guid: f43962b74b5b6f84cb559afb5a1cd241, type: 3}
   badFoods:
-  - {fileID: 11400000, guid: 1bf32708242cd3541ad8dafa405bac11, type: 2}
-  - {fileID: 11400000, guid: 1bf32708242cd3541ad8dafa405bac11, type: 2}
-  - {fileID: 11400000, guid: 9e257141c83d45d40ae0879b84498d36, type: 2}
+  - {fileID: 11400000, guid: 99cb1b8c43b94e542a12ee5b6ec751d9, type: 2}
+  - {fileID: 11400000, guid: 0bf7a3fc5ef6d6d478d9562f168c2362, type: 2}
+  - {fileID: 11400000, guid: 74c4537e380e8424aa134487e1becd3b, type: 2}
   - {fileID: 11400000, guid: 9e257141c83d45d40ae0879b84498d36, type: 2}
   minX: 7
   maxX: 24
@@ -2042,7 +2042,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'Use the left and right arrow keys to move
 
-    Collect 5 ingredients listed
+    Collect 8 ingredients listed
     on the right
 
     Avoid spoiled foods (green)
@@ -2164,7 +2164,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 50, y: 100}
-  m_SizeDelta: {x: 375, y: 75}
+  m_SizeDelta: {x: 400, y: 50}
   m_Pivot: {x: 0, y: 0}
 --- !u!114 &1948105423
 MonoBehaviour:
@@ -2238,7 +2238,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 350}
+  m_AnchoredPosition: {x: 0, y: 450}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2072371885

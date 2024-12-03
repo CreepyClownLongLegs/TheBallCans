@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 072a5866706193a4ab15fd9f000c1934, type: 3}
+  m_Name: RecipeRound1
+  m_EditorClassIdentifier: 
+  foods:
+  - {fileID: 11400000, guid: dcdecaea3ed278643a32eceac64466c0, type: 2}
+  - {fileID: 11400000, guid: a85dd7c4a3a32eb45b26f9b1adbf0894, type: 2}
+  - {fileID: 11400000, guid: 14b95d5bd2e15b646bdab760fac36974, type: 2}
+  - {fileID: 11400000, guid: e070f00c6f9412a43abd7a52647a407c, type: 2}
+  - {fileID: 11400000, guid: 0c7633399196caf499b230a5e9709242, type: 2}
+  - {fileID: 11400000, guid: 94ab79482185b234e896683cad6157a2, type: 2}
+  - {fileID: 11400000, guid: cb97d69726de5b04d9a6edc14004b816, type: 2}
+  - {fileID: 11400000, guid: b97f5e40dd197f746b87c6c8503e585a, type: 2}
+  recipeName: Tave Kosi

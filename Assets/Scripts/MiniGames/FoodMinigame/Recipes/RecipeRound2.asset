@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 072a5866706193a4ab15fd9f000c1934, type: 3}
+  m_Name: RecipeRound2
+  m_EditorClassIdentifier: 
+  foods:
+  - {fileID: 11400000, guid: 6e99d61b3d5fa5649814396e63cc1f84, type: 2}
+  - {fileID: 11400000, guid: 5811de2412e6d594088ee0eec0cc51c7, type: 2}
+  - {fileID: 11400000, guid: 91a4610a35e52e24ea1a6ae245502b6a, type: 2}
+  - {fileID: 11400000, guid: 86ced493be5d72548b34035fc83d70a6, type: 2}
+  recipeName: Papanasi

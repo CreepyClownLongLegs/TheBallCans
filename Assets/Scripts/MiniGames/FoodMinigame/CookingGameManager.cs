@@ -25,7 +25,6 @@ public class CookingGameManager : MonoBehaviour
     [SerializeField] public TextMeshProUGUI GameOverScoreText;
     [SerializeField] public GameObject door;
 
-    public float YRecipeOffset;
     public int pointsCollected = 0;
     public float secondsTheVisualPointsCueIsShown = 1f;
     public int correctOrderExtraPoints = 10;
@@ -81,7 +80,7 @@ public class CookingGameManager : MonoBehaviour
         {
             GameObject obj = Instantiate(foodIconPrefab, recipePanel.transform);
             obj.GetComponent<Image>().sprite = foodSC.icon;
-            obj.transform.position = new Vector3(obj.transform.position.x, (obj.transform.position.y - i*100) + YRecipeOffset, 0);
+            obj.transform.position = new Vector3(obj.transform.position.x, obj.transform.position.y - (i*100) + 355, 0);
             obj.GetComponentInChildren<TextMeshProUGUI>().text = foodSC.name;
             i++;
         }
@@ -100,7 +99,7 @@ public class CookingGameManager : MonoBehaviour
         {
             obj.GetComponent<Image>().color = new Color(1,1,1,1);
         }
-        obj.transform.position = new Vector3(((obj.transform.position.x + itemInOrder*75) - 225), obj.transform.position.y, 0);
+        obj.transform.position = new Vector3(((obj.transform.position.x + itemInOrder*50) - 225), obj.transform.position.y, 0);
     }
 
 

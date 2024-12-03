@@ -78,7 +78,7 @@ public class FoodInventory : MonoBehaviour
 
     public void EnoughFoodsCollected()
     {
-        if(foods.Count == 5)
+        if(foods.Count == CookingGameManager.instance.recipeFirstRound.GetFoods().Count)
         {
             //won
             if(CheckIfEnoughFoodsCollected())
