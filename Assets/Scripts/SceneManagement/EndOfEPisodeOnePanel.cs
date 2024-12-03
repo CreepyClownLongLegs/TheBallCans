@@ -32,7 +32,7 @@ public class EndOfEPisodeOnePanel : MonoBehaviour
         } 
         if(timer > (sleepingTimer + 0.5f) && timer < (sleepingTimer + 3f)){
             showSleepingText();
-        }
+        } 
         if(timer > (sleepingTimer + 3f) && timer < (sleepingTimer + fadeInOutTime)){
             text.text = EpisodeTwoText;
         }

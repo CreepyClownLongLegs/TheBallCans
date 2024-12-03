@@ -30,6 +30,7 @@ public class EndEpisodeOne : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collider2D){
         if(collider2D.gameObject.CompareTag("Player") && EpisodeManager.instance.EpisodeOneRhytmGameFinished && !EpisodeManager.instance.secondEpisode){
             endOfEpisodeOnePanel.SetActive(true);
+            StartCoroutine(playSleepingSound());
             EpisodeManager.instance.firstEpisode = false;
             EpisodeManager.instance.secondEpisode = true;
             EpisodeManager.instance.ChangeDoorValue("Romania", true);
@@ -40,6 +41,11 @@ public class EndEpisodeOne : MonoBehaviour
         }
     }
 
+
+    private IEnumerator playSleepingSound(){
+        yield return new WaitForSeconds(6f);
+        AudioManager.instance.PlayOneShot(FMODEvents.instance.sleepingSFX, this.transform.position);
+    }
 
 
 }

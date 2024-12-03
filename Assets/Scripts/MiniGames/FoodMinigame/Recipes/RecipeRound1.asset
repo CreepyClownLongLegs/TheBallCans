@@ -18,7 +18,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 14b95d5bd2e15b646bdab760fac36974, type: 2}
   - {fileID: 11400000, guid: e070f00c6f9412a43abd7a52647a407c, type: 2}
   - {fileID: 11400000, guid: 0c7633399196caf499b230a5e9709242, type: 2}
-  - {fileID: 11400000, guid: 94ab79482185b234e896683cad6157a2, type: 2}
   - {fileID: 11400000, guid: cb97d69726de5b04d9a6edc14004b816, type: 2}
   - {fileID: 11400000, guid: b97f5e40dd197f746b87c6c8503e585a, type: 2}
-  recipeName: Tave Kosi
+  - {fileID: 11400000, guid: 0d485b30d66facb468989a9c244470e0, type: 2}
+  recipeName: Sarmale
