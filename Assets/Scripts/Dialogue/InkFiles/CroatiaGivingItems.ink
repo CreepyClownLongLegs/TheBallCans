@@ -6,7 +6,7 @@ VAR HAS_SPOON = "false"
 VAR HAS_IRON = "false"
 VAR EPISODE_TWO = "false"
 
-{EPISODE_TWO == "false" : -> main | {HAS_IRON == "true" : already_bought | buy_items}}
+{EPISODE_TWO == "false" : -> main | {HAS_IRON == "true" : -> already_bought | -> buy_items}}
 
 === buy_items ===
 Yo.

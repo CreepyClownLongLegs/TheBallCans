@@ -149,7 +149,6 @@ namespace Inventory.Model
         public void SaveGame(GameData data)
         {
             SerializableDictionary<string, bool> itemsCollected = new SerializableDictionary<string, bool>();
-            itemsCollected = data.itemsCollected;
             InventoryItem inventoryItem;
 
             foreach(InventoryItem item in inventoryItems){

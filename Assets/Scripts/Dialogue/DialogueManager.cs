@@ -36,6 +36,7 @@ public class DialogueManager : PersistentSingleton<DialogueManager>
     public bool GotPasswordFromFatima = false;
     public bool hasIron = false;
     public bool hasSpoon = false;
+    public bool secondEpisode = false;
 
     private const string SPEAKER_TAG = "speaker";
     private const string PORTRAIT_TAG = "portrait";
@@ -144,6 +145,9 @@ public class DialogueManager : PersistentSingleton<DialogueManager>
                     if(!hasSpoon)
                     {
                         TrySetInkStoryVariable("HAS_SPOON","false");
+                    }
+                    if(EpisodeManager.instance.secondEpisode){
+                        TrySetInkStoryVariable("EPISODE_TWO","true");
                     }
                 dialogueText.text = currentStory.Continue();
                 DisplayChoices();

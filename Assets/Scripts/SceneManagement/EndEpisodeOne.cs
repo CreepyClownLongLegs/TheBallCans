@@ -20,6 +20,7 @@ public class EndEpisodeOne : MonoBehaviour
             endOfEpisodeOnePanel.SetActive(true);
             EpisodeManager.instance.firstEpisode = false;
             EpisodeManager.instance.secondEpisode = true;
+            EpisodeManager.instance.ChangeDoorValue("Romania", true);
         }
     }
 }
