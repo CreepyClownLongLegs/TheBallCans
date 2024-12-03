@@ -22,6 +22,7 @@ public class ItemLocationModifierSO : RoomModifierSO
             chairParent.transform.position = coords;
             //place item in the scene
             Instantiate(chair, chairParent.transform);
+            PickUpSystem.instance.inventoryData.RemoveItemWithName(item.name);
         }
         else
         {

@@ -8,6 +8,9 @@ public class PickUpSystem : MonoBehaviour
 {
     [SerializeField]
     public InventorySO inventoryData;
+    [SerializeField] public ItemSO iron;
+    [SerializeField] public ItemSO spoon;
+    [SerializeField] public ItemSO mixer;
     CharacterController2D characterController;
     public static PickUpSystem instance {get; private set;}
 
@@ -45,9 +48,20 @@ public class PickUpSystem : MonoBehaviour
             Debug.Log("Item picked up!");
             NotificationManager.Instance.showNotification("You've picked up a " + item.InventoryItem.name, NotificationPanelColor.INFO);
             inventoryData.AddItem(item.InventoryItem);
-            inventoryData.SaveGame(DataPersistenceManager.instance.GetGameData());
-            DataPersistenceManager.instance.SaveGame();
             item.DestroyItem();
+            SaveGameOnItemPickup();
         }
     }
+
+    public void SaveGameOnItemPickup()
+    {
+        inventoryData.SaveGame(DataPersistenceManager.instance.GetGameData());
+        DataPersistenceManager.instance.SaveGame();
+    }
+
+    void OnApplicationQuit(){
+        SaveGameOnItemPickup();
+    }
+
+
 }

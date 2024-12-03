@@ -13,8 +13,8 @@ Hi new guy, I"m super stressed now, can you come back later :(  #portrait:Andree
     -> END
 
 === main ===
-Please help with cookint, I'm dying :(  #portrait:Andreea_Happy #speaker:Andreea #layout:right
-Please help with cookint, I'm dying :(  #portrait:Andreea_Happyy #speaker:Andreea #layout:right
+Please help with cooking, I'm dying :(  #portrait:Andreea_Happy #speaker:Andreea #layout:right
+Please help with cooking, I'm dying :(  #portrait:Andreea_Happyy #speaker:Andreea #layout:right
 
 ~startEpisodeOneCookingGame()
     

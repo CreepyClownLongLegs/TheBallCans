@@ -25,10 +25,16 @@ namespace Inventory
             InputSystem.inventoryCalled += InventoryCalled;
         }
 
+        private void OnEnable(){
+            UpdateInventoryUI(PickUpSystem.instance.inventoryData.GetCurrentInventoryState());
+        }
+
+
+
         private void PrepareInventoryData()
         {
             
-            inventoryData.OnInventoryUpdated += UpdateInventoryUI;
+            //inventoryData.OnInventoryUpdated += UpdateInventoryUI;
             foreach (InventoryItem item in initialItems)
             {
                 if(item.IsEmpty)

@@ -25943,7 +25943,7 @@ PrefabInstance:
     - target: {fileID: 2233427347802757375, guid: 4edb65a5af8515e408166dd70ea934cc, type: 3}
       propertyPath: inkJSON
       value: 
-      objectReference: {fileID: 4900000, guid: 583b00d77eca7bb45bbda42d3b50acaf, type: 3}
+      objectReference: {fileID: 4900000, guid: 7571562e05190654c9d0650e0155a8e8, type: 3}
     - target: {fileID: 2886564764390913598, guid: 4edb65a5af8515e408166dd70ea934cc, type: 3}
       propertyPath: m_SortingOrder
       value: 1

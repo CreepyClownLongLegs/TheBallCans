@@ -6,7 +6,7 @@ using UnityEngine;
 namespace Inventory.Model
 {
     [CreateAssetMenu]
-    public class InventorySO : ScriptableObject,IDataPersistence
+    public class InventorySO : ScriptableObject, IDataPersistence
     {
         [SerializeField]
         private List<InventoryItem> inventoryItems;
@@ -35,8 +35,21 @@ namespace Inventory.Model
 
         public void AddItem(ItemSO item)
         {
+            if (item.Name == "Iron")
+            {
+                DialogueManager.Instance.hasIron = true;
+                Debug.Log("Iron has been added to your inventory.");
+            }
+            if (item.Name == "Spoon")
+            {
+                DialogueManager.Instance.hasSpoon = true;
+                Debug.Log("Spoon has been added to your inventory.");
+            }
             for (int i = 0; i < inventoryItems.Count; i++)
             {
+                if(inventoryItems[i].item == item){
+                    return;
+                }
                 if (inventoryItems[i].IsEmpty)
                 {
                     inventoryItems[i] = new InventoryItem
@@ -45,8 +58,10 @@ namespace Inventory.Model
                     };
                     return;
                 }
+                
             }
         }
+
 
         public Dictionary<int, InventoryItem> GetCurrentInventoryState()
         {
@@ -67,6 +82,15 @@ namespace Inventory.Model
 
         public void RemoveItem(int itemIndex, int amount)
         {
+            if (inventoryItems[itemIndex].item.Name == "Iron")
+            {
+                DialogueManager.Instance.hasIron = false;
+            }
+            if (inventoryItems[itemIndex].item.Name == "Spoon")
+            {
+                DialogueManager.Instance.hasSpoon = false;
+            }
+
             if (inventoryItems.Count > itemIndex)
             {
                 if (inventoryItems[itemIndex].IsEmpty)
@@ -82,10 +106,26 @@ namespace Inventory.Model
             }
         }
 
+        public void RemoveItemWithName(string name)
+        {
+            for (int i = 0; i < inventoryItems.Count; i++)
+            {
+                if (!inventoryItems[i].IsEmpty)
+                {
+                    if(inventoryItems[i].item.Name == name)
+                    {
+                        inventoryItems[i] = InventoryItem.GetEmptyItem();
+                        //InformAboutChange();
+                    }
+                }
+            }
+        }
+
         private void InformAboutChange()
         {
             OnInventoryUpdated?.Invoke(GetCurrentInventoryState());
         }
+
 
         public void LoadGame(GameData data)
         {
@@ -98,7 +138,9 @@ namespace Inventory.Model
                     inventoryItem.quantity = 1;
                 }
                 if(!inventoryItems.Contains(inventoryItem)){
-                    this.AddItem(inventoryItem);
+                    if(inventoryItem.item!= null){
+                        this.AddItem(inventoryItem);
+                    }
                 }
             }
         }
@@ -108,9 +150,11 @@ namespace Inventory.Model
         {
             SerializableDictionary<string, bool> itemsCollected = new SerializableDictionary<string, bool>();
             itemsCollected = data.itemsCollected;
+            InventoryItem inventoryItem;
+
             foreach(InventoryItem item in inventoryItems){
                 string serializedData = JsonUtility.ToJson(item);
-                if(!data.itemsCollected.ContainsKey(serializedData) && !itemsCollected.ContainsKey(serializedData)){
+                if(!itemsCollected.ContainsKey(serializedData)){
                 itemsCollected.Add(serializedData, true);
                 Debug.Log(serializedData);  
                 }

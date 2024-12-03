@@ -1382,6 +1382,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inventoryData: {fileID: 11400000, guid: 5ef8bbe8ece78914c9143b8c6f9851a2, type: 2}
+  iron: {fileID: 11400000, guid: cd08f6486cb998d4093c04e3a82fc902, type: 2}
+  spoon: {fileID: 11400000, guid: 3f830e2e66a560c43bf5caa3550f3bf3, type: 2}
+  mixer: {fileID: 11400000, guid: 36aeb9b3b8374d9419648d8ae70821f6, type: 2}
 --- !u!1 &1418818652 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2835939271339811661, guid: bfcbce1dcf717724b911bbcdd670c71a, type: 3}

@@ -21,7 +21,7 @@ namespace Inventory.UI
 
         private bool empty = true;
 
-        public void Awake()
+        public void OnEnable()
         {
             ResetData();
             Deselect();
@@ -29,7 +29,9 @@ namespace Inventory.UI
 
         public void ResetData()
         {
-            this.itemImage.gameObject.SetActive(false);
+            if(this.itemImage != null){
+                this.itemImage?.gameObject.SetActive(false);
+            }
             empty = true;
         }
 
