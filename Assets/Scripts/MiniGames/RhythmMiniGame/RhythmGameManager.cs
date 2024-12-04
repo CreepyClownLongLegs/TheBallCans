@@ -13,6 +13,8 @@ using UnityEngine.Video;
 public class RhythmGameManager : MonoBehaviour
 {
     public float gameToStart = 10f;
+    public float gameToStartFirstEpisode = 10f;
+    public float gameToStartSecondEpisode = 10f;
     private CharacterController2D playerController;
     private SpriteRenderer playerRenderer;
     public bool scrollerScrolling = false;
@@ -24,8 +26,8 @@ public class RhythmGameManager : MonoBehaviour
     [SerializeField] private GameObject countDown;
     [SerializeField] private GameObject endPanel;
     [SerializeField] private GameObject door; 
-    [SerializeField] public VideoPlayer suadaVideo;
-    private EventInstance Suada;
+    [SerializeField] private VideoPlayer videoPlayer;
+    private EventInstance RhythmGameMusic;
     public int score = 0;
     public int currentMultiplierts = 0;
 
@@ -37,16 +39,22 @@ public class RhythmGameManager : MonoBehaviour
         Instance = this;
 
         AudioManager.instance.StopSong(AudioManager.instance.musicEventInstance);
-        Suada = AudioManager.instance.InitializeSuada();
     }
     void Start()
     {
+        if(EpisodeManager.instance.secondEpisode){
+            RhythmGameMusic = AudioManager.instance.InitializeMiPlesemo();
+            gameToStart = gameToStartFirstEpisode;
+            gameToStart = gameToStartSecondEpisode;
+        }else { 
+            RhythmGameMusic = AudioManager.instance.InitializeSuada();
+        }
         door.SetActive(false);
         startPanel.SetActive(true);
         countDown.SetActive(false);
         endPanel.SetActive(false);
         StartScrolling();
-        Suada.start();
+        RhythmGameMusic.start();
         playerController = GameObject.FindGameObjectWithTag("Player").GetComponent<CharacterController2D>();
         playerRenderer = GameObject.FindGameObjectWithTag("Player").GetComponent<SpriteRenderer>();
         playerController.elevatorPanelIsOpen = true;
@@ -64,14 +72,14 @@ public class RhythmGameManager : MonoBehaviour
     }
 
     private void LoadRoom(){
-        Suada.stop(STOP_MODE.IMMEDIATE);
+        RhythmGameMusic.stop(STOP_MODE.IMMEDIATE);
         playerRenderer = GameObject.FindGameObjectWithTag("Player").GetComponent<SpriteRenderer>();
         playerController.elevatorPanelIsOpen = false;
         playerRenderer.enabled = true;
+        videoPlayer.Stop();
         startPanel.SetActive(false);
         endPanel.SetActive(false);
         scoreText.gameObject.SetActive(false);
-        suadaVideo.Stop();
         GameEventsManager.instance.playerEvents.RhytmGamePlayed();
         EpisodeManager.instance.EpisodeOneRhytmGameFinished = true;
         this.door.SetActive(true);

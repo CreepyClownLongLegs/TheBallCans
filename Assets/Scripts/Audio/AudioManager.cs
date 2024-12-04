@@ -28,7 +28,7 @@ public class AudioManager : MonoBehaviour
     private EventInstance ambienceEventInstance;
     public EventInstance musicEventInstance;
     public EventInstance suadaEventInstance;
-
+    public EventInstance miPlesemoEventInstance;
     public static AudioManager instance { get; private set; }
 
     private void Awake()
@@ -79,6 +79,12 @@ public class AudioManager : MonoBehaviour
     {
         suadaEventInstance = CreateInstance(FMODEvents.instance.suada);
         return suadaEventInstance;
+    }
+
+    public EventInstance InitializeMiPlesemo()
+    {
+        miPlesemoEventInstance = CreateInstance(FMODEvents.instance.miPlesemo);
+        return miPlesemoEventInstance;
     }
 
     public void SetAmbienceParameter(string parameterName, float parameterValue)

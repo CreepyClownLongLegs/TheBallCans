@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{95eea727-5f12-4e40-a9b9-36d9ae6b4090}">
+		<property name="assetPath">
+			<value>Isak Sabanovic Mi plesemo live ZG 20 21 26 06 21 EM 74 YouTube.wav</value>
+		</property>
+		<property name="isStreaming">
+			<value>true</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>153.69287981859409</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{58154428-f8e7-4f3d-898f-e22766795eee}</destination>
+		</relationship>
+	</object>
+</objects>
