@@ -20,6 +20,10 @@ public class InkExternalFunctions
         story.BindExternalFunction("giveSpoon", GiveSpoon);
         story.BindExternalFunction("giveIron", GiveIron);
         story.BindExternalFunction("takeMixer", TakeMixer);
+        story.BindExternalFunction("takeSlingshot", TakeSlingshot);
+        story.BindExternalFunction("giveSlingshot", GiveSlingshot);
+        story.BindExternalFunction("giveGun", GiveGun);
+        story.BindExternalFunction("startRhytmGame", StartRhythmGame);
     }
 
     public void Unbind(Story story) 
@@ -34,11 +38,21 @@ public class InkExternalFunctions
         story.UnbindExternalFunction("giveSpoon");
         story.UnbindExternalFunction("giveIron");
         story.UnbindExternalFunction("takeMixer");
+        story.UnbindExternalFunction("takeSlingshot");
+        story.UnbindExternalFunction("giveSlingshot");
+        story.UnbindExternalFunction("giveGun");
+        story.UnbindExternalFunction("startRhytmGame");
     }
 
     public void StartEpisodeOneKayakingGame(){
         Debug.Log("Starting Kayaking Game");
         _ = SceneLoader.Instance.LoadSceneGroup(6);
+        GameObject.FindGameObjectWithTag("Player").transform.position = new Vector3(0,0,0);
+    }
+
+    public void StartRhythmGame(){
+        Debug.Log("Starting Rhythm Game");
+        _ = SceneLoader.Instance.LoadSceneGroup(8);
         GameObject.FindGameObjectWithTag("Player").transform.position = new Vector3(0,0,0);
     }
 
@@ -81,7 +95,24 @@ public class InkExternalFunctions
 
     public void TakeMixer(){
         PickUpSystem.instance.inventoryData.RemoveItemWithName("Mixer");
-        NotificationManager.Instance.showNotification("Mixer have been taken", NotificationPanelColor.INFO);      
+        NotificationManager.Instance.showNotification("Mixer has been taken", NotificationPanelColor.INFO);      
+    }
+
+    public void TakeSlingshot(){
+        PickUpSystem.instance.inventoryData.RemoveItemWithName("Slingshot");
+        NotificationManager.Instance.showNotification("Slingshot has been taken", NotificationPanelColor.INFO);      
+    }
+
+    public void GiveSlingshot()
+    {
+        PickUpSystem.instance.inventoryData.AddItem(PickUpSystem.instance.slingshot);
+        EpisodeManager.instance.gotSlingshot = true;
+        NotificationManager.Instance.showNotification("Slingshot has been added to your inventory", NotificationPanelColor.INFO);
+    }
+    public void GiveGun()
+    {
+        PickUpSystem.instance.inventoryData.AddItem(PickUpSystem.instance.laserGun);
+        NotificationManager.Instance.showNotification("Laser Gun has been added to your inventory", NotificationPanelColor.INFO);
     }
 
     public void GiveSpoon()

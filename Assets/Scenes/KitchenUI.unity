@@ -295,11 +295,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 195675530947174559, guid: 76278b9ca7dd540408202b76f16a75d8, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -8.54
+      value: -0.67
       objectReference: {fileID: 0}
     - target: {fileID: 195675530947174559, guid: 76278b9ca7dd540408202b76f16a75d8, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3.44
+      value: 2.07
       objectReference: {fileID: 0}
     - target: {fileID: 195675530947174559, guid: 76278b9ca7dd540408202b76f16a75d8, type: 3}
       propertyPath: m_LocalPosition.z
@@ -458,6 +458,10 @@ PrefabInstance:
     - target: {fileID: 1037814454168694568, guid: 690c5e5b96bbc0f43be3944ea98fff57, type: 3}
       propertyPath: finishPoint
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1443808259989622494, guid: 690c5e5b96bbc0f43be3944ea98fff57, type: 3}
+      propertyPath: m_Name
+      value: QuestPointSecondEpisode
       objectReference: {fileID: 0}
     - target: {fileID: 1837116060564633220, guid: 690c5e5b96bbc0f43be3944ea98fff57, type: 3}
       propertyPath: m_LocalPosition.x

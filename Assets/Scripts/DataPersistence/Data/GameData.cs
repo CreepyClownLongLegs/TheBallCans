@@ -20,6 +20,7 @@ public class GameData
     public bool FirstTimeInBosniaRoom;
     public bool FirstTimeInSerbiaRoom;
     public bool hasMixer;
+    public bool gotSlingshot;
     public Vector3 playerPosition;
     public PlayerData playerMoney = new PlayerData();
     public int playerExpirience;
@@ -44,6 +45,7 @@ public class GameData
         CookingQuestAcceptedEpisodeTwo = false;
         EpisodeTwoRhytmGameFinished = false;
         hasMixer = false;
+        gotSlingshot = false;
 
         FirstTimeInRomaniaRoom = false;
         FirstTimeInRomaniaRoom = false;
@@ -64,6 +66,7 @@ public class GameData
 
         //setting initial Data For NPCS
         npcs.Add("RomaniaNPCRoom", false);
+        npcs.Add("ZlatanNPCLobby", false);
 
     }
 }

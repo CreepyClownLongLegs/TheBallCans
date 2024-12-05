@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ef3df9da318dd4043b224b5fe84b0f13, type: 3}
+  m_Name: Slingshot
+  m_EditorClassIdentifier: 
+  <Name>k__BackingField: Slingshot
+  <Description>k__BackingField: A Slingshot that Fatima made as a prototype, it has
+    a bunch of pink heart stickers on it
+  <ItemImage>k__BackingField: {fileID: -600800778, guid: dc933b8a4f749554998a141cba2cfebe, type: 3}

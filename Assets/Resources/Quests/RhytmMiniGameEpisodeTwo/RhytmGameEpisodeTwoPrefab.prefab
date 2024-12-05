@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &8915990210330428662
+--- !u!1 &6445955984727514865
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,43 +8,39 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 5078356443945430945}
-  - component: {fileID: 8686582793870282010}
+  - component: {fileID: 5754944263754012429}
+  - component: {fileID: 7180026540563371403}
   m_Layer: 0
-  m_Name: RhytmgameEpisodeOne
+  m_Name: RhytmGameEpisodeTwoPrefab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &5078356443945430945
+--- !u!4 &5754944263754012429
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8915990210330428662}
+  m_GameObject: {fileID: 6445955984727514865}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 5.129523, y: 0.6463011, z: 1.0683641}
+  m_LocalPosition: {x: 4.1471186, y: 0.23103374, z: 0.0047756718}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &8686582793870282010
+--- !u!114 &7180026540563371403
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8915990210330428662}
+  m_GameObject: {fileID: 6445955984727514865}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e56253542f1ea3f4588b887a868aebd5, type: 3}
+  m_Script: {fileID: 11500000, guid: 7ade1f74f11b19046aef7ee43c4c178d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  questId: 
-  stepIndex: 0
-  newState: 
-  gamePlayed: 0

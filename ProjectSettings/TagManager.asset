@@ -12,6 +12,7 @@ TagManager:
   - upArrow
   - chairParent
   - Bullet
+  - Gun
   layers:
   - Default
   - TransparentFX

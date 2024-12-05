@@ -20,6 +20,7 @@ public class EpisodeManager : MonoBehaviour, IDataPersistence
     public bool FirstTimeInBosniaRoom = false;
     public bool FirstTimeInSerbiaRoom = false;
     public bool gotMixer = false;
+    public bool gotSlingshot = false;
     public static EpisodeManager instance {private set; get;}
 
     public void LoadGame(GameData data)
@@ -32,12 +33,17 @@ public class EpisodeManager : MonoBehaviour, IDataPersistence
         EpisodeOneKayakingGameFinished = data.EpisodeOneKayakingGameFinished;
         EpisodeOneCookingGameFinished = data.EpisodeOneCookingGameFinished;
         EpisodeOneRhytmGameFinished = data.EpisodeOneRhytmGameFinished;
+        EpisodeTwoRhytmGameFinished = data.EpisodeTwoRhytmGameFinished;
+        EpisodeTwoCookingGameFinished = data.EpisodeTwoCookingGameFinished;
         CookingQuestAcceptedEpisodeTwo = data.CookingQuestAcceptedEpisodeTwo;
         FirstTimeInBosniaRoom = data.FirstTimeInBosniaRoom;
         FirstTimeInRomaniaRoom = data.FirstTimeInRomaniaRoom;
         FirstTimeInSerbiaRoom = data.FirstTimeInSerbiaRoom;
         gotMixer = data.hasMixer;
+        gotSlingshot = data.gotSlingshot;
         DialogueManager.Instance.EpisodeOneCookingGameFinished = EpisodeOneCookingGameFinished;
+        DialogueManager.Instance.EpisodeTwoCookingGameFinished = EpisodeTwoCookingGameFinished;
+        Debug.Log("Cookign game second round finished : " + EpisodeTwoCookingGameFinished);
         DialogueManager.Instance.EpisodeOneKayakingGameFinished = EpisodeOneKayakingGameFinished;
         DialogueManager.Instance.CookingQuestAccepted = CookingQuestAcceptedEpisodeOne;
         DialogueManager.Instance.CookingQuestAcceptedSecondEpisode =CookingQuestAcceptedEpisodeTwo;
@@ -48,9 +54,10 @@ public class EpisodeManager : MonoBehaviour, IDataPersistence
         data.CookingQuestAcceptedEpisodeOne = CookingQuestAcceptedEpisodeOne;
         data.doors = this.doors;
         data.npcs = this.npcs;
+        data.gotSlingshot = gotSlingshot;
         data.firstEpisode = firstEpisode;
         data.secondEpisode = secondEpisode;
-        data.EpisodeOneKayakingGameFinished = EpisodeOneCookingGameFinished;
+        data.EpisodeOneKayakingGameFinished = EpisodeOneKayakingGameFinished;
         data.EpisodeOneCookingGameFinished = EpisodeOneCookingGameFinished;
         data.EpisodeOneRhytmGameFinished = EpisodeOneRhytmGameFinished;
         data.CookingQuestAcceptedEpisodeTwo = CookingQuestAcceptedEpisodeTwo;

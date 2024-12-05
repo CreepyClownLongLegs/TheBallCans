@@ -5,6 +5,7 @@ using Ink.Runtime;
 using JetBrains.Annotations;
 using TMPro;
 using Unity.VisualScripting;
+using Unity.VisualScripting.Dependencies.Sqlite;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
@@ -76,6 +77,10 @@ public class DialogueManager : PersistentSingleton<DialogueManager>
         dialogueIsPlaying = false;
         dialoguePanel.SetActive(false);
         continueIcon.SetActive(false);
+
+        EpisodeTwoCookingGameFinished = EpisodeManager.instance.EpisodeTwoCookingGameFinished;
+        EpisodeOneCookingGameFinished = EpisodeManager.instance.EpisodeOneCookingGameFinished;
+        CookingQuestAcceptedSecondEpisode = EpisodeManager.instance.CookingQuestAcceptedEpisodeTwo;
 
         // get all of the choices text 
         choicesText = new TextMeshProUGUI[choices.Length];
@@ -162,6 +167,15 @@ public class DialogueManager : PersistentSingleton<DialogueManager>
                     if(EpisodeTwoCookingGameFinished){
                         TrySetInkStoryVariable("EPISODE_TWO_FINISHED_COOKING_GAME","true");     
                         EpisodeManager.instance.EpisodeTwoCookingGameFinished = true;   
+                    }
+                    if(EpisodeManager.instance.EpisodeOneRhytmGameFinished){
+                        TrySetInkStoryVariable("EPISODE_ONE_FINISHED_RHYTHM_GAME","true");
+                    }
+                    if(EpisodeManager.instance.EpisodeTwoRhytmGameFinished){
+                        TrySetInkStoryVariable("EPISODE_TWO_FINISHED_RHYTHM_GAME","true");     
+                    }
+                    if(EpisodeManager.instance.gotSlingshot){
+                        TrySetInkStoryVariable("HAS_SLINGSHOT", "true");
                     }
                 dialogueText.text = currentStory.Continue();
                 DisplayChoices();

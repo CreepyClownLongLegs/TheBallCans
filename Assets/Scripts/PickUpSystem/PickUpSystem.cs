@@ -11,6 +11,8 @@ public class PickUpSystem : MonoBehaviour
     [SerializeField] public ItemSO iron;
     [SerializeField] public ItemSO spoon;
     [SerializeField] public ItemSO mixer;
+    [SerializeField] public ItemSO slingshot;
+    [SerializeField] public ItemSO laserGun;
     CharacterController2D characterController;
     public static PickUpSystem instance {get; private set;}
 

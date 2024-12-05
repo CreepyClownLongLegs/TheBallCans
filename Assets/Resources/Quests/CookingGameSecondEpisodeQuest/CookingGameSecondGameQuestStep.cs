@@ -18,9 +18,11 @@ public class CookingGameSecondGameQuestStep : QuestStep
     }
 
     private void WonCookingGame(){
-        winCookingGame = true;
-        GameEventsManager.instance.playerEvents.wonCookingGame -= WonCookingGame;
-        FinishQuestStep();
+        if(EpisodeManager.instance.secondEpisode){
+            winCookingGame = true;
+            GameEventsManager.instance.playerEvents.wonCookingGame -= WonCookingGame;
+            FinishQuestStep();
+        }
     }
 
     private void UpdateState()
@@ -36,6 +38,7 @@ public class CookingGameSecondGameQuestStep : QuestStep
         
         if(QuestManager.Instance.GetQuestById(questId).state==QuestState.IN_PROGRESS){
             Debug.Log("its in progress the cooking of Second Episode");
+            EpisodeManager.instance.CookingQuestAcceptedEpisodeTwo = true;
             DialogueManager.Instance.CookingQuestAcceptedSecondEpisode = true;
             EpisodeManager.instance.saveNPCShowVariable("RomaniaNPCRoom", false);
             EpisodeManager.instance.saveNPCShowVariable("RomaniaNPCKitchen", true);
