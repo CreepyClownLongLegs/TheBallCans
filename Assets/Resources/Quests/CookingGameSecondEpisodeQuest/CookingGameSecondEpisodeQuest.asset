@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad00d617a413e124596d9928d737f4b6, type: 3}
   m_Name: CookingGameSecondEpisodeQuest
   m_EditorClassIdentifier: 
-  <id>k__BackingField: CookingGameSecondEpisodeQuestInfo
+  <id>k__BackingField: CookingGameSecondEpisodeQuest
   displayName: Find the Mixer and make some Papanasi
   description: Uh Oh, you need like, a mixer to make Papanasi, i guess u could ask
     the dude downstairs at the counter ? lol idk, oh yeah and then go help Romania
