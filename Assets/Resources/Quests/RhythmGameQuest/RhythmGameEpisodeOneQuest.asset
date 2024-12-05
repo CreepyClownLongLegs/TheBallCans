@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <id>k__BackingField: RhythmGameEpisodeOneQuest
   displayName: Make Grandpa Happy
+  description: Quest
   questPrerequirements:
   - {fileID: 11400000, guid: c817707775decc444b57ce8704cd0878, type: 2}
   questStepPrefabs:

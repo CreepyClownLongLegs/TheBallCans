@@ -19,6 +19,7 @@ public class InkExternalFunctions
         story.BindExternalFunction("giveMixer", GiveMixer);
         story.BindExternalFunction("giveSpoon", GiveSpoon);
         story.BindExternalFunction("giveIron", GiveIron);
+        story.BindExternalFunction("takeMixer", TakeMixer);
     }
 
     public void Unbind(Story story) 
@@ -27,6 +28,12 @@ public class InkExternalFunctions
         story.UnbindExternalFunction("startEpisodeOneCookingGame");
         story.UnbindExternalFunction("GotPasswordFromFatima");
         story.UnbindExternalFunction("UnlockSerbiaRoom");
+        story.UnbindExternalFunction("takeIron");
+        story.UnbindExternalFunction("takeSpoon");
+        story.UnbindExternalFunction("giveMixer");
+        story.UnbindExternalFunction("giveSpoon");
+        story.UnbindExternalFunction("giveIron");
+        story.UnbindExternalFunction("takeMixer");
     }
 
     public void StartEpisodeOneKayakingGame(){
@@ -43,6 +50,7 @@ public class InkExternalFunctions
         NotificationManager.Instance.showNotification("You've unlocked Zorans Room!", NotificationPanelColor.SUCCSES);
     }
 
+    //its actually now used for nboth episodes haha...
     public void StartEpisodeOneCookingGame(){
         Debug.Log("Starting Cooking Game");
         _ = SceneLoader.Instance.LoadSceneGroup(7);
@@ -52,6 +60,7 @@ public class InkExternalFunctions
     public void GiveMixer()
     {
         PickUpSystem.instance.inventoryData.AddItem(PickUpSystem.instance.mixer);
+        EpisodeManager.instance.gotMixer = true;
         NotificationManager.Instance.showNotification("Mixer has been added to your inventory", NotificationPanelColor.INFO);
     }
 
@@ -59,14 +68,20 @@ public class InkExternalFunctions
     {
         PickUpSystem.instance.inventoryData.RemoveItemWithName("Iron");
         DialogueManager.Instance.hasIron = false;
-        NotificationManager.Instance.showNotification("Iron has been removed from your inventory", NotificationPanelColor.INFO);
+        GameEventsManager.instance.goldEvents.MoneySpent(10);
+        NotificationManager.Instance.showNotification("Iron and Soon have been removed from your inventory", NotificationPanelColor.INFO);
     }
 
     public void TakeSpoon()
     {
         PickUpSystem.instance.inventoryData.RemoveItemWithName("Spoon");
         DialogueManager.Instance.hasSpoon = false;
-        NotificationManager.Instance.showNotification("Spoon has been removed from your inventory", NotificationPanelColor.INFO);
+        NotificationManager.Instance.showNotification("10 Dabloons have been taken", NotificationPanelColor.INFO);
+    }
+
+    public void TakeMixer(){
+        PickUpSystem.instance.inventoryData.RemoveItemWithName("Mixer");
+        NotificationManager.Instance.showNotification("Mixer have been taken", NotificationPanelColor.INFO);      
     }
 
     public void GiveSpoon()

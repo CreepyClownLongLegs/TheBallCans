@@ -23,7 +23,7 @@ public class FoodSpawner : MonoBehaviour
     // Update is called once per frame
     void Start()
     {
-        cookingManagerList = CookingGameManager.instance.recipeFirstRound.GetFoods();
+        cookingManagerList = CookingGameManager.instance.recipe.GetFoods();
         FoodInventory.instance.badFoods = badFoods;
         CookingGameManager.GameOver += dontSpawn;
         CookingGameManager.GameStart += startToSpawn;

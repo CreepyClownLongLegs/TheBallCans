@@ -67,7 +67,7 @@ public class FoodInventory : MonoBehaviour
     public void CompareOrderOnCollection(FoodSC foodSC)
     {
         int indexInInvetory = foods.IndexOf(foodSC);
-        int indexInRecipe = CookingGameManager.instance.recipeFirstRound.GetFoods().IndexOf(foodSC);
+        int indexInRecipe = CookingGameManager.instance.recipe.GetFoods().IndexOf(foodSC);
         Debug.Log("Correct Order");
         if(indexInInvetory == indexInRecipe)
         {
@@ -78,7 +78,7 @@ public class FoodInventory : MonoBehaviour
 
     public void EnoughFoodsCollected()
     {
-        if(foods.Count == CookingGameManager.instance.recipeFirstRound.GetFoods().Count)
+        if(foods.Count == CookingGameManager.instance.recipe.GetFoods().Count)
         {
             //won
             if(CheckIfEnoughFoodsCollected())
@@ -100,7 +100,7 @@ public class FoodInventory : MonoBehaviour
         int wrongItems = 0;
         foreach (FoodSC food in foods)
         {
-            if(!CookingGameManager.instance.recipeFirstRound.GetFoods().Contains(food))
+            if(!CookingGameManager.instance.recipe.GetFoods().Contains(food))
             {
                 wrongItems++;
             }

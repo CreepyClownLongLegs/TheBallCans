@@ -21,4 +21,8 @@ public class GoldEvents
             onGoldChange(gold);
         }
     }
+    public event Action<int> onGoldLost;
+    public void MoneySpent(int gold){
+        onGoldLost?.Invoke(gold);
+    }
 }

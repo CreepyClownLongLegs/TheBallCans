@@ -14,13 +14,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   inventoryItems:
   - quantity: 0
-    item: {fileID: 0}
+    item: {fileID: 11400000, guid: 169033dd187b18d40b1681789d903067, type: 2}
     itemState: []
   - quantity: 0
-    item: {fileID: 0}
+    item: {fileID: 11400000, guid: 9b67dce914ebbcf4d86b08ced90be11c, type: 2}
     itemState: []
   - quantity: 0
-    item: {fileID: 0}
+    item: {fileID: 11400000, guid: 36aeb9b3b8374d9419648d8ae70821f6, type: 2}
     itemState: []
   - quantity: 0
     item: {fileID: 0}

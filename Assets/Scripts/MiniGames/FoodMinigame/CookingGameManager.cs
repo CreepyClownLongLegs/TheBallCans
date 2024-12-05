@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.AI;
 using UnityEngine.UI;
 
 public class CookingGameManager : MonoBehaviour
@@ -13,6 +14,10 @@ public class CookingGameManager : MonoBehaviour
     public OnScoreChangedCallback onScoreChangedCallback;
     [SerializeField]
     public Recipe recipeFirstRound;
+
+    [SerializeField]
+    public Recipe recipeSecondRound;
+    public Recipe recipe;
     [SerializeField] private GameObject recipePanel;
     [SerializeField] private GameObject inventoryPanel;
     [SerializeField] private GameObject foodIconPrefab;
@@ -60,6 +65,12 @@ public class CookingGameManager : MonoBehaviour
 
     void Start()
     {
+        if(EpisodeManager.instance.secondEpisode){
+            recipe = recipeSecondRound;
+        }
+        else{
+            recipe = recipeFirstRound;
+        }
         this.door.SetActive(false);
         CreateRecipePanel();
         initialPosition = GameObject.FindGameObjectWithTag("Player").transform.position;
@@ -74,9 +85,9 @@ public class CookingGameManager : MonoBehaviour
 
     private void CreateRecipePanel()
     {
-        recipeName.text = recipeFirstRound.recipeName;
+        recipeName.text = recipe.recipeName;
         int i = 0;
-        foreach(FoodSC foodSC in recipeFirstRound.GetFoods())
+        foreach(FoodSC foodSC in recipe.GetFoods())
         {
             GameObject obj = Instantiate(foodIconPrefab, recipePanel.transform);
             obj.GetComponent<Image>().sprite = foodSC.icon;
@@ -108,10 +119,14 @@ public class CookingGameManager : MonoBehaviour
         if(pointsCollected > 0)
         {
             GameEventsManager.instance.playerEvents.ExperienceGained(pointsCollected);
-            NotificationManager.Instance.showNotification("Yipie!! <br> You've unlocked Romanias room! :D", NotificationPanelColor.SUCCSES);
-            GameEventsManager.instance.playerEvents.WonCookingGame();
-            EpisodeManager.instance.ChangeDoorValue("Romania", true);
+            if(EpisodeManager.instance.secondEpisode){
+            DialogueManager.Instance.EpisodeTwoCookingGameFinished = true;
+            }else{
             DialogueManager.Instance.EpisodeOneCookingGameFinished = true;
+            NotificationManager.Instance.showNotification("Yipie!! <br> You've unlocked Romanias room! :D", NotificationPanelColor.SUCCSES);
+            EpisodeManager.instance.ChangeDoorValue("Romania", true);
+            }
+            GameEventsManager.instance.playerEvents.WonCookingGame();
         }
         NotificationManager.Instance.showNotification("Yipie!! <br> You wonzzz! :D", NotificationPanelColor.SUCCSES);
     }

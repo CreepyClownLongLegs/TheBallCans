@@ -8,6 +8,7 @@ public class QuestInfoSO : ScriptableObject{
 
     [Header("General")]
     public string displayName;
+    public string description = "Quest";
 
     [Header("Requirements")]
 

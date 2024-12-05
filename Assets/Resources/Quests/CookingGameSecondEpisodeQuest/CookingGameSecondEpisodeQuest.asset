@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad00d617a413e124596d9928d737f4b6, type: 3}
+  m_Name: CookingGameSecondEpisodeQuest
+  m_EditorClassIdentifier: 
+  <id>k__BackingField: CookingGameSecondEpisodeQuestInfo
+  displayName: Find the Mixer and make some Papanasi
+  description: Uh Oh, you need like, a mixer to make Papanasi, i guess u could ask
+    the dude downstairs at the counter ? lol idk, oh yeah and then go help Romania
+    in the kitchen maybe ? But first u gotta talk to Andreea!
+  questPrerequirements:
+  - {fileID: 11400000, guid: d15967a04e358c44a881bacca4b624a7, type: 2}
+  - {fileID: 11400000, guid: c817707775decc444b57ce8704cd0878, type: 2}
+  questStepPrefabs:
+  - {fileID: 1737532408220118262, guid: 1dd2cc6d97ec0e14d8853839f1f21266, type: 3}
+  coins: 40
+  playerExpirience: 35

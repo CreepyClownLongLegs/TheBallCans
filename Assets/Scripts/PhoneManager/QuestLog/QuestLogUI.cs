@@ -82,7 +82,7 @@ public class QuestLogUI : MonoBehaviour
         questDisplayNameText.text = quest.info.displayName;
 
         // status
-        questStatusText.text = quest.GetFullStatusText();
+        questStatusText.text = quest.info.description;
 
         // rewards
         goldRewardsText.text = quest.info.coins + " Gold";

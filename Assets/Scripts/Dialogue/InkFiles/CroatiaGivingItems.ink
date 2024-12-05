@@ -5,8 +5,9 @@ EXTERNAL giveSpoon()
 VAR HAS_SPOON = "false"
 VAR HAS_IRON = "false"
 VAR EPISODE_TWO = "false"
+VAR ACCEPTED_QUEST_YET_EPISODE_TWO = "false"
 
-{EPISODE_TWO == "false" : -> main | {HAS_IRON == "true" : -> already_bought | -> buy_items}}
+{EPISODE_TWO == "false" : -> main | { ACCEPTED_QUEST_YET_EPISODE_TWO == "false" :  -> talk_to_Andreea_first | {HAS_IRON == "true" : -> already_bought | -> buy_items}}}
 
 === buy_items ===
 Yo.
@@ -22,6 +23,16 @@ I was ready to hit the coal mines in no time after that.
 ~giveIron()
 I wonder if that made me the way I am now.
     -> END
+    
+=== talk_to_Andreea_first ===
+I heard theres stuff for this...like the opposite of laxatives... #speaker: JosipNPC #layout: right
+I heard theres stuff for this...like the opposite of laxatives... #speaker: JosipNPC #layout: right 
+What was it again... #speaker: JosipNPC #layout: right
+Oh hi there, haha #speaker: JosipNPC #layout: right
+I was just talking to myself #speaker: JosipNPC #layout: right
+Btw, Andreea seemed really distressed this morning #speaker: JosipNPC #layout: right
+Maybe you should go talk to her idk #speaker: JosipNPC #layout: right
+    ->END
     
 === main ===
 Finally a new job. #speaker: JosipNPC #layout: right

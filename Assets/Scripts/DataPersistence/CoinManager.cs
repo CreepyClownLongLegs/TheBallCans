@@ -12,11 +12,13 @@ public class CoinManager : PersistentSingleton<CoinManager>,IDataPersistence
 
     public void Start(){
         GameEventsManager.instance.goldEvents.onGoldGained += AddMoney;
+        GameEventsManager.instance.goldEvents.onGoldLost += SpendMoney;
         GameEventsManager.instance.miscEvents.onCoinCollected += addOneCoin;
     }
 
     public void OnDestroy(){
         GameEventsManager.instance.goldEvents.onGoldGained -= AddMoney;
+        GameEventsManager.instance.goldEvents.onGoldLost -= SpendMoney;
         GameEventsManager.instance.miscEvents.onCoinCollected -= addOneCoin;
     }
 

@@ -21,6 +21,7 @@ public class NewBehaviourScript : MonoBehaviour
     {
       GameEventsManager.instance.miscEvents.onCoinCollected += UpdateDisplay;
       GameEventsManager.instance.goldEvents.onGoldGained += UpdateDisplayINT;
+      GameEventsManager.instance.goldEvents.onGoldLost += UpdateDisplayINT;
       GameEventsManager.instance.playerEvents.onExperienceGained +=UpdateDisplayINT;
       UpdateDisplay();
 
@@ -30,6 +31,7 @@ public class NewBehaviourScript : MonoBehaviour
     void OnDestroy(){
     GameEventsManager.instance.miscEvents.onCoinCollected -= UpdateDisplay;
     GameEventsManager.instance.goldEvents.onGoldGained -= UpdateDisplayINT;
+    GameEventsManager.instance.goldEvents.onGoldLost -= UpdateDisplayINT;
     GameEventsManager.instance.playerEvents.onExperienceGained -=UpdateDisplayINT;
     }
 

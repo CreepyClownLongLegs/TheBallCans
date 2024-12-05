@@ -186,6 +186,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   score: 0
   recipeFirstRound: {fileID: 11400000, guid: 857172aa83a455b41a30946e94406aab, type: 2}
+  recipeSecondRound: {fileID: 11400000, guid: ccf9d37d20a4f7448b749668f9e03cfd, type: 2}
+  recipe: {fileID: 11400000, guid: 857172aa83a455b41a30946e94406aab, type: 2}
   recipePanel: {fileID: 1274430231}
   inventoryPanel: {fileID: 1948105421}
   foodIconPrefab: {fileID: 5313832007856911555, guid: 6dd78db3df6f2e542bee65790cd7a971, type: 3}
@@ -197,7 +199,6 @@ MonoBehaviour:
   gameLostPanel: {fileID: 2072823927}
   GameOverScoreText: {fileID: 1375687022}
   door: {fileID: 975386880}
-  YRecipeOffset: 190
   pointsCollected: 0
   secondsTheVisualPointsCueIsShown: 3
   correctOrderExtraPoints: 10

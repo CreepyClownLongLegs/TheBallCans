@@ -12,9 +12,14 @@ public class GameData
     public bool EpisodeOneCookingGameFinished;
     public bool CookingQuestAcceptedEpisodeOne;
     public bool EpisodeOneRhytmGameFinished;
+    public bool EpisodeTwoKayakingGameFinished;
+    public bool EpisodeTwoCookingGameFinished;
+    public bool CookingQuestAcceptedEpisodeTwo;
+    public bool EpisodeTwoRhytmGameFinished;
     public bool FirstTimeInRomaniaRoom;
     public bool FirstTimeInBosniaRoom;
     public bool FirstTimeInSerbiaRoom;
+    public bool hasMixer;
     public Vector3 playerPosition;
     public PlayerData playerMoney = new PlayerData();
     public int playerExpirience;
@@ -33,6 +38,13 @@ public class GameData
         EpisodeOneCookingGameFinished = false;
         CookingQuestAcceptedEpisodeOne = false;
         EpisodeOneRhytmGameFinished = false;
+
+        EpisodeTwoKayakingGameFinished = false;
+        EpisodeTwoCookingGameFinished = false;
+        CookingQuestAcceptedEpisodeTwo = false;
+        EpisodeTwoRhytmGameFinished = false;
+        hasMixer = false;
+
         FirstTimeInRomaniaRoom = false;
         FirstTimeInRomaniaRoom = false;
         FirstTimeInSerbiaRoom = false;

@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <id>k__BackingField: WinCookingGameInfo
   displayName: Help the sweet Romanian Chef!
+  description: Quest
   questPrerequirements:
   - {fileID: 11400000, guid: ac6c3b71959d645498440972ac44df95, type: 2}
   questStepPrefabs:

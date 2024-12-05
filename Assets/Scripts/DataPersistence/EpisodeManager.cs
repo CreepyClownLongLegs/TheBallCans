@@ -12,9 +12,14 @@ public class EpisodeManager : MonoBehaviour, IDataPersistence
     public bool EpisodeOneCookingGameFinished = false;
     public bool EpisodeOneRhytmGameFinished = false;
     public bool CookingQuestAcceptedEpisodeOne = false;
+    public bool CookingQuestAcceptedEpisodeTwo = false;
+    public bool EpisodeTwoKayakingGameFinished = false;
+    public bool EpisodeTwoCookingGameFinished = false;
+    public bool EpisodeTwoRhytmGameFinished = false;
     public bool FirstTimeInRomaniaRoom = false;
     public bool FirstTimeInBosniaRoom = false;
     public bool FirstTimeInSerbiaRoom = false;
+    public bool gotMixer = false;
     public static EpisodeManager instance {private set; get;}
 
     public void LoadGame(GameData data)
@@ -27,12 +32,15 @@ public class EpisodeManager : MonoBehaviour, IDataPersistence
         EpisodeOneKayakingGameFinished = data.EpisodeOneKayakingGameFinished;
         EpisodeOneCookingGameFinished = data.EpisodeOneCookingGameFinished;
         EpisodeOneRhytmGameFinished = data.EpisodeOneRhytmGameFinished;
+        CookingQuestAcceptedEpisodeTwo = data.CookingQuestAcceptedEpisodeTwo;
         FirstTimeInBosniaRoom = data.FirstTimeInBosniaRoom;
         FirstTimeInRomaniaRoom = data.FirstTimeInRomaniaRoom;
         FirstTimeInSerbiaRoom = data.FirstTimeInSerbiaRoom;
+        gotMixer = data.hasMixer;
         DialogueManager.Instance.EpisodeOneCookingGameFinished = EpisodeOneCookingGameFinished;
         DialogueManager.Instance.EpisodeOneKayakingGameFinished = EpisodeOneKayakingGameFinished;
         DialogueManager.Instance.CookingQuestAccepted = CookingQuestAcceptedEpisodeOne;
+        DialogueManager.Instance.CookingQuestAcceptedSecondEpisode =CookingQuestAcceptedEpisodeTwo;
     }
 
     public void SaveGame(GameData data)
@@ -45,9 +53,14 @@ public class EpisodeManager : MonoBehaviour, IDataPersistence
         data.EpisodeOneKayakingGameFinished = EpisodeOneCookingGameFinished;
         data.EpisodeOneCookingGameFinished = EpisodeOneCookingGameFinished;
         data.EpisodeOneRhytmGameFinished = EpisodeOneRhytmGameFinished;
+        data.CookingQuestAcceptedEpisodeTwo = CookingQuestAcceptedEpisodeTwo;
         data.FirstTimeInBosniaRoom = FirstTimeInBosniaRoom;
         data.FirstTimeInRomaniaRoom = FirstTimeInRomaniaRoom;
         data.FirstTimeInSerbiaRoom = FirstTimeInSerbiaRoom;
+        data.EpisodeTwoCookingGameFinished = EpisodeOneCookingGameFinished;
+        data.EpisodeTwoKayakingGameFinished = EpisodeTwoKayakingGameFinished;
+        data.EpisodeTwoRhytmGameFinished = EpisodeTwoRhytmGameFinished;
+        data.hasMixer = gotMixer;
     }
 
     public void saveNPCShowVariable(string ID, bool Value){
