@@ -35,6 +35,7 @@ public class EpisodeManager : MonoBehaviour, IDataPersistence
         EpisodeOneRhytmGameFinished = data.EpisodeOneRhytmGameFinished;
         EpisodeTwoRhytmGameFinished = data.EpisodeTwoRhytmGameFinished;
         EpisodeTwoCookingGameFinished = data.EpisodeTwoCookingGameFinished;
+        EpisodeTwoKayakingGameFinished = data.EpisodeTwoKayakingGameFinished;
         CookingQuestAcceptedEpisodeTwo = data.CookingQuestAcceptedEpisodeTwo;
         FirstTimeInBosniaRoom = data.FirstTimeInBosniaRoom;
         FirstTimeInRomaniaRoom = data.FirstTimeInRomaniaRoom;

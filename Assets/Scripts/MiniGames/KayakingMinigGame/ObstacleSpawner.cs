@@ -79,6 +79,8 @@ public class ObstacleSpawner : MonoBehaviour
     }
 
     private void SpawnBullet(){
+        if(EpisodeManager.instance.secondEpisode){
         GameObject bullet = Instantiate(bulletPrefab, player.transform);
+        }
     }
 }

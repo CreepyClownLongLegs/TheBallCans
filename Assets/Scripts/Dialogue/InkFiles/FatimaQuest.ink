@@ -1,8 +1,14 @@
 INCLUDE globals.ink
 VAR EPISODE_ONE_FINISHED_KAYAKING_GAME = "false"
+VAR EPISODE_TWO_FINISHED_KAYAKING_GAME = "false"
+VAR EPISODE_TWO_RHYTHM_GAME_FINISHED = "false"
+VAR EPISODE_TWO = "false"
+VAR HAS_SLINGSHOT = "false"
 EXTERNAL startEpisodeOneKayakingGame()
+EXTERNAL takeSlingshot()
+EXTERNAL giveGun()
 
-{ EPISODE_ONE_FINISHED_KAYAKING_GAME == "false": -> main | -> already_played }
+{ EPISODE_TWO == "false" : {EPISODE_ONE_FINISHED_KAYAKING_GAME == "false": -> main | -> already_played} | { EPISODE_TWO_FINISHED_KAYAKING_GAME == "false" : {HAS_SLINGSHOT=="false" : -> pre_slingshot | ->second_main} | ->second_already_played } }
 
 === main ===
 Huh, you want the Wifi password?  #portrait:Fatima_Happy #speaker:Fatima #layout:right
@@ -21,6 +27,28 @@ Mayb3 you can h3lp me r3m3mber and then I h3lp you with the password? #portrait:
 ~startEpisodeOneKayakingGame()
     
     -> END
+    
+=== second_main ===
+Huh, you want the Wifi password?  #portrait:Fatima_Happy #speaker:Fatima #layout:right
+~takeSlingshot()
+Time for round twp!  #portrait:Fatima_Happy #speaker:Fatima #layout:right
+~giveGun()
+With a Gun!  #portrait:Fatima_Happy #speaker:Fatima #layout:right
+~startEpisodeOneKayakingGame()
+h3h3  #portrait:Fatima_Happy #speaker:Fatima #layout:right
+    ->END
+    
+===  pre_slingshot ===
+Huh, you want the Wifi password?  #portrait:Fatima_Happy #speaker:Fatima #layout:right
+Do you know where my sling is?  #portrait:Fatima_Happy #speaker:Fatima #layout:right
+
+    ->END
+    
+=== second_already_played ===
+Huh, you want the Wifi password?  #portrait:Fatima_Happy #speaker:Fatima #layout:right
+w333ll, c ya  #portrait:Fatima_Happy #speaker:Fatima #layout:right
+k33p th3 gun  #portrait:Fatima_Happy #speaker:Fatima #layout:right
+ ->END
 
 === already_played ===
 Thanks for the help dud3!#portrait:Fatima_Happy #speaker:Fatima #layout:right

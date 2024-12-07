@@ -46,6 +46,12 @@ public static KayakingGameManager Instance { get; private set; }
         characterController2D = GameObject.FindGameObjectWithTag("Player").GetComponent<CharacterController2D>();
         gameOverPanel.SetActive(false);
         gameStartPanel.SetActive(true);
+        if(EpisodeManager.instance.secondEpisode){
+            GameObject.FindGameObjectWithTag("Gun").SetActive(true);
+            gameStartPanel.transform.GetChild(1).GetComponent<TextMeshProUGUI>().text = "Same as BEfore <br> Except you got a gun now :3 <br> use it by pressing the Space bar";
+        }else {
+            GameObject.FindGameObjectWithTag("Gun").SetActive(false);
+        }
         InputSystem.interactPressed += ReturnToRoom;
         InputSystem.interactPressed += StartGame;
         this.hearts = oldHearts;

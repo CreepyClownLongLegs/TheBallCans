@@ -177,6 +177,9 @@ public class DialogueManager : PersistentSingleton<DialogueManager>
                     if(EpisodeManager.instance.gotSlingshot){
                         TrySetInkStoryVariable("HAS_SLINGSHOT", "true");
                     }
+                    if(EpisodeManager.instance.EpisodeTwoKayakingGameFinished){
+                        TrySetInkStoryVariable("EPISODE_TWO_FINISHED_KAYAKING_GAME", "true");
+                    }
                 dialogueText.text = currentStory.Continue();
                 DisplayChoices();
                 HandleTags(currentStory.currentTags);

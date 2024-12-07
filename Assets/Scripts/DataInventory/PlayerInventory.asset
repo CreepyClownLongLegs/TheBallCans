@@ -20,7 +20,7 @@ MonoBehaviour:
     item: {fileID: 11400000, guid: 9b67dce914ebbcf4d86b08ced90be11c, type: 2}
     itemState: []
   - quantity: 0
-    item: {fileID: 11400000, guid: 36aeb9b3b8374d9419648d8ae70821f6, type: 2}
+    item: {fileID: 11400000, guid: 19bc5955d21005149b9ee93f08758528, type: 2}
     itemState: []
   - quantity: 0
     item: {fileID: 0}

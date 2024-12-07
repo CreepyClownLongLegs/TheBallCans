@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad00d617a413e124596d9928d737f4b6, type: 3}
+  m_Name: KayakingGameSecondEpisodeQuestInfo
+  m_EditorClassIdentifier: 
+  <id>k__BackingField: KayakingGameSecondEpisodeQuestInfo
+  displayName: What happened at that Kayaking trip fr now??!
+  description: Complete the "Grumpy Gramps" Quest once more and after talking to
+    Zlatan afterwards, go and give it to Fatima!
+  questPrerequirements:
+  - {fileID: 11400000, guid: faff3212fcbe28c42af075cf2f2f3794, type: 2}
+  questStepPrefabs:
+  - {fileID: 5225822275066206589, guid: 359f26f606455e245966eb67f9ae8846, type: 3}
+  coins: 30
+  playerExpirience: 30

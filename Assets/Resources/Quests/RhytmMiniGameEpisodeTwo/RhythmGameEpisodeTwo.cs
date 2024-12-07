@@ -16,12 +16,15 @@ public class RhythmGameEpisodeTwo : QuestStep
     }
 
     private void rhytmGamePlayed(){
-        gamePlayed = true;
-        GameEventsManager.instance.playerEvents.rhytmGamePlayed -= rhytmGamePlayed;
-        EpisodeManager.instance.ChangeDoorValue("Bosnia", true);
-        EpisodeManager.instance.EpisodeTwoRhytmGameFinished = true;
-        Debug.Log("Episode TWo Rhytm Game Finished");
-        FinishQuestStep();
+        if(EpisodeManager.instance.secondEpisode){
+            gamePlayed = true;
+            GameEventsManager.instance.playerEvents.rhytmGamePlayed -= rhytmGamePlayed;
+            EpisodeManager.instance.ChangeDoorValue("Bosnia", true);
+            EpisodeManager.instance.saveNPCShowVariable("BosniaNPC", true);
+            EpisodeManager.instance.EpisodeTwoRhytmGameFinished = true;
+            Debug.Log("Episode TWo Rhytm Game Finished");
+            FinishQuestStep();
+        }
     }
     private void UpdateState()
     {
