@@ -7387,6 +7387,18 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5276761623424749131, guid: 9d0e09810d6d3f9489dc727695e95d53, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 35f2530a37ee5f14d9d44bfaf6d40135, type: 2}
+    - target: {fileID: 5276761623424749131, guid: 9d0e09810d6d3f9489dc727695e95d53, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 3570069871140317031, guid: 35f2530a37ee5f14d9d44bfaf6d40135, type: 2}
+    - target: {fileID: 5276761623424749131, guid: 9d0e09810d6d3f9489dc727695e95d53, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6063090390018623129, guid: 9d0e09810d6d3f9489dc727695e95d53, type: 3}
       propertyPath: position.x
       value: -7.5
