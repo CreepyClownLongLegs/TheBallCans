@@ -53,5 +53,5 @@ You probably still have things to unpack ;)  #portrait:Andreea_Happy #speaker:An
 === has_mixer ===
     Alright my little chefs helper! :3 #portrait:Andreea_Happy #speaker:Andreea #layout:right
     Follow me to the kitchen downstairs! :3 #portrait:Andreea_Happy #speaker:Andreea #layout:right
-    Let's make some romanian doghnuts! :D #portrait:Andreea_Happy #speaker:Andreea #layout:right
- 
+    Let's make some romanian doughnuts! :D #portrait:Andreea_Happy #speaker:Andreea #layout:right
+ -> END
