@@ -14,7 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <id>k__BackingField: RhythmMiniGameEpisodeTwoQuest
   displayName: Grumpy is at it again
-  description: Go Make Zlatans Grumpy Gramps Happy again :)
+  description: 'Go Make Zlatans Grumpy Gramps Happy again : by making the Singers
+    sing well'
   questPrerequirements:
   - {fileID: 11400000, guid: c789f8941675fbf4da935af7f869a60f, type: 2}
   - {fileID: 11400000, guid: d15967a04e358c44a881bacca4b624a7, type: 2}

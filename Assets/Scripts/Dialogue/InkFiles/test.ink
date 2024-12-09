@@ -1,7 +1,8 @@
 VAR HAS_IRON = "false"
 VAR HAS_MIXER = "false"
+VAR EPISODE_TWO = "false"
 
-{HAS_IRON == "false" : {HAS_MIXER == "true" : -> has_mixer | ->main} | ->has_iron}
+{ EPISODE_TWO == "false" : ->episode_one | {HAS_IRON == "false" : {HAS_MIXER == "true" : -> has_mixer | ->main} | ->has_iron}}
 
 
 === main ===
@@ -13,6 +14,14 @@ But I need a mixer to make Papanasi :/#portrait:Andreea_Happy #speaker:Andreea #
     ->papanasi
 + [Can I help somehow?]
     -> here_is_how_you_help
+    
+=== episode_one ===
+Thank you so much for your help again today :) #portrait:Andreea_Happy #speaker:Andreea #layout:right
+Thank you so much for your help again today :) #portrait:Andreea_Happy #speaker:Andreea #layout:right
+I decided to make the Papanasi tommorow tho, so please drop by first thing in the morning :) #portrait:Andreea_Happy #speaker:Andreea #layout:right 
+My grandma has also been feeling much better now  :D #portrait:Andreea_Happy #speaker:Andreea #layout:right
+But I think I might still require your assistance tommorow ;) #portrait:Andreea_Happy #speaker:Andreea #layout:right
+->END
     
     
 === here_is_how_you_help ===
@@ -55,3 +64,4 @@ You probably still have things to unpack ;)  #portrait:Andreea_Happy #speaker:An
     Follow me to the kitchen downstairs! :3 #portrait:Andreea_Happy #speaker:Andreea #layout:right
     Let's make some romanian doughnuts! :D #portrait:Andreea_Happy #speaker:Andreea #layout:right
  -> END
+

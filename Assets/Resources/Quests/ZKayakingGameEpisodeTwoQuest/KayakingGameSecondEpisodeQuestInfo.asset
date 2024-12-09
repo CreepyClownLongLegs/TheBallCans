@@ -15,7 +15,7 @@ MonoBehaviour:
   <id>k__BackingField: KayakingGameSecondEpisodeQuestInfo
   displayName: What happened at that Kayaking trip fr now??!
   description: Complete the "Grumpy Gramps" Quest once more and after talking to
-    Zlatan afterwards, go and give it to Fatima!
+    Zlatan and getting a certain item, go and give it to Fatima!
   questPrerequirements:
   - {fileID: 11400000, guid: faff3212fcbe28c42af075cf2f2f3794, type: 2}
   questStepPrefabs:

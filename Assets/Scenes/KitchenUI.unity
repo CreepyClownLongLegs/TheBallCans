@@ -254,11 +254,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3779877751471845589, guid: 1e93ce31111ae2e44b767f78f2d030fd, type: 3}
       propertyPath: position.x
-      value: -7.5
+      value: -11
       objectReference: {fileID: 0}
     - target: {fileID: 3779877751471845589, guid: 1e93ce31111ae2e44b767f78f2d030fd, type: 3}
       propertyPath: position.y
-      value: 7
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 3779877751471845589, guid: 1e93ce31111ae2e44b767f78f2d030fd, type: 3}
       propertyPath: nextSceneToLoad

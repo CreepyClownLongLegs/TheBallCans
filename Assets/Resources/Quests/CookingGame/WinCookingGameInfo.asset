@@ -14,7 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <id>k__BackingField: WinCookingGameInfo
   displayName: Help the sweet Romanian Chef!
-  description: Quest
+  description: 'After completing and collecting "Configure Wifi Quest", go to the
+    kitchen and see whether zour helping hand is required anywhere! Don''t forget
+    to talk with the guests! '
   questPrerequirements:
   - {fileID: 11400000, guid: ac6c3b71959d645498440972ac44df95, type: 2}
   questStepPrefabs:

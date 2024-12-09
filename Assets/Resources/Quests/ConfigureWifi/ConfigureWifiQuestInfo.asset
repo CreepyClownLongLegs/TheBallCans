@@ -14,9 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <id>k__BackingField: ConfigureWifiQuestInfo
   displayName: Ask your Neighbour for the Password
-  description: Quest
+  description: Go to your neighboars room and ask the for the Wifi password, after
+    they give you the password, come back to the room and type it into the computer
   questPrerequirements: []
   questStepPrefabs:
   - {fileID: 2233480869180428782, guid: a288ab22c275236489e4cbb5ca179624, type: 3}
-  coins: 3
+  coins: 10
   playerExpirience: 25

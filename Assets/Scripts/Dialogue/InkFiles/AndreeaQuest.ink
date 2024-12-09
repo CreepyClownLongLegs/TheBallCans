@@ -8,11 +8,11 @@ EXTERNAL startEpisodeOneCookingGame()
 EXTERNAL UnlockSerbiaRoom()
 EXTERNAL takeMixer()
 
-{EPISODE_TWO == "true" : { HAS_MIXER == "true" : {EPISODE_TWO_FINISHED_COOKING_GAME == "true" : -> already_played_episode_two | -> episode_two_play_game}| -> not_ready_to_play} |  {ACCEPTED_QUEST_YET == "false" : -> not_ready_to_play | { EPISODE_ONE_FINISHED_COOKING_GAME == "false": -> main | -> already_played }}}
+{EPISODE_TWO == "true" : { HAS_MIXER == "true" : {EPISODE_TWO_FINISHED_COOKING_GAME == "true" : -> already_played_episode_two | -> episode_two_play_game}| -> no_mixer} |  {ACCEPTED_QUEST_YET == "false" : -> not_ready_to_play | { EPISODE_ONE_FINISHED_COOKING_GAME == "false": -> main | -> already_played }}}
 
 === not_ready_to_play===
-Hi new guy, I"m super stressed now, can you come back later :(  #portrait:Andreea_Happy #speaker:Andreea #layout:right
-Hi new guy, I"m super stressed now, can you come back later :(  #portrait:Andreea_Happy #speaker:Andreea #layout:right
+Hi new guy, I'm super stressed now, can you come back later :(  #portrait:Andreea_Happy #speaker:Andreea #layout:right
+Hi new guy, I'm super stressed now, can you come back later :(  #portrait:Andreea_Happy #speaker:Andreea #layout:right
 I just have way too much to do :(  #portrait:Andreea_Happy #speaker:Andreea #layout:right
     +[Can I help?]
     Ah you know, usually I wouldn't take help from somebody new :/  #portrait:Andreea_Happy #speaker:Andreea #layout:right
@@ -35,12 +35,10 @@ Where do I get a mixer?!? :(  #portrait:Andreea_Happy #speaker:Andreea #layout:r
     -> END
     
 === episode_two_play_game===
-Please help with cooking, I'm dying :(  #portrait:Andreea_Happy #speaker:Andreea #layout:right
-Please help with cooking, I'm dying :(  #portrait:Andreea_Happyy #speaker:Andreea #layout:right
-
-Ok awesaume Sauce!! U got the mixer!
+Ok awesomeOk awesomesauce!! U got the mixer! #portrait:Andreea_Happy #speaker:Andreea #layout:right
+Ok awesomesauce!! U got the mixer! #portrait:Andreea_Happy #speaker:Andreea #layout:right
 ~takeMixer()
-Let the cooking begin!!
+Let the cooking begin!! #portrait:Andreea_Happy #speaker:Andreea #layout:right
 
 ~startEpisodeOneCookingGame()
     ->END
@@ -75,7 +73,7 @@ haha :) #portrait:Antheneum #speaker:Andreea #layout:item
 Thank God that's over... :) #portrait:Antheneum #speaker:Andreea #layout:item
 We took this picture there on our trip :) #portrait:UsInRomania #speaker:Andreea #layout:item
 Cool right :D #portrait:UsInRomania #speaker:Andreea #layout:item
-But not as cool as the Sarmale we had afterwards, mad we could barely move for an hour after eating it O-O portrait:UsInRomania #speaker:Andreea #layout:item
+But not as cool as the Sarmale we had afterwards, mad we could barely move for an hour after eating it O-O #portrait:UsInRomania #speaker:Andreea #layout:item
 We were in a trans! :D #portrait:Andreea_Happy #speaker:Andreea #layout:right
 And afterwards there was this light show in the center of Bucharest we saw on our way home :D #portrait:SpotLightFestival #speaker:Andreea #layout:item
 And everybody around us was dancing, it was also the first time for me to see that :O #portrait:SpotLightFestival #speaker:Andreea #layout:item
@@ -112,8 +110,76 @@ We thought they might've put something in the Sarmale and now we were seeing thi
     -> END
 
 ===already_played_episode_two===
-You were a great help traveller! :)#portrait:Andreea_Happy #speaker:Andreea #layout:right
-You were a great help traveller! :)#portrait:Andreea_Happy #speaker:Andreea #layout:right
-Collect Your pay at the tezga :D
+And you just keep getting better and better don't you :)#portrait:Andreea_Happy #speaker:Andreea #layout:right
+And you just keep getting better and better don't you :)#portrait:Andreea_Happy #speaker:Andreea #layout:right
+Maybe you should consider opening your own romanian specialties restaurant <3 #portrait:Andreea_Happy #speaker:Andreea #layout:right
+Or just come working for me hehe ;) #portrait:Andreea_Happy #speaker:Andreea #layout:right
+Eating Papanasi always reminds of the Michael Jackson monument in Bucharest. #portrait:Andreea_Happy #speaker:Andreea #layout:right
+    +[the Michael Jackson what in Bucharest?]
+    ->michale_jakson_monument
+    ->DONE
+    +[Oh yeah, I was there too?]
+    Really? That's so cool :D #portrait:Andreea_Happy #speaker:Andreea #layout:right
+    I remember it being pretty close to the parliament Castle :) #portrait:Andreea_Happy #speaker:Andreea #layout:right
+    ->parliament_castle
 
     -> END
+
+===michale_jakson_monument===
+Yeah haha, we evicted a Michael Jackson memorial at Herastrau Park! ;) #portrait:MichaelJackson #speaker:Andreea #layout:item
+That's our biggest park in Bucharest. :D #portrait:MichaelJackson #speaker:Andreea #layout:item
+I didn't go there much in highschool, but friends of me have. :') #portrait:MichaelJackson #speaker:Andreea #layout:item
+They say it's pretty awesome. :) #portrait:MichaelJackson #speaker:Andreea #layout:itemt
+    ->parliament_castle
+->END
+    
+===parliament_castle===
+The Parliament Castle also looks insane. >:) #portrait:Parlament #speaker:Andreea #layout:item
+Even tho we call it a castle its been made pretty recently, about a hundred year ago! o-O #portrait:Parlament #speaker:Andreea #layout:item
+With about 700 architests. O-O #portrait:Parlament #speaker:Andreea #layout:item
+But the name Castle is actually pretty fiting cus its made with like tons of crystals and gold and precious materials... >:D #portrait:Castle #speaker:Andreea #layout:item
+All sourced from Romania btw. ;) #portrait:Castle #speaker:Andreea #layout:item
+Haha :D #portrait:Castle #speaker:Andreea #layout:item
+yeah :D #portrait:Castle #speaker:Andreea #layout:item
+So many people died during the contruction of that place :') #portrait:Castle #speaker:Andreea #layout:item
++[That's insane]
+Yeah... :D #portrait:Andreea_Happy #speaker:Andreea #layout:right
+yeah...... :') #portrait:Andreea_Happy #speaker:Andreea #layout:right
+->why_are_you_here
+->DONE
++[Meh I've heard worse]
+Oh wow, ok mister smarty pants :/ #portrait:Andreea_Happy #speaker:Andreea #layout:right
+No more castle stories for you then :/ #portrait:Andreea_Happy #speaker:Andreea #layout:right
+Just kidding ;) #portrait:Andreea_Happy #speaker:Andreea #layout:right
+I'll tell you as many castle stories as you want :* #portrait:Andreea_Happy #speaker:Andreea #layout:right
+->why_are_you_here
+->END
+
+===why_are_you_here===
+You curious about anything else? :) #portrait:Andreea_Happy #speaker:Andreea #layout:right
++[Why are you here?]
+In this kitchen or in Austria in general? ;) #portrait:Andreea_Happy #speaker:Andreea #layout:right
+haha just kidding XD #portrait:Andreea_Happy #speaker:Andreea #layout:right
+Well, as much as I love romanian culture <3 #portrait:Andreea_Happy #speaker:Andreea #layout:right
+sadly, our country and it's government isn't in the best state currently :')  #portrait:Andreea_Happy #speaker:Andreea #layout:right
+I am also not sure if it's ever been in it's best state actually haha XD #portrait:Andreea_Happy #speaker:Andreea #layout:right
+But the wages keep being stagnant and well , the prices have just been rising since we joined the EU :') #portrait:Andreea_Happy #speaker:Andreea #layout:right
+And I have a family, like anybody else :/ #portrait:Andreea_Happy #speaker:Andreea #layout:right
+And I don't want to risk my family being in a situation where we can't efford groceries :/ #portrait:Andreea_Happy #speaker:Andreea #layout:right
+So, I hope this answers your question :) #portrait:Andreea_Happy #speaker:Andreea #layout:right
+Anyway, thank you for your help again ! :* #portrait:Andreea_Happy #speaker:Andreea #layout:right
+For some reason I just feel like you alreadz work here XD #portrait:Andreea_Happy #speaker:Andreea #layout:right
+Collect Your pay at the tezga :D #portrait:Andreea_Happy #speaker:Andreea #layout:right
+->DONE
++[Does Romania have electricity?]
+WHY DO PEOPLE HERE KEEP ASKING ME THAAATTT??? o-O #portrait:Andreea_Happy #speaker:Andreea #layout:right
+Sorry for shouting :)  #portrait:Andreea_Happy #speaker:Andreea #layout:right
+I just have no clue where you guys get that idea from :/ #portrait:Andreea_Happy #speaker:Andreea #layout:right
+Haha yes silly :* #portrait:Andreea_Happy #speaker:Andreea #layout:right
+We have electricity XD #portrait:Andreea_Happy #speaker:Andreea #layout:right
+And even Wifi!! :O #portrait:Andreea_Happy #speaker:Andreea #layout:right
+May I add, the fastest one in Europe! :) #portrait:Andreea_Happy #speaker:Andreea #layout:right
+Anyway, thank you for your help again ! :* #portrait:Andreea_Happy #speaker:Andreea #layout:right
+For some reason I just feel like you alreadz work here XD #portrait:Andreea_Happy #speaker:Andreea #layout:right
+Collect Your pay at the tezga :D #portrait:Andreea_Happy #speaker:Andreea #layout:right
+->END

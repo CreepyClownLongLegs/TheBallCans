@@ -29,7 +29,7 @@ public class NewsLogScrollingList : MonoBehaviour
 
     void Start(){
         videoCanvas.SetActive(false);
-        CreateNewsWithVideo("NEws", "Watch the video dumbass", "justdoit.com", VideoFiles.instance.kayakingVideo, FMODEvents.instance.kayakingVideo);
+        //CreateNewsWithVideo("NEws", "Watch the video dumbass", "justdoit.com", VideoFiles.instance.kayakingVideo, FMODEvents.instance.kayakingVideo);
     }
     public void CreateNewsWithoutVideo(string title, string description, string source){
         GameObject news = Instantiate(newsPrefab, contentParent.transform);

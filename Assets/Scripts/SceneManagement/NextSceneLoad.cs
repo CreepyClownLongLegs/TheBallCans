@@ -32,12 +32,12 @@ private void OnTriggerEnter2D(Collider2D collider2D){
         }
         if(ID == "Romania" && !EpisodeManager.instance.FirstTimeInRomaniaRoom){
             EpisodeManager.instance.FirstTimeInRomaniaRoom = true;
-            NewsLogScrollingList.instance.CreateNewsWithoutVideo("Romanins stealing again", "Comes as new surprise to anyone", "trsumebro.com");
+            NewsLogScrollingList.instance.CreateNewsWithoutVideo("Romanian gang caught after 27 burglaries", "Niederösterreich 09.10.2019 14:03", "Kronen Zeitung");
             NotificationManager.Instance.showNotification("You've got news ! :) " , NotificationPanelColor.INFO);
         }
         if(ID == "Bosnia" && !EpisodeManager.instance.FirstTimeInBosniaRoom){
             EpisodeManager.instance.FirstTimeInBosniaRoom = true;
-            NewsLogScrollingList.instance.CreateNewsWithoutVideo("Bosnians in need again", "They done need our help again", "trsumebro.com");
+            NewsLogScrollingList.instance.CreateNewsWithoutVideo("Fight against Srebrenica denial continues", "24. Mai 2024, 17:10", "Der Standard");
             NotificationManager.Instance.showNotification("You've got news ! :) " , NotificationPanelColor.INFO);
         }
             _ = SceneLoader.Instance.LoadSceneGroup(nextSceneToLoad);
