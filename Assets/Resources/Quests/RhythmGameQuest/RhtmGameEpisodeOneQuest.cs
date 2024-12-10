@@ -10,6 +10,7 @@ public class RhtmGameEpisodeOneQuest : QuestStep
     private void Start(){
         UpdateState();
         GameEventsManager.instance.playerEvents.rhytmGamePlayed += rhytmGamePlayed;
+        onFinishQuest += rhythmGameOver;
     }  
     protected override void SetQuestStepState(string state)
     {
@@ -20,11 +21,16 @@ public class RhtmGameEpisodeOneQuest : QuestStep
     private void rhytmGamePlayed(){
         gamePlayed = true;
         GameEventsManager.instance.playerEvents.rhytmGamePlayed -= rhytmGamePlayed;
+        FinishQuestStep();
+    }
+
+    private void rhythmGameOver(){
         NotificationManager.Instance.showNotification("Time to go hinks mimimimi!", NotificationPanelColor.SUCCSES);
+        onFinishQuest -= rhythmGameOver;
         EpisodeManager.instance.ChangeDoorValue("Romania", false);
         EpisodeManager.instance.ChangeDoorValue("Bosnia", false);
         EpisodeManager.instance.ChangeDoorValue("Serbia", false);
-        FinishQuestStep();
+        EpisodeManager.instance.GoToSleepPanel.SetActive(true);
     }
     private void UpdateState()
     {

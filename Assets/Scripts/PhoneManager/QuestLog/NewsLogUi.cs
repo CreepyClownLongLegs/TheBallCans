@@ -16,6 +16,7 @@ public class NewsLogUi : MonoBehaviour
 
     public void showNewsLog(){
         this.contentParent.SetActive(true);
+        EpisodeManager.instance.YouveGotNewsPanel.SetActive(false);
         contentParentQuestLog.HideUI();
     }
 

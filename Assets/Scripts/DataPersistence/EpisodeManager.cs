@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class EpisodeManager : MonoBehaviour, IDataPersistence
 {
+    [SerializeField] public GameObject GoToSleepPanel; 
+    [SerializeField] public GameObject YouveGotNewsPanel;
     SerializableDictionary<string,bool> doors;
     public SerializableDictionary<string,bool> npcs;
     public bool firstEpisode = true;
@@ -25,6 +27,8 @@ public class EpisodeManager : MonoBehaviour, IDataPersistence
 
     public void LoadGame(GameData data)
     {
+        GoToSleepPanel.SetActive(false);
+        YouveGotNewsPanel.SetActive(false);
         doors = data.doors;
         npcs = data.npcs;
         firstEpisode = data.firstEpisode;

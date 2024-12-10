@@ -136,6 +136,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: QuestIcon
       objectReference: {fileID: 0}
+    - target: {fileID: 7200127870018367477, guid: 81330c466fe5abe4eb6a510624619a3e, type: 3}
+      propertyPath: m_Intensity
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7200127870018367477, guid: 81330c466fe5abe4eb6a510624619a3e, type: 3}
+      propertyPath: m_FalloffIntensity
+      value: 0.281
+      objectReference: {fileID: 0}
+    - target: {fileID: 7200127870018367477, guid: 81330c466fe5abe4eb6a510624619a3e, type: 3}
+      propertyPath: m_PointLightOuterRadius
+      value: 5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

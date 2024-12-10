@@ -21,6 +21,7 @@ Thank you so much for your help again today :) #portrait:Andreea_Happy #speaker:
 I decided to make the Papanasi tommorow tho, so please drop by first thing in the morning :) #portrait:Andreea_Happy #speaker:Andreea #layout:right 
 My grandma has also been feeling much better now  :D #portrait:Andreea_Happy #speaker:Andreea #layout:right
 But I think I might still require your assistance tommorow ;) #portrait:Andreea_Happy #speaker:Andreea #layout:right
+Btw the song that's playing rn is called Stereo Love, it's by  a romanian artist, if you want to check it out later. ;)
 ->END
     
     

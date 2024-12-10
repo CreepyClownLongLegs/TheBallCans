@@ -35,12 +35,14 @@ public class NewsLogScrollingList : MonoBehaviour
         GameObject news = Instantiate(newsPrefab, contentParent.transform);
         news.GetComponent<NewsObject>().CreateNewsWithoutVideo(title, description, source);
         news.transform.SetAsFirstSibling();
+        EpisodeManager.instance.YouveGotNewsPanel.SetActive(true);
         UpdateScrolling(news.GetComponent<RectTransform>());
     }
     public void CreateNewsWithVideo(string title, string description, string source, VideoClip video, EventReference audio){
         GameObject news = Instantiate(newsPrefab, contentParent.transform);
         news.GetComponent<NewsObject>().CreateNewsWithVideo(title, description, source, video, audio);
         news.transform.SetAsFirstSibling();
+        EpisodeManager.instance.YouveGotNewsPanel.SetActive(true);
         UpdateScrolling(news.GetComponent<RectTransform>());
     }
     private void UpdateScrolling(RectTransform buttonRectTransform)

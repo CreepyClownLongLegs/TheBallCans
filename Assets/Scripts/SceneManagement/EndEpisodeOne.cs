@@ -37,6 +37,7 @@ public class EndEpisodeOne : MonoBehaviour
             EpisodeManager.instance.saveNPCShowVariable("ZlatanNPCLobby",true);
             GameObject.FindGameObjectWithTag("Player").GetComponent<CharacterController2D>().elevatorPanelIsOpen = true;
             boxCollider2D = GetComponent<BoxCollider2D>();
+            EpisodeManager.instance.GoToSleepPanel.SetActive(false);
             boxCollider2D.enabled = false;
             //endOfEpisodeOnePanel.GetComponent<EndOfEPisodeOnePanel>().FadeInOut();
         }
