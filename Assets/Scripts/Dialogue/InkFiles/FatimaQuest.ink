@@ -48,6 +48,13 @@ ITSSS A LAS33RRR GUUNNN ^_^ #portrait:Fatima_Happy #speaker:Fatima #layout:right
     Harml3ss
     Almosy compl3t3ly <3 <3
     just don't point it at your 3y3s pls <3
+But since you ar3 h3r3...  #portrait:Fatima_Happy #speaker:Fatima #layout:right
+H3lp m3 sort th3 PCITUREEESS FROM MY KAYAKING TRIP
+I found the actual on3s this tim3
+I sw3ar!!111!
+~startEpisodeOneKayakingGame()
+h3h3  #portrait:Fatima_Happy #speaker:Fatima #layout:right
+    ->END
 + [Wtf? Why would I need this?]
     It's basically an acc3ssory l3l
     And as part of my r3s3arch, I mad3 this 
@@ -125,6 +132,10 @@ L3L  #portrait:Skakaci #speaker:Fatima #layout:item
     Sh3s got like two kids on top of it all, crazy buzzin3ss imo, idk how sh3 do3s it #portrait:Fatima_Happy #speaker:Fatima #layout:right
     So idk dud3, I don't think its a r3ligious thing, It mor3 of a #portrait:Fatima_Happy #speaker:Fatima #layout:right 
     "Whats custom3ry in that plac3" thing I think #portrait:Fatima_Happy #speaker:Fatima #layout:right
+Btw giv3 me your phon3, I'll subscrib3 you to this bosnian n3ws pag3, so you can g3t actual cool stuff thats happ3ning down th3r3!
+w333ll, c ya th3n  #portrait:Fatima_Happy #speaker:Fatima #layout:right
+k33p th3 toy :)  #portrait:Fatima_Happy #speaker:Fatima #layout:right
+-> DONE
     +[I thought Bosnia was still at war]
     Lmao no, I h3ar that all th3 tim3 #portrait:Fatima_Happy #speaker:Fatima #layout:right
     Or that th3r3 is nothing th3r3 but grav3l #portrait:Fatima_Happy #speaker:Fatima #layout:right
