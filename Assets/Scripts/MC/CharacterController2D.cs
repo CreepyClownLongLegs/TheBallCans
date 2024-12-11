@@ -73,22 +73,48 @@ public class CharacterController2D : MonoBehaviour, IDataPersistence
 
     void goingDownAnimation(){
         current_anim = "walkingupmc";
+        if(SceneLoader.Instance.loadedScenes.Contains("CookingMinigameUI")){
+            current_anim = "cookingDown";
+        }
+        kayakingAnimation();
     }
 
     void goingRightAnimation(){
         current_anim = "walkingrightmc";
+        if(SceneLoader.Instance.loadedScenes.Contains("CookingMinigameUI")){
+            current_anim = "cookingRight";
+        }
+        kayakingAnimation();
     }
 
     void goingLeftAnimation(){
         current_anim = "walkingleftmc";
+        if(SceneLoader.Instance.loadedScenes.Contains("CookingMinigameUI")){
+            current_anim = "cookingLeft";
+        }
+        kayakingAnimation();
     }
 
     void idleAnimation(){
         current_anim = "idlemc";
+        if(SceneLoader.Instance.loadedScenes.Contains("CookingMinigameUI")){
+            current_anim = "cookingIdle";
+        }
+        kayakingAnimation();
     }
 
     void goingUpAnimation(){
         current_anim = "walkingmc";
+        if(SceneLoader.Instance.loadedScenes.Contains("CookingMinigameUI")){
+            current_anim = "cookingUp";
+        }
+        kayakingAnimation();
+    }
+
+    void kayakingAnimation(){
+        if(SceneLoader.Instance.loadedScenes.Contains("KayakingMiniGameUI")){
+            current_anim = "kayaking";
+        }
     }
 
     public void LoadGame(GameData data)

@@ -55,16 +55,16 @@ Bruh.
 <b>Quite morbid to build that tower out of your enemies, if you ask me...</b>
 <b>It was since been dismantled, but later restored with a chapel surrounding it.</b>
 <b>...aaanyways, thanks for helping my old man, cya around, kiddo!</b>
-<b>Hope you can sleep tonight with that tower imbedded into your brain haha...</b>
+<b>Hope you can sleep tonight with that tower imbedded into your brain haha...</b> #speaker:Zlatan #portrait:Zlatan_happy #layout:left
 ->END
 
 === main_two ===
-Bruh. #speaker:Zlatan
+Bruh. #speaker:Zlatan #portrait:Zlatan_happy #layout:left
 <b>This one is going to be harder than the last one. My old man was very impressed by your last performance.</b> #speaker:Zlatan
 <b>So I think you set his standards pretty high.</b> #speaker:Zlatan
 <b>Can you work your magic once more?</b> #speaker:Zlatan
 ~startRhytmGame()
-<b>You're a life saver.</b> #speaker:Zlatan
+<b>You're a life saver.</b> #speaker:Zlatan #portrait:Zlatan_happy #layout:left
 ->END
     
 === game_two_played ===

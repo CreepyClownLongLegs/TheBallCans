@@ -87,7 +87,7 @@ public class RhythmGameManager : MonoBehaviour
     }
 
     public void addExpirience(){
-        expirience = (int)(score/10);
+        expirience = (int)(score/55);
         GameEventsManager.instance.playerEvents.ExperienceGained(expirience);
     }
 

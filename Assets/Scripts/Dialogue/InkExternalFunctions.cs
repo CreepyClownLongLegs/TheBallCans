@@ -63,7 +63,7 @@ public class InkExternalFunctions
         EpisodeManager.instance.saveNPCShowVariable("RomaniaNPCKitchen", false);
         EpisodeManager.instance.saveNPCShowVariable("ZoranNPCKitchen", false);
         EpisodeManager.instance.saveNPCShowVariable("RomaniaNPCRoom", true);
-        NotificationManager.Instance.showNotification("You've unlocked Zorans Room!", NotificationPanelColor.SUCCSES);
+        NotificationManager.Instance.showNotification("You've unlocked Zlatans Room!", NotificationPanelColor.SUCCSES);
     }
 
     //its actually now used for nboth episodes haha...
