@@ -183,6 +183,10 @@ PrefabInstance:
       propertyPath: inkJSON
       value: 
       objectReference: {fileID: 4900000, guid: fbd1e936e82eade4eae84f23c171366b, type: 3}
+    - target: {fileID: 2233427347802757375, guid: 4edb65a5af8515e408166dd70ea934cc, type: 3}
+      propertyPath: contactName
+      value: Grumpy (Zlatans Grandpa)
+      objectReference: {fileID: 0}
     - target: {fileID: 2886564764390913598, guid: 4edb65a5af8515e408166dd70ea934cc, type: 3}
       propertyPath: m_SortingOrder
       value: 2
@@ -16964,6 +16968,10 @@ PrefabInstance:
       propertyPath: inkJSON
       value: 
       objectReference: {fileID: 4900000, guid: 02ac9943b6d4c0e41b7a42bb62af1196, type: 3}
+    - target: {fileID: 2233427347802757375, guid: 4edb65a5af8515e408166dd70ea934cc, type: 3}
+      propertyPath: contactName
+      value: Goran (Zlatans brother)
+      objectReference: {fileID: 0}
     - target: {fileID: 4233935009285510954, guid: 4edb65a5af8515e408166dd70ea934cc, type: 3}
       propertyPath: m_Sprite
       value: 
@@ -17240,6 +17248,10 @@ PrefabInstance:
       propertyPath: inkJSON
       value: 
       objectReference: {fileID: 4900000, guid: 962344ce0d4a02045b3f24e361a47c4a, type: 3}
+    - target: {fileID: 2233427347802757375, guid: 4edb65a5af8515e408166dd70ea934cc, type: 3}
+      propertyPath: contactName
+      value: Zlatan (Serbia)
+      objectReference: {fileID: 0}
     - target: {fileID: 4233935009285510954, guid: 4edb65a5af8515e408166dd70ea934cc, type: 3}
       propertyPath: m_Sprite
       value: 

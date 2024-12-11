@@ -26005,6 +26005,10 @@ PrefabInstance:
       propertyPath: inkJSON
       value: 
       objectReference: {fileID: 4900000, guid: 7571562e05190654c9d0650e0155a8e8, type: 3}
+    - target: {fileID: 2233427347802757375, guid: 4edb65a5af8515e408166dd70ea934cc, type: 3}
+      propertyPath: contactName
+      value: Josip (Crotia)
+      objectReference: {fileID: 0}
     - target: {fileID: 2886564764390913598, guid: 4edb65a5af8515e408166dd70ea934cc, type: 3}
       propertyPath: m_SortingOrder
       value: 1
@@ -26098,6 +26102,10 @@ PrefabInstance:
       propertyPath: inkJSON
       value: 
       objectReference: {fileID: 4900000, guid: 6638c08ca8682e8499ead0f3f33938f3, type: 3}
+    - target: {fileID: 2233427347802757375, guid: 4edb65a5af8515e408166dd70ea934cc, type: 3}
+      propertyPath: contactName
+      value: Marija (Slovenia)
+      objectReference: {fileID: 0}
     - target: {fileID: 4233935009285510954, guid: 4edb65a5af8515e408166dd70ea934cc, type: 3}
       propertyPath: m_Sprite
       value: 
@@ -26171,6 +26179,10 @@ PrefabInstance:
       propertyPath: inkJSON
       value: 
       objectReference: {fileID: 4900000, guid: 791397274c9756241abeceaaa7872fe0, type: 3}
+    - target: {fileID: 2233427347802757375, guid: 4edb65a5af8515e408166dd70ea934cc, type: 3}
+      propertyPath: contactName
+      value: Zlatan (Serbia)
+      objectReference: {fileID: 0}
     - target: {fileID: 4233935009285510954, guid: 4edb65a5af8515e408166dd70ea934cc, type: 3}
       propertyPath: m_Sprite
       value: 
