@@ -277,6 +277,7 @@ MonoBehaviour:
   spotLightVideo: {fileID: 32900000, guid: aca894fb167265743882796eceffd1bd, type: 3}
   suadaVideo: {fileID: 32900000, guid: ae47da635edc0ec49b7d1686bfd8afc6, type: 3}
   miPlesemoVideo: {fileID: 32900000, guid: ad9d0017c16892043971bdf9ca3898b6, type: 3}
+  pljeskavicaVideo: {fileID: 32900000, guid: 7873a28c870353941bf131c2e1f8ff08, type: 3}
 --- !u!1 &324139823
 GameObject:
   m_ObjectHideFlags: 0
@@ -1520,7 +1521,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4177523355002960858, guid: 53809d304e5c67a429c05a15f2c8c113, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 299.99997
+      value: -0.000030517578
       objectReference: {fileID: 0}
     - target: {fileID: 4549267875344800276, guid: 53809d304e5c67a429c05a15f2c8c113, type: 3}
       propertyPath: m_SizeDelta.x
@@ -3744,6 +3745,10 @@ PrefabInstance:
       value: -347838949
       objectReference: {fileID: 0}
     - target: {fileID: 6028204992699187070, guid: b6d3de740a11c4d47b52aa67379b37a5, type: 3}
+      propertyPath: <pljeskavicaVideo>k__BackingField.Path
+      value: event:/pljeskavicaVideo
+      objectReference: {fileID: 0}
+    - target: {fileID: 6028204992699187070, guid: b6d3de740a11c4d47b52aa67379b37a5, type: 3}
       propertyPath: <serbiaTheme>k__BackingField.Guid.Data1
       value: 1444482223
       objectReference: {fileID: 0}
@@ -3906,6 +3911,22 @@ PrefabInstance:
     - target: {fileID: 6028204992699187070, guid: b6d3de740a11c4d47b52aa67379b37a5, type: 3}
       propertyPath: <restaurantTheme>k__BackingField.Guid.Data4
       value: -347838949
+      objectReference: {fileID: 0}
+    - target: {fileID: 6028204992699187070, guid: b6d3de740a11c4d47b52aa67379b37a5, type: 3}
+      propertyPath: <pljeskavicaVideo>k__BackingField.Guid.Data1
+      value: 954611071
+      objectReference: {fileID: 0}
+    - target: {fileID: 6028204992699187070, guid: b6d3de740a11c4d47b52aa67379b37a5, type: 3}
+      propertyPath: <pljeskavicaVideo>k__BackingField.Guid.Data2
+      value: 1203967672
+      objectReference: {fileID: 0}
+    - target: {fileID: 6028204992699187070, guid: b6d3de740a11c4d47b52aa67379b37a5, type: 3}
+      propertyPath: <pljeskavicaVideo>k__BackingField.Guid.Data3
+      value: -2101040460
+      objectReference: {fileID: 0}
+    - target: {fileID: 6028204992699187070, guid: b6d3de740a11c4d47b52aa67379b37a5, type: 3}
+      propertyPath: <pljeskavicaVideo>k__BackingField.Guid.Data4
+      value: -1185808170
       objectReference: {fileID: 0}
     - target: {fileID: 6028204992699187070, guid: b6d3de740a11c4d47b52aa67379b37a5, type: 3}
       propertyPath: <kayakingMiniGameTheme>k__BackingField.Guid.Data1

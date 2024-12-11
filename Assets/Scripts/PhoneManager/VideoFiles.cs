@@ -8,6 +8,7 @@ public class VideoFiles : MonoBehaviour
     [SerializeField] public VideoClip spotLightVideo;
     [SerializeField] public VideoClip suadaVideo;
     [SerializeField] public VideoClip miPlesemoVideo;
+    [SerializeField] public VideoClip pljeskavicaVideo;
     public static VideoFiles instance {private set; get;}
     void Awake()
     {

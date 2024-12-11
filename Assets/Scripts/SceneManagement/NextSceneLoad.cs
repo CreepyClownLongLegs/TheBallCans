@@ -24,7 +24,7 @@ private void OnTriggerEnter2D(Collider2D collider2D){
         //TODO: find actual media sources
         if(ID == "Serbia" && !EpisodeManager.instance.FirstTimeInSerbiaRoom){
             EpisodeManager.instance.FirstTimeInSerbiaRoom = true;
-            NewsLogScrollingList.instance.CreateNewsWithoutVideo("Serbians at it again", "3 Austrians killed by a gang of serbians", "trustmebro.com");;
+            NewsLogScrollingList.instance.CreateNewsWithoutVideo("Election irregularities: EU calls for rule of law mission for Serbia", "08.02.2024 17:24", "Der Standard");
         }
         if(ID == "Romania" && !EpisodeManager.instance.FirstTimeInRomaniaRoom){
             EpisodeManager.instance.FirstTimeInRomaniaRoom = true;

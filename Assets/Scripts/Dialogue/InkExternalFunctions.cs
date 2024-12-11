@@ -1,3 +1,4 @@
+using System;
 using Ink.Runtime;
 using Systems.SceneManagement;
 using UnityEngine;
@@ -6,6 +7,7 @@ public class InkExternalFunctions
 {
     bool already_sent_kayaking_video = false;
     bool already_sent_spotlight_video = false;
+    bool already_sent_pljeskavica_video = false;
     public void Bind(Story story)
     {
         story.BindExternalFunction("startEpisodeOneKayakingGame", StartEpisodeOneKayakingGame);
@@ -22,9 +24,11 @@ public class InkExternalFunctions
         story.BindExternalFunction("giveSlingshot", GiveSlingshot);
         story.BindExternalFunction("giveGun", GiveGun);
         story.BindExternalFunction("startRhytmGame", StartRhythmGame);
-        story.BindExternalFunction("kayakingVideo",KayakingNews);
+        story.BindExternalFunction("kayakingVideo", KayakingNews);
         story.BindExternalFunction("spotlightVideo", SpotLightNews);
+        story.BindExternalFunction("pljeskavicaVideo", PljeskavicaNews);
     }
+
 
     public void Unbind(Story story) 
     {
@@ -87,6 +91,16 @@ public class InkExternalFunctions
         NewsLogScrollingList.instance.CreateNewsWithVideo("Bucharest’s Spotlight festival returns to Calea Victoriei", "27 September 2024, Romania", "www.romania-insider.com", VideoFiles.instance.spotLightVideo, FMODEvents.instance.spotLightVideo);
         }
     }
+
+    public void PljeskavicaNews()
+    {
+        if (!already_sent_pljeskavica_video)
+        {
+            NewsLogScrollingList.instance.CreateNewsWithVideo("Leskovac makes world's biggest pljeskavica, again!", "30.08.2024", "www.ktv.rs", VideoFiles.instance.pljeskavicaVideo, FMODEvents.instance.pljeskavicaVideo);
+            already_sent_pljeskavica_video = true;
+        }
+    }
+
 
     public void GiveMixer()
     {

@@ -20,6 +20,7 @@ public class FMODEvents : MonoBehaviour
     [field: SerializeField] public EventReference miPlesemo {get; private set;} 
     [field: SerializeField] public EventReference kayakingVideo {get; private set;} 
     [field: SerializeField] public EventReference spotLightVideo {get; private set;} 
+    [field: SerializeField] public EventReference pljeskavicaVideo {get; private set;}
     [field: SerializeField] public EventReference sleepingSFX {get; private set;} 
 
     public static FMODEvents instance {get; private set;}
