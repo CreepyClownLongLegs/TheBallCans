@@ -76,6 +76,7 @@ public class InkExternalFunctions
     public void KayakingNews(){
         if(!already_sent_kayaking_video){
         NewsLogScrollingList.instance.CreateNewsWithVideo("Tourists from everywhere coming to Neretva Rafting", "03.08.2024, 23:45 BiH", "Vijesti.ba", VideoFiles.instance.kayakingVideo, FMODEvents.instance.kayakingVideo);
+        EpisodeManager.instance.GoToSleepPanel.SetActive(true);
         already_sent_kayaking_video = true;    
         }
     }

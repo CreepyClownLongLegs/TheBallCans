@@ -2,15 +2,13 @@ using System.Collections;
 using TMPro;
 using UnityEngine;
 
-public class EndEpisodeOne : MonoBehaviour
+public class EndOfEpisode2 : MonoBehaviour
 {
     [SerializeField]
     private GameObject endOfEpisodeOnePanel;
     private BoxCollider2D boxCollider2D;
     private TextMeshProUGUI text;
-    string sleepingText = "zzZZzzZZ <br> zzZZZZzz";
-    string EpisodeTwoText = "Begin Of Episode Two: <br> You ain't so bad kid";
-    public float sleepingTimer = 30f;
+    public float sleepingTimer = 0f;
     public float fadeInOutTime = 50f;
     Color black = Color.black;
 
@@ -18,10 +16,6 @@ public class EndEpisodeOne : MonoBehaviour
     void Start()
     {   
         endOfEpisodeOnePanel.SetActive(false);
-        this.boxCollider2D = GetComponent<BoxCollider2D>();
-        if(EpisodeManager.instance.secondEpisode){
-            this.boxCollider2D.enabled = false;
-        }
     }
 
     void OnEnabled(){
@@ -29,13 +23,12 @@ public class EndEpisodeOne : MonoBehaviour
     }
 
     private void OnTriggerEnter2D(Collider2D collider2D){
-        if(collider2D.gameObject.CompareTag("Player") && EpisodeManager.instance.EpisodeOneRhytmGameFinished && !EpisodeManager.instance.secondEpisode){
+        if(collider2D.gameObject.CompareTag("Player") && EpisodeManager.instance.EpisodeTwoRhytmGameFinished && EpisodeManager.instance.secondEpisode){
             endOfEpisodeOnePanel.SetActive(true);
             StartCoroutine(playSleepingSound());
-            EpisodeManager.instance.firstEpisode = false;
-            EpisodeManager.instance.secondEpisode = true;
             EpisodeManager.instance.ChangeDoorValue("Romania", true);
-            EpisodeManager.instance.saveNPCShowVariable("ZlatanNPCLobby",true);
+            EpisodeManager.instance.ChangeDoorValue("Serbia", true);
+            EpisodeManager.instance.ChangeDoorValue("Bosnia", true);
             GameObject.FindGameObjectWithTag("Player").GetComponent<CharacterController2D>().elevatorPanelIsOpen = true;
             boxCollider2D = GetComponent<BoxCollider2D>();
             EpisodeManager.instance.GoToSleepPanel.SetActive(false);
@@ -46,9 +39,7 @@ public class EndEpisodeOne : MonoBehaviour
 
 
     private IEnumerator playSleepingSound(){
-        yield return new WaitForSeconds(6f);
+        yield return new WaitForSeconds(0.8f);
         AudioManager.instance.PlayOneShot(FMODEvents.instance.sleepingSFX, this.transform.position);
     }
-
-
 }

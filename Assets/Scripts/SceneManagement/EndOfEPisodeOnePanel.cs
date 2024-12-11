@@ -8,7 +8,8 @@ public class EndOfEPisodeOnePanel : MonoBehaviour
     private TextMeshProUGUI text;
     string sleepingText = "zzZZzzZZ <br> zzZZZZzz";
     string EpisodeTwoText = "Begin Of Episode Two: <br> You ain't so bad kid";
-    public float sleepingTimer = 3f;
+    string YouveCompletedTheGameText = "CONGRATULATIONS! <br> You've completed the game <br> Ending : 1 of 3";
+    public float sleepingTimer = 2f;
     public float fadeInOutTime = 5f;
     Color black = Color.black;
     public float timer = 0f;
@@ -21,6 +22,12 @@ public class EndOfEPisodeOnePanel : MonoBehaviour
     {
         endOfEpisodeOnePanel = this.gameObject;
         text = GetComponentInChildren<TextMeshProUGUI>();
+        if(EpisodeManager.instance.secondEpisode){
+            this.endOfEpisodeOnePanel.GetComponentInChildren<TextMeshProUGUI>().text = "";
+            EpisodeTwoText = YouveCompletedTheGameText;
+            sleepingTimer = 0f;
+            fadeInOutTime = 6f;
+        }
     }
 
     void FixedUpdate(){
