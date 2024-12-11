@@ -59,12 +59,12 @@ Bruh.
 ->END
 
 === main_two ===
-Bruh.
-<b>This one is going to be harder than the last one. My old man was very impressed by your last performance.</b>
-<b>So I think you set his standards pretty high.</b>
-<b>Can you work your magic once more?</b>
+Bruh. #speaker:Zlatan
+<b>This one is going to be harder than the last one. My old man was very impressed by your last performance.</b> #speaker:Zlatan
+<b>So I think you set his standards pretty high.</b> #speaker:Zlatan
+<b>Can you work your magic once more?</b> #speaker:Zlatan
 ~startRhytmGame()
-<b>You're a life saver.</b>
+<b>You're a life saver.</b> #speaker:Zlatan
 ->END
     
 === game_two_played ===
