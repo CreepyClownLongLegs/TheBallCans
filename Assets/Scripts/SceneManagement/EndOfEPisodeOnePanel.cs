@@ -22,7 +22,7 @@ public class EndOfEPisodeOnePanel : MonoBehaviour
     {
         endOfEpisodeOnePanel = this.gameObject;
         text = GetComponentInChildren<TextMeshProUGUI>();
-        if(EpisodeManager.instance.secondEpisode){
+        if(EpisodeManager.instance.EpisodeTwoRhytmGameFinished){
             this.endOfEpisodeOnePanel.GetComponentInChildren<TextMeshProUGUI>().text = "";
             EpisodeTwoText = YouveCompletedTheGameText;
             sleepingTimer = 0f;
