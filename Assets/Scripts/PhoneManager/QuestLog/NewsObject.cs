@@ -1,10 +1,7 @@
-using System.Collections;
-using System.Collections.Generic;
+
 using FMODUnity;
 using TMPro;
-using UnityEditor.Rendering.LookDev;
 using UnityEngine;
-using UnityEngine.UI;
 using UnityEngine.Video;
 
 public class NewsObject : MonoBehaviour

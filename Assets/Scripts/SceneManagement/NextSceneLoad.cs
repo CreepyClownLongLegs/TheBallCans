@@ -1,7 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
 using Systems.SceneManagement;
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class NextSceneLoad : MonoBehaviour

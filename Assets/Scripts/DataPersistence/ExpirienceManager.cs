@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class ExpirienceManager : PersistentSingleton<ExpirienceManager>,IDataPersistence

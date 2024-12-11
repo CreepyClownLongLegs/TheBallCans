@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class CookingGameSecondGameQuestStep : QuestStep
@@ -42,6 +40,9 @@ public class CookingGameSecondGameQuestStep : QuestStep
             DialogueManager.Instance.CookingQuestAcceptedSecondEpisode = true;
             EpisodeManager.instance.saveNPCShowVariable("RomaniaNPCRoom", false);
             EpisodeManager.instance.saveNPCShowVariable("RomaniaNPCKitchen", true);
+            EpisodeManager.instance.saveNPCShowVariable("SloveniaNPCLobby", false);
+            EpisodeManager.instance.saveNPCShowVariable("SloveniaNPCKitchen", false);
+            EpisodeManager.instance.saveNPCShowVariable("BulgariaNPCKitchen", false);
         }
 
         ChangeState(state, status);

@@ -1,9 +1,7 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using FMODUnity;
 using FMOD.Studio;
-using System.Xml.Serialization;
 using Systems.SceneManagement;
 
 public class AudioManager : MonoBehaviour

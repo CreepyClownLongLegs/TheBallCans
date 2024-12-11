@@ -1,8 +1,4 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using Ink.Runtime;
-using Inventory.Model;
 using Systems.SceneManagement;
 using UnityEngine;
 

@@ -1,6 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
-using Inventory.Model;
 using UnityEngine;
 
 [System.Serializable]
@@ -67,6 +64,7 @@ public class GameData
         //setting initial Data For NPCS
         npcs.Add("RomaniaNPCRoom", false);
         npcs.Add("ZlatanNPCLobby", false);
+        npcs.Add("SloveniaNPCLobby", false);
 
     }
 }

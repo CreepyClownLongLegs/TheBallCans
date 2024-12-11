@@ -1,6 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class WinCookingGame : QuestStep
@@ -21,6 +18,9 @@ public class WinCookingGame : QuestStep
     private void WonCookingGame(){
         winCookingGame = true;
         GameEventsManager.instance.playerEvents.wonCookingGame -= WonCookingGame;
+        EpisodeManager.instance.saveNPCShowVariable("SloveniaNPCKitchen", false);
+        EpisodeManager.instance.saveNPCShowVariable("SloveniaNPCLobby", true);
+        EpisodeManager.instance.saveNPCShowVariable("BulgariaNPCKitchen", false);
         FinishQuestStep();
     }
 
