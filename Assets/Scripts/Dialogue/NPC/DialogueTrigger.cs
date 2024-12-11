@@ -1,12 +1,16 @@
+using System;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class DialogueTrugger : MonoBehaviour
 {
 [Header("Trigger Bounds")]
+private Image ContactIconImage;
 [SerializeField]private GameObject visualCue;
 [SerializeField]private TextAsset inkJSON;
-
+[SerializeField]public GameObject ContactIcon; 
+[SerializeField]public String contactName = "";
 private bool playerInRangeOnce;
 private bool playerCloseEnough;
 private void Awake(){
@@ -14,6 +18,7 @@ private void Awake(){
 }
 
 private void Start(){
+    ContactIconImage = ContactIcon.GetComponent<Image>();
     playerCloseEnough = false;
     playerInRangeOnce = false;
 }
@@ -45,6 +50,8 @@ private void noTalking(){
     if(!DialogueManager.Instance.dialogueIsPlaying && playerCloseEnough) {
         playerInRangeOnce = true;
         DialogueManager.Instance.EnterDialogueMode(inkJSON);
+        //add to contacts
+        ContactsScrollingList.instance.CreateContact(ContactIconImage, contactName);
     }
 }
 

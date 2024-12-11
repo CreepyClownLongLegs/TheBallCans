@@ -9,6 +9,7 @@ public class QuestLogUI : MonoBehaviour
     [Header("Components")]
     [SerializeField] private GameObject contentParent;
     [SerializeField] private NewsLogUi newsLogUi;
+    [SerializeField] private ContactsUI contactsUI;
     [SerializeField] private QuestLogScrollingList scrollingList;
     [SerializeField] private TextMeshProUGUI questDisplayNameText;
     [SerializeField] private TextMeshProUGUI questStatusText;
@@ -40,6 +41,7 @@ public class QuestLogUI : MonoBehaviour
     public void ShowUI()
     {
         contentParent.SetActive(true);
+        contactsUI.HideContactsUI();
         newsLogUi.HideNewsLogUI();
         GameEventsManager.instance.playerEvents.DisablePlayerMovement();
         // note - this needs to happen after the content parent is set active,

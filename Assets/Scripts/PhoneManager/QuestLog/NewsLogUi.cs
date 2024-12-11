@@ -7,6 +7,7 @@ public class NewsLogUi : MonoBehaviour
     //To Show News Panel
     [SerializeField] GameObject contentParent;
     [SerializeField] QuestLogUI contentParentQuestLog;
+    [SerializeField] ContactsUI contentContacts;
     // Start is called before the first frame update
     void Start()
     {
@@ -17,6 +18,7 @@ public class NewsLogUi : MonoBehaviour
         this.contentParent.SetActive(true);
         EpisodeManager.instance.YouveGotNewsPanel.SetActive(false);
         contentParentQuestLog.HideUI();
+        contentContacts.HideContactsUI();
     }
 
     public void HideNewsLogUI(){

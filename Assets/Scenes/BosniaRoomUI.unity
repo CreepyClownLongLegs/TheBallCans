@@ -287,6 +287,10 @@ PrefabInstance:
       propertyPath: inkJSON
       value: 
       objectReference: {fileID: 4900000, guid: d8d6a35aa2b230241b102d1f9cb5ff9c, type: 3}
+    - target: {fileID: 2233427347802757375, guid: 4edb65a5af8515e408166dd70ea934cc, type: 3}
+      propertyPath: contactName
+      value: Jelena (Herzegowina)
+      objectReference: {fileID: 0}
     - target: {fileID: 4233935009285510954, guid: 4edb65a5af8515e408166dd70ea934cc, type: 3}
       propertyPath: m_Sprite
       value: 
@@ -372,6 +376,10 @@ PrefabInstance:
       propertyPath: inkJSON
       value: 
       objectReference: {fileID: 4900000, guid: bfa3ed6cf91af4048b5cb62eb8be7f18, type: 3}
+    - target: {fileID: 2233427347802757375, guid: 4edb65a5af8515e408166dd70ea934cc, type: 3}
+      propertyPath: contactName
+      value: Fatima (Bosnia)
+      objectReference: {fileID: 0}
     - target: {fileID: 2886564764390913598, guid: 4edb65a5af8515e408166dd70ea934cc, type: 3}
       propertyPath: m_Sprite
       value: 
