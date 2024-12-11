@@ -2,6 +2,7 @@ VAR EPISODE_TWO_FINISHED_RHYTHM_GAME = "false"
 VAR EPISODE_ONE_FINISHED_RHYTHM_GAME = "false"
 VAR EPISODE_TWO = "false"
 VAR HAS_SLINGSHOT = "false"
+EXTERNAL pljeskavicaVideo()
 EXTERNAL giveSlingshot()
 EXTERNAL startRhytmGame()
 
@@ -79,6 +80,12 @@ Bruh. #speaker:Zlatan #portrait:Zlatan_happy #layout:left
 <b>Here you can try one of the best pasulj, a typical bean stew with smoked meats like bacon and sausage.</b> #portrait:Pasulj #layout:item #speaker:Zlatan
 <b>And kajmak, a creamy dairy food, usually served on the side, like ketchup.</b>#portrait:Kajmak #layout:item #speaker:Zlatan
 <b>If you're more into drinking, there are a bunch of vineyards scattered across Novi Sad.</b>#portrait:VineyardsNS #layout:item #speaker:Zlatan
+<b>...</b>#speaker:Zlatan #portrait:Zlatan_happy #layout:left
+<b>By the way, let me show you something on your phone...</b>#speaker:Zlatan #portrait:Zlatan_happy #layout:left
+~pljeskavicaVideo()
+<b>Since we are on the topic of foods, theres a video about the world's biggest pljeskavica!</b>#speaker:Zlatan #portrait:Zlatan_happy #layout:left
+<b>Homemade in Leskovac. This year they made it 86,4kg!!! Insane right?</b>#speaker:Zlatan #portrait:Zlatan_happy #layout:left
+<b>...</b>#speaker:Zlatan #portrait:Zlatan_happy #layout:left
 
 <b>Oh yeah right, Bosnia gave me this, could you bring it back to her?</b> #speaker:Zlatan #portrait:Zlatan_happy #layout:left
 ~giveSlingshot()

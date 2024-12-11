@@ -48,6 +48,7 @@ public class InkExternalFunctions
         story.UnbindExternalFunction("startRhytmGame");
         story.UnbindExternalFunction("kayakingVideo");
         story.UnbindExternalFunction("spotlightVideo");
+        story.UnbindExternalFunction("pljeskavicaVideo");
     }
 
     public void StartEpisodeOneKayakingGame(){
