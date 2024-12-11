@@ -4,6 +4,7 @@ VAR ACCEPTED_QUEST_YET = "false"
 VAR EPISODE_TWO = "false"
 VAR HAS_MIXER = "false"
 VAR EPISODE_TWO_FINISHED_COOKING_GAME = "false"
+EXTERNAL spotlightVideo()
 EXTERNAL startEpisodeOneCookingGame()
 EXTERNAL UnlockSerbiaRoom()
 EXTERNAL takeMixer()
@@ -169,6 +170,8 @@ And I don't want to risk my family being in a situation where we can't afford gr
 So, I hope this answers your question :) #portrait:Andreea_Happy #speaker:Andreea #layout:right
 Anyway, thank you for your help again ! :* #portrait:Andreea_Happy #speaker:Andreea #layout:right
 For some reason I just feel like you already work here XD #portrait:Andreea_Happy #speaker:Andreea #layout:right
+Also, remember when i told you about the Spotlight festival ? Check out these news from Romania ! :D 
+~spotlightVideo()
 Collect your pay at the tezga :D #portrait:Andreea_Happy #speaker:Andreea #layout:right
 ->DONE
 +[Does Romania have electricity?]
@@ -180,6 +183,8 @@ We have electricity XD #portrait:Andreea_Happy #speaker:Andreea #layout:right
 And even internet!! :O #portrait:Andreea_Happy #speaker:Andreea #layout:right
 May I add, the fastest one in Europe! :) #portrait:Andreea_Happy #speaker:Andreea #layout:right
 Anyway, thank you for your help again ! :* #portrait:Andreea_Happy #speaker:Andreea #layout:right
+Also, remember when i told you about the Spotlight festival ? Check out these news from Romania ! :D 
+~spotlightVideo()
 For some reason I just feel like you already work here XD #portrait:Andreea_Happy #speaker:Andreea #layout:right
 Collect Your pay at the tezga :D #portrait:Andreea_Happy #speaker:Andreea #layout:right
 ->END

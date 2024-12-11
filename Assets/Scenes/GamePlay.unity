@@ -273,7 +273,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a01c3be4ab239b429c1b44c4079adef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  kayakingVideo: {fileID: 32900000, guid: 622c7130860027142a28b568f83de202, type: 3}
+  kayakingVideo: {fileID: 32900000, guid: 6b296e50810b14947bc11c12e31da5c7, type: 3}
+  spotLightVideo: {fileID: 32900000, guid: aca894fb167265743882796eceffd1bd, type: 3}
   suadaVideo: {fileID: 32900000, guid: ae47da635edc0ec49b7d1686bfd8afc6, type: 3}
   miPlesemoVideo: {fileID: 32900000, guid: ad9d0017c16892043971bdf9ca3898b6, type: 3}
 --- !u!114 &450152773 stripped
@@ -814,7 +815,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4177523355002960858, guid: 53809d304e5c67a429c05a15f2c8c113, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 300
+      value: 299.99997
       objectReference: {fileID: 0}
     - target: {fileID: 4549267875344800276, guid: 53809d304e5c67a429c05a15f2c8c113, type: 3}
       propertyPath: m_SizeDelta.x
@@ -2154,8 +2155,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4278716442
-  m_fontColor: {r: 0.10062885, g: 0.03006207, b: 0.03006207, a: 1}
+    rgba: 4288872446
+  m_fontColor: {r: 0.99720806, g: 1, b: 0.6367924, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -2514,6 +2515,10 @@ PrefabInstance:
       value: event:/kayakingvideo
       objectReference: {fileID: 0}
     - target: {fileID: 6028204992699187070, guid: b6d3de740a11c4d47b52aa67379b37a5, type: 3}
+      propertyPath: <spotLightVideo>k__BackingField.Path
+      value: event:/spotLight
+      objectReference: {fileID: 0}
+    - target: {fileID: 6028204992699187070, guid: b6d3de740a11c4d47b52aa67379b37a5, type: 3}
       propertyPath: <miPlesemo>k__BackingField.Guid.Data1
       value: 211693264
       objectReference: {fileID: 0}
@@ -2676,6 +2681,22 @@ PrefabInstance:
     - target: {fileID: 6028204992699187070, guid: b6d3de740a11c4d47b52aa67379b37a5, type: 3}
       propertyPath: <kayakingVideo>k__BackingField.Guid.Data4
       value: -394153369
+      objectReference: {fileID: 0}
+    - target: {fileID: 6028204992699187070, guid: b6d3de740a11c4d47b52aa67379b37a5, type: 3}
+      propertyPath: <spotLightVideo>k__BackingField.Guid.Data1
+      value: -1659145806
+      objectReference: {fileID: 0}
+    - target: {fileID: 6028204992699187070, guid: b6d3de740a11c4d47b52aa67379b37a5, type: 3}
+      propertyPath: <spotLightVideo>k__BackingField.Guid.Data2
+      value: 1238619266
+      objectReference: {fileID: 0}
+    - target: {fileID: 6028204992699187070, guid: b6d3de740a11c4d47b52aa67379b37a5, type: 3}
+      propertyPath: <spotLightVideo>k__BackingField.Guid.Data3
+      value: -1107867230
+      objectReference: {fileID: 0}
+    - target: {fileID: 6028204992699187070, guid: b6d3de740a11c4d47b52aa67379b37a5, type: 3}
+      propertyPath: <spotLightVideo>k__BackingField.Guid.Data4
+      value: -1829522387
       objectReference: {fileID: 0}
     - target: {fileID: 6028204992699187070, guid: b6d3de740a11c4d47b52aa67379b37a5, type: 3}
       propertyPath: <kayakingMiniGameTheme>k__BackingField.Path

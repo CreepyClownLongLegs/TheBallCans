@@ -7,6 +7,7 @@ VAR HAS_SLINGSHOT = "false"
 EXTERNAL startEpisodeOneKayakingGame()
 EXTERNAL takeSlingshot()
 EXTERNAL giveGun()
+EXTERNAL kayakingVideo()
 
 { EPISODE_TWO == "false" : {EPISODE_ONE_FINISHED_KAYAKING_GAME == "false": -> main | -> already_played} | { EPISODE_TWO_FINISHED_KAYAKING_GAME == "false" : {HAS_SLINGSHOT=="false" : -> pre_slingshot | ->second_main} | ->second_already_played } }
 
@@ -132,7 +133,8 @@ L3L  #portrait:Skakaci #speaker:Fatima #layout:item
     Sh3s got like two kids on top of it all, crazy buzzin3ss imo, idk how sh3 do3s it #portrait:Fatima_Happy #speaker:Fatima #layout:right
     So idk dud3, I don't think its a r3ligious thing, It mor3 of a #portrait:Fatima_Happy #speaker:Fatima #layout:right 
     "Whats custom3ry in that plac3" thing I think #portrait:Fatima_Happy #speaker:Fatima #layout:right
-Btw giv3 me your phon3, I'll subscrib3 you to this bosnian n3ws pag3, so you can g3t actual cool stuff thats happ3ning down th3r3!
+Btw giv3 me your phon3, I'll subscrib3 you to this bosnian n3ws pag3, so you can g3t actual cool stuff thats happ3ning down th3r3! 
+~kayakingVideo()
 w333ll, c ya th3n  #portrait:Fatima_Happy #speaker:Fatima #layout:right
 k33p th3 toy :)  #portrait:Fatima_Happy #speaker:Fatima #layout:right
 -> DONE
@@ -147,6 +149,7 @@ k33p th3 toy :)  #portrait:Fatima_Happy #speaker:Fatima #layout:right
     Sadly... #portrait:Fatima_Happy #speaker:Fatima #layout:right
     So I can't r3ally blam3 you for asking. #portrait:Fatima_Happy #speaker:Fatima #layout:right
 Btw giv3 me your phon3, I'll subscrib3 you to this bosnian n3ws pag3, so you can g3t actual cool stuff thats happ3ning down th3r3!
+~kayakingVideo()
 w333ll, c ya th3n  #portrait:Fatima_Happy #speaker:Fatima #layout:right
 k33p th3 toy :)  #portrait:Fatima_Happy #speaker:Fatima #layout:right
  ->END

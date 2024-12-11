@@ -8,6 +8,8 @@ using UnityEngine;
 
 public class InkExternalFunctions
 {
+    bool already_sent_kayaking_video = false;
+    bool already_sent_spotlight_video = false;
     public void Bind(Story story)
     {
         story.BindExternalFunction("startEpisodeOneKayakingGame", StartEpisodeOneKayakingGame);
@@ -24,6 +26,8 @@ public class InkExternalFunctions
         story.BindExternalFunction("giveSlingshot", GiveSlingshot);
         story.BindExternalFunction("giveGun", GiveGun);
         story.BindExternalFunction("startRhytmGame", StartRhythmGame);
+        story.BindExternalFunction("kayakingVideo",KayakingNews);
+        story.BindExternalFunction("spotlightVideo", SpotLightNews);
     }
 
     public void Unbind(Story story) 
@@ -42,6 +46,8 @@ public class InkExternalFunctions
         story.UnbindExternalFunction("giveSlingshot");
         story.UnbindExternalFunction("giveGun");
         story.UnbindExternalFunction("startRhytmGame");
+        story.UnbindExternalFunction("kayakingVideo");
+        story.UnbindExternalFunction("spotlightVideo");
     }
 
     public void StartEpisodeOneKayakingGame(){
@@ -69,6 +75,20 @@ public class InkExternalFunctions
         Debug.Log("Starting Cooking Game");
         _ = SceneLoader.Instance.LoadSceneGroup(7);
         GameObject.FindGameObjectWithTag("Player").transform.position = new Vector3(14,-8,0);
+    }
+
+    public void KayakingNews(){
+        if(!already_sent_kayaking_video){
+        NewsLogScrollingList.instance.CreateNewsWithVideo("Tourists from everywhere coming to Neretva Rafting", "03.08.2024, 23:45 BiH", "Vijesti.ba", VideoFiles.instance.kayakingVideo, FMODEvents.instance.kayakingVideo);
+        already_sent_kayaking_video = true;    
+        }
+    }
+
+    public void SpotLightNews(){
+        if(!already_sent_spotlight_video){
+        already_sent_spotlight_video = true;
+        NewsLogScrollingList.instance.CreateNewsWithVideo("Bucharest’s Spotlight festival returns to Calea Victoriei", "27 September 2024, Romania", "www.romania-insider.com", VideoFiles.instance.spotLightVideo, FMODEvents.instance.spotLightVideo);
+        }
     }
 
     public void GiveMixer()
