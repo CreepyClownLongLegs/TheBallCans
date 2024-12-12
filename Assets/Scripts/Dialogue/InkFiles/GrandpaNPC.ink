@@ -2,6 +2,6 @@
 
 === main ===
 Huh? Who are you? #speaker: GrandpaNPC #layout: right
-Huh? Who are you? #speaker: GrandpaNPC #layout: right
-Leave me alone! I'm trying to watch my show!
+<i>Huh? Who are you?</i> #speaker: Grandpa #layout: right
+<i>Leave me alone! I'm trying to watch my show!</i>
 -> END
