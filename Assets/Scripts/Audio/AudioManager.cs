@@ -164,6 +164,10 @@ public class AudioManager : MonoBehaviour
                 StopSong(musicEventInstance);
                 InitializeMusic(FMODEvents.instance.kayakingMiniGameTheme);
             }
+            if(scene=="GameEnd"){
+                StopSong(musicEventInstance);
+                InitializeMusic(FMODEvents.instance.suada);
+            }
         }
     }
 

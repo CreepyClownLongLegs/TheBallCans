@@ -6,6 +6,7 @@ public class EpisodeManager : MonoBehaviour, IDataPersistence
     [SerializeField] public GameObject YouveGotNewsPanel;
     SerializableDictionary<string,bool> doors;
     public SerializableDictionary<string,bool> npcs;
+    public SerializableDictionary<string,string> contacts;
     public bool firstEpisode = true;
     public bool secondEpisode = false;
     public bool EpisodeOneKayakingGameFinished = false;
@@ -43,6 +44,7 @@ public class EpisodeManager : MonoBehaviour, IDataPersistence
         FirstTimeInRomaniaRoom = data.FirstTimeInRomaniaRoom;
         FirstTimeInSerbiaRoom = data.FirstTimeInSerbiaRoom;
         gotMixer = data.hasMixer;
+        contacts = data.contacts;
         gotSlingshot = data.gotSlingshot;
         DialogueManager.Instance.EpisodeOneCookingGameFinished = EpisodeOneCookingGameFinished;
         DialogueManager.Instance.EpisodeTwoCookingGameFinished = EpisodeTwoCookingGameFinished;
@@ -71,6 +73,7 @@ public class EpisodeManager : MonoBehaviour, IDataPersistence
         data.EpisodeTwoKayakingGameFinished = EpisodeTwoKayakingGameFinished;
         data.EpisodeTwoRhytmGameFinished = EpisodeTwoRhytmGameFinished;
         data.hasMixer = gotMixer;
+        data.contacts = contacts;
     }
 
     public void saveNPCShowVariable(string ID, bool Value){

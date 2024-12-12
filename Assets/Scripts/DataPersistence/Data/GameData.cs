@@ -27,6 +27,7 @@ public class GameData
     public SerializableDictionary<string, bool> itemsCollected;
     public SerializableDictionary<string, string> questMap;
     public SerializableDictionary<string,bool> npcs;
+    public SerializableDictionary<string,string> contacts;
 
     public GameData()
     {
@@ -55,6 +56,7 @@ public class GameData
         coinsCollected = new SerializableDictionary<string, bool>();
         itemsCollected = new SerializableDictionary<string, bool>();
         questMap = new SerializableDictionary<string, string>();
+        contacts = new SerializableDictionary<string, string>();
 
         //setting initial Data For Doors
         doors.Add("Romania", false);

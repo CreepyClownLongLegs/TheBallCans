@@ -11,4 +11,9 @@ public class ConactObject : MonoBehaviour
         this.contactImage.GetComponent<Image>().sprite = contactIcon.sprite;
         this.name.text = contactName;
     }
+
+    public void CreateContactWithSprite(Sprite sprite, string contactName){
+        this.contactImage.GetComponent<Image>().sprite = sprite;
+        this.name.text = contactName;
+    }
 }

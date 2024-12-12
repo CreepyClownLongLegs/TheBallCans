@@ -13,6 +13,7 @@ TagManager:
   - chairParent
   - Bullet
   - Gun
+  - TheEnd
   layers:
   - Default
   - TransparentFX

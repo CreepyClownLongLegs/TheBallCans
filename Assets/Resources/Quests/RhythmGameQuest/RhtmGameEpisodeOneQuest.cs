@@ -26,7 +26,6 @@ public class RhtmGameEpisodeOneQuest : QuestStep
         onFinishQuest -= rhythmGameOver;
         EpisodeManager.instance.ChangeDoorValue("Romania", false);
         EpisodeManager.instance.ChangeDoorValue("Bosnia", false);
-        EpisodeManager.instance.ChangeDoorValue("Serbia", false);
         EpisodeManager.instance.GoToSleepPanel.SetActive(true);
     }
     private void UpdateState()

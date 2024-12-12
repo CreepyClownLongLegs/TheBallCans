@@ -1,3 +1,4 @@
+using System;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -8,7 +9,7 @@ public class EndOfEPisodeOnePanel : MonoBehaviour
     private TextMeshProUGUI text;
     string sleepingText = "zzZZzzZZ <br> zzZZZZzz";
     string EpisodeTwoText = "Begin Of Episode Two: <br> You ain't so bad kid";
-    string YouveCompletedTheGameText = "CONGRATULATIONS! <br> You've completed the game <br> Ending : 1 of 3";
+    string YouveCompletedTheGameText = "CONGRATULATIONS! <br> You've completed the game <br>";
     public float sleepingTimer = 2f;
     public float fadeInOutTime = 5f;
     Color black = Color.black;
@@ -17,14 +18,25 @@ public class EndOfEPisodeOnePanel : MonoBehaviour
     bool isAddingRichTextTag = false;
     int i = 0;
     int j=0;
+    public static event Action endOfGame;
     // Start is called before the first frame update
     private void Start()
     {
         endOfEpisodeOnePanel = this.gameObject;
         text = GetComponentInChildren<TextMeshProUGUI>();
         if(EpisodeManager.instance.EpisodeTwoRhytmGameFinished){
+            //end of game
             this.endOfEpisodeOnePanel.GetComponentInChildren<TextMeshProUGUI>().text = "";
             EpisodeTwoText = YouveCompletedTheGameText;
+            //checking for ending type
+            if(DataPersistenceManager.instance.GetExpirience() < 100){
+                EpisodeTwoText += "Ending 1 of 3 : 'Kindred Spirits'";
+            }else if ((100 <= DataPersistenceManager.instance.GetExpirience()) 
+            &&  DataPersistenceManager.instance.GetExpirience() < 180){
+                EpisodeTwoText += "Ending 2 of 3 : 'Neighboars forever'";
+            }else{
+                EpisodeTwoText += "Ending 3 of 3 : 'We're glad you moved here'";               
+            }
             sleepingTimer = 0f;
             fadeInOutTime = 6f;
         }

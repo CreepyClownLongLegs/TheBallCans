@@ -27,6 +27,7 @@ public class InkExternalFunctions
         story.BindExternalFunction("kayakingVideo", KayakingNews);
         story.BindExternalFunction("spotlightVideo", SpotLightNews);
         story.BindExternalFunction("pljeskavicaVideo", PljeskavicaNews);
+        story.BindExternalFunction("endGame", endGame);
     }
 
 
@@ -49,6 +50,7 @@ public class InkExternalFunctions
         story.UnbindExternalFunction("kayakingVideo");
         story.UnbindExternalFunction("spotlightVideo");
         story.UnbindExternalFunction("pljeskavicaVideo");
+        story.UnbindExternalFunction("endGame");
     }
 
     public void StartEpisodeOneKayakingGame(){
@@ -84,6 +86,10 @@ public class InkExternalFunctions
         EpisodeManager.instance.GoToSleepPanel.SetActive(true);
         already_sent_kayaking_video = true;    
         }
+    }
+
+    public void endGame(){
+        GameObject.FindGameObjectWithTag("TheEnd").transform.GetChild(0).gameObject.SetActive(true);
     }
 
     public void SpotLightNews(){

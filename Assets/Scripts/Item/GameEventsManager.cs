@@ -50,5 +50,10 @@ public class MiscEvents
             onGemCollected();
         }
     }
+
+    public event Action onGameEnd;
+    public void OnGameEnd(){
+        onGameEnd?.Invoke();
+    }
 }
 

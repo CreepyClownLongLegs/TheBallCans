@@ -1,5 +1,7 @@
 
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
+using System.Threading;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -15,7 +17,6 @@ public class ContactsScrollingList : MonoBehaviour
     [Header("Contacts Button")]
     [SerializeField] private GameObject contactPrefab;
     public static ContactsScrollingList instance;
-    public static List<string> contacts = new List<string>(); 
 
     void Awake(){
         if(instance != null){
@@ -27,17 +28,31 @@ public class ContactsScrollingList : MonoBehaviour
 
     void Start(){
         //CreatecontactWithVideo("contact", "Watch the video dumbass", "justdoit.com", VideoFiles.instance.kayakingVideo, FMODEvents.instance.kayakingVideo);
+        foreach(KeyValuePair<string,string> contact in EpisodeManager.instance.contacts){
+            if(contact.Value != "Heads/"){
+            CreateContactWithSprite(Resources.Load<Sprite>(contact.Value),contact.Key);
+            }
+        }
     }
 
     public void CreateContact(Image contactIcon, string contactName){
-        if(contacts.Contains(contactName)){
+        if(EpisodeManager.instance.contacts.ContainsKey(contactName)){
             return;
         }
         GameObject contact = Instantiate(contactPrefab
         , contentParent.transform);
         contact.GetComponent<ConactObject>().CreateContact(contactIcon, contactName);
         contact.transform.SetAsFirstSibling();
-        contacts.Add(contactName);
+        EpisodeManager.instance.contacts.Add(contactName, "Heads/" + contactName);
+        UpdateScrolling(contact.GetComponent<RectTransform>());
+    }
+
+    //just at the beggining
+    public void CreateContactWithSprite(Sprite contactIcon, string contactName){
+        GameObject contact = Instantiate(contactPrefab
+        , contentParent.transform);
+        contact.GetComponent<ConactObject>().CreateContactWithSprite(contactIcon, contactName);
+        contact.transform.SetAsFirstSibling();
         UpdateScrolling(contact.GetComponent<RectTransform>());
     }
     private void UpdateScrolling(RectTransform buttonRectTransform)

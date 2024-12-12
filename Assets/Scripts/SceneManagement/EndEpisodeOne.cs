@@ -35,6 +35,7 @@ public class EndEpisodeOne : MonoBehaviour
             EpisodeManager.instance.firstEpisode = false;
             EpisodeManager.instance.secondEpisode = true;
             EpisodeManager.instance.ChangeDoorValue("Romania", true);
+            EpisodeManager.instance.ChangeDoorValue("Serbia", false);
             EpisodeManager.instance.saveNPCShowVariable("ZlatanNPCLobby",true);
             GameObject.FindGameObjectWithTag("Player").GetComponent<CharacterController2D>().elevatorPanelIsOpen = true;
             boxCollider2D = GetComponent<BoxCollider2D>();

@@ -14,6 +14,8 @@ private void Start(){
     ID = this.name;
     episodeManager = EpisodeManager.instance;
 }
+
+
 private void OnTriggerEnter2D(Collider2D collider2D){
     if(episodeManager.DoorExistsInDictionary(ID)){
         if(!episodeManager.GetDoorValue(ID)){
