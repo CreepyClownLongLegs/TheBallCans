@@ -27,6 +27,7 @@ public class InkExternalFunctions
         story.BindExternalFunction("kayakingVideo", KayakingNews);
         story.BindExternalFunction("spotlightVideo", SpotLightNews);
         story.BindExternalFunction("pljeskavicaVideo", PljeskavicaNews);
+        story.BindExternalFunction("isInContacts", (string charaName) => {return EpisodeManager.instance.contacts.ContainsKey(charaName);}, false);
         story.BindExternalFunction("endGame", endGame);
     }
 
@@ -50,6 +51,7 @@ public class InkExternalFunctions
         story.UnbindExternalFunction("kayakingVideo");
         story.UnbindExternalFunction("spotlightVideo");
         story.UnbindExternalFunction("pljeskavicaVideo");
+        story.UnbindExternalFunction("isInContacts");
         story.UnbindExternalFunction("endGame");
     }
 
