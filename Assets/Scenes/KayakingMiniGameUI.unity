@@ -4380,6 +4380,42 @@ PrefabInstance:
       propertyPath: m_Name
       value: KayakingGameManager
       objectReference: {fileID: 0}
+    - target: {fileID: 4366189559392521618, guid: 2bf93751b3d827646a2f16d074c4b571, type: 3}
+      propertyPath: m_TileSpriteArray.Array.data[1].m_Data
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 4366189559392521618, guid: 2bf93751b3d827646a2f16d074c4b571, type: 3}
+      propertyPath: m_TileSpriteArray.Array.data[2].m_Data
+      value: 
+      objectReference: {fileID: 2096530727, guid: 30a6f0060d2a6764e94d9485e242989a, type: 3}
+    - target: {fileID: 4366189559392521618, guid: 2bf93751b3d827646a2f16d074c4b571, type: 3}
+      propertyPath: m_TileSpriteArray.Array.data[21].m_Data
+      value: 
+      objectReference: {fileID: -386076783, guid: 30a6f0060d2a6764e94d9485e242989a, type: 3}
+    - target: {fileID: 4366189559392521618, guid: 2bf93751b3d827646a2f16d074c4b571, type: 3}
+      propertyPath: m_TileSpriteArray.Array.data[1].m_RefCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4366189559392521618, guid: 2bf93751b3d827646a2f16d074c4b571, type: 3}
+      propertyPath: m_TileSpriteArray.Array.data[21].m_RefCount
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4366189559392521618, guid: 2bf93751b3d827646a2f16d074c4b571, type: 3}
+      propertyPath: m_Tiles.Array.data[295].second.m_AllTileFlags
+      value: 1073741825
+      objectReference: {fileID: 0}
+    - target: {fileID: 4366189559392521618, guid: 2bf93751b3d827646a2f16d074c4b571, type: 3}
+      propertyPath: m_Tiles.Array.data[493].second.m_TileSpriteIndex
+      value: 21
+      objectReference: {fileID: 0}
+    - target: {fileID: 4366189559392521618, guid: 2bf93751b3d827646a2f16d074c4b571, type: 3}
+      propertyPath: m_Tiles.Array.data[731].second.m_TileSpriteIndex
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4366189559392521618, guid: 2bf93751b3d827646a2f16d074c4b571, type: 3}
+      propertyPath: m_Tiles.Array.data[295].second.m_TileObjectToInstantiateIndex
+      value: 65535
+      objectReference: {fileID: 0}
     - target: {fileID: 5119098658528870866, guid: 2bf93751b3d827646a2f16d074c4b571, type: 3}
       propertyPath: m_text
       value: "Avoid obstacles \nCollect 3 Memory Items \nOh ye, beware of the river
@@ -4387,7 +4423,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6068077210217836267, guid: 2bf93751b3d827646a2f16d074c4b571, type: 3}
       propertyPath: m_SortingOrder
-      value: 0
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 6629176529481099819, guid: 2bf93751b3d827646a2f16d074c4b571, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -4395,7 +4431,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6826284983023431323, guid: 2bf93751b3d827646a2f16d074c4b571, type: 3}
       propertyPath: m_SortingOrder
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7071305777451354852, guid: 2bf93751b3d827646a2f16d074c4b571, type: 3}
       propertyPath: m_AnchoredPosition.y

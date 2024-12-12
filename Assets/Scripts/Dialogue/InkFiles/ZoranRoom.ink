@@ -87,7 +87,7 @@ Bruh. #speaker:Zlatan #portrait:Zlatan_happy #layout:left
 <b>Homemade in Leskovac. This year they made it 86,4kg!!! Insane right?</b>#speaker:Zlatan #portrait:Zlatan_happy #layout:left
 <b>...</b>#speaker:Zlatan #portrait:Zlatan_happy #layout:left
 
-<b>Oh yeah right, Bosnia gave me this, could you bring it back to her?</b> #speaker:Zlatan #portrait:Zlatan_happy #layout:left
+<b>Oh yeah right, Fatima gave me this, could you bring it back to her?</b> #speaker:Zlatan #portrait:Zlatan_happy #layout:left
 ~giveSlingshot()
 <b>Thanks man</b> #speaker:Zlatan #portrait:Zlatan_happy #layout:left
     ->END
