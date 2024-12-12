@@ -25,29 +25,29 @@ I wonder if that made me the way I am now.
     -> END
     
 === talk_to_Andreea_first ===
-I heard theres stuff for this...like the opposite of laxatives... #speaker: JosipNPC #layout: right
-I heard theres stuff for this...like the opposite of laxatives... #speaker: JosipNPC #layout: right 
-What was it again... #speaker: JosipNPC #layout: right
-Oh hi there, haha #speaker: JosipNPC #layout: right
-I was just talking to myself #speaker: JosipNPC #layout: right
-Btw, Andreea seemed really distressed this morning #speaker: JosipNPC #layout: right
-Maybe you should go talk to her idk #speaker: JosipNPC #layout: right
+I heard theres stuff for this...like the opposite of laxatives... #speaker: Josip #layout: right
+I heard theres stuff for this...like the opposite of laxatives... #speaker: Josip #layout: right 
+What was it again... #speaker: Josip #layout: right
+Oh hi there, haha #speaker: Josip #layout: right
+I was just talking to myself #speaker: Josip #layout: right
+Btw, Andreea seemed really distressed this morning #speaker: Josip #layout: right
+Maybe you should go talk to her idk #speaker: Josip #layout: right
     ->END
     
 === main ===
-Finally a new job. #speaker: JosipNPC #layout: right
-Finally a new job. #speaker: JosipNPC #layout: right
+Finally a new job. #speaker: Josip #layout: right
+Finally a new job. #speaker: Josip #layout: right
 I hope I keep this one, last one was too much for me.
 Do you want to hear my story?
 + [No, loser. Get back to work.]
-    Oh- okay... Sorry. #speaker: JosipNPC #layout: right
+    Oh- okay... Sorry. #speaker: Josip #layout: right
     ->DONE
 + [Sure, I got some time.]
-    Well, my former boss wanted me to stop shitting my pants. #speaker: JosipNPC #layout: right
+    Well, my former boss wanted me to stop shitting my pants. #speaker: Josip #layout: right
     Can you believe that?!
     ->END
     
 === already_bought ===
-Bruh I gotta shit so bad. #speaker: JosipNPC #layout: right
-Bruh I gotta shit so bad. #speaker: JosipNPC #layout: right
+Bruh I gotta shit so bad. #speaker: Josip #layout: right
+Bruh I gotta shit so bad. #speaker: Josip #layout: right
     -> END
