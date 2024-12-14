@@ -5,7 +5,7 @@ VAR EPISODE_TWO_FINISHED_COOKING_GAME = "false"
 ===main===
 <b>My grandpa is watching that show again</b> #speaker:Zlatan #portrait:Zlatan_happy #layout:left
 <b>My grandpa is watching that show again...</b> #speaker:Zlatan #portrait:Zlatan_happy #layout:left
-<b>...</b> #speaker:Zoran #portrait:Zlatan_happy #layout:left
+<b>...</b> #speaker:Zlatan #portrait:Zlatan_happy #layout:left
 <b>Your assistance may be required upstairs again</b> #speaker:Zlatan #portrait:defZlatan_happyault #layout:left
     ->END
     

@@ -1,4 +1,5 @@
 
+using Systems.SceneManagement;
 using TMPro;
 using UnityEngine;
 
@@ -20,6 +21,7 @@ public class NewBehaviourScript : MonoBehaviour
       GameEventsManager.instance.goldEvents.onGoldGained += UpdateDisplayINT;
       GameEventsManager.instance.goldEvents.onGoldLost += UpdateDisplayINT;
       GameEventsManager.instance.playerEvents.onExperienceGained +=UpdateDisplayINT;
+      SceneLoader.newSceneGrouploaded += UpdateDisplay;  
       UpdateDisplay();
 
     }
@@ -30,6 +32,7 @@ public class NewBehaviourScript : MonoBehaviour
     GameEventsManager.instance.goldEvents.onGoldGained -= UpdateDisplayINT;
     GameEventsManager.instance.goldEvents.onGoldLost -= UpdateDisplayINT;
     GameEventsManager.instance.playerEvents.onExperienceGained -=UpdateDisplayINT;
+    SceneLoader.newSceneGrouploaded -= UpdateDisplay;  
     }
 
     private void UpdateDisplay(){
@@ -38,7 +41,9 @@ public class NewBehaviourScript : MonoBehaviour
         expText.text = exp + expirience + "XP";
     }
 
-    private void UpdateDisplayINT(int money){
-        UpdateDisplay();
+    private void UpdateDisplayINT(int moneyint){
+        expirience = DataPersistenceManager.instance.GetGameData().playerExpirience;
+        moneyText.text = money + playerData.money;
+        expText.text = exp + expirience + "XP";
     }
 }
