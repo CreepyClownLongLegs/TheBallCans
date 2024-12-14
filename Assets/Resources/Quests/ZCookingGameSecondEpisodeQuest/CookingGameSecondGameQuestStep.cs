@@ -7,6 +7,8 @@ public class CookingGameSecondGameQuestStep : QuestStep
     private void Start(){
         UpdateState();
         GameEventsManager.instance.playerEvents.wonCookingGame += WonCookingGame;
+        EpisodeManager.instance.EpisodeTwoCookingGameFinished = false;
+        DialogueManager.Instance.EpisodeTwoCookingGameFinished = false;
     }   
     protected override void SetQuestStepState(string state)
     {
@@ -38,6 +40,9 @@ public class CookingGameSecondGameQuestStep : QuestStep
             Debug.Log("its in progress the cooking of Second Episode");
             EpisodeManager.instance.CookingQuestAcceptedEpisodeTwo = true;
             DialogueManager.Instance.CookingQuestAcceptedSecondEpisode = true;
+            //bullshit solution look at it at a later time maybe
+            EpisodeManager.instance.EpisodeTwoCookingGameFinished = false;
+            DialogueManager.Instance.EpisodeTwoCookingGameFinished = false;
             EpisodeManager.instance.saveNPCShowVariable("RomaniaNPCRoom", false);
             EpisodeManager.instance.saveNPCShowVariable("RomaniaNPCKitchen", true);
             EpisodeManager.instance.saveNPCShowVariable("SloveniaNPCLobby", false);

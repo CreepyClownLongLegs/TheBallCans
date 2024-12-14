@@ -86,6 +86,7 @@ public class FoodInventory : MonoBehaviour
                 //lost
                 CookingGameManager.instance.GameOverCalled(true);
             }
+            
             else
             {
                 //lost
