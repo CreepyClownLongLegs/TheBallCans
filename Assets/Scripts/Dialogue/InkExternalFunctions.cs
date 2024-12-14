@@ -75,7 +75,7 @@ public class InkExternalFunctions
         NotificationManager.Instance.showNotification("You've unlocked Zlatans Room!", NotificationPanelColor.SUCCSES);
     }
 
-    //its actually now used for nboth episodes haha...
+    //its actually now used for both episodes haha...
     public void StartEpisodeOneCookingGame(){
         Debug.Log("Starting Cooking Game");
         _ = SceneLoader.Instance.LoadSceneGroup(7);
