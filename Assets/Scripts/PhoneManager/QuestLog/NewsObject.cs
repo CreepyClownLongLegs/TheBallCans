@@ -18,7 +18,7 @@ public class NewsObject : MonoBehaviour
         exitVideo();
     }
     public void CreateNewsWithoutVideo(string title, string description, string source){
-        this.title.text = "Breaking :" + title;
+        this.title.text = "Breaking: " + title;
         this.description.text = description;
         this.source.text = "Source: " + source;
         watchVideoButton.SetActive(false);
@@ -26,7 +26,7 @@ public class NewsObject : MonoBehaviour
     }
 
     public void CreateNewsWithVideo(string title, string description, string source, VideoClip video, EventReference audio){
-        this.title.text = "Breaking :" + title;
+        this.title.text = "Breaking: " + title;
         this.description.text = description;
         this.source.text = "Source: " + source;
         this.video = video;

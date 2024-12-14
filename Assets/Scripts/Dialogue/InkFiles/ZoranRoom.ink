@@ -4,7 +4,7 @@ VAR EPISODE_TWO = "false"
 VAR HAS_SLINGSHOT = "false"
 EXTERNAL pljeskavicaVideo()
 EXTERNAL giveSlingshot()
-EXTERNAL startRhytmGame()
+EXTERNAL startRhythmGame()
 
 {EPISODE_TWO == "false" : {EPISODE_ONE_FINISHED_RHYTHM_GAME == "false" : -> main | -> game_one_played} | {EPISODE_TWO_FINISHED_RHYTHM_GAME == "false" : -> main_two | {HAS_SLINGSHOT == "false" : -> game_two_played | -> gotten_slingshot}}}
 
@@ -19,7 +19,7 @@ EXTERNAL startRhytmGame()
 <b>Very ludicrous, if you ask me.</b>
 <b>... anyways...</b>
 <b>Have I mentioned that the show started in Belgrade?</b>#speaker:Zlatan #portrait:Zlatan_happy #layout:left
-<b>Have you heard of Belgrade? Do they mention the city in your history books?</b>
+-<b>Have you heard of Belgrade? Do they mention the city in your history books?</b>
 +[Not really.]
     <b>Well it's the capital of Serbia and also the biggest city with about 1.2 million citizens living in it.</b>#speaker:Zlatan #portrait:Belgrade #layout:item
     <b>It's located on the rivers Sava and Danube, which also flows through Vienna. A cool thing to share with yall!</b>
@@ -41,7 +41,7 @@ EXTERNAL startRhytmGame()
 <b>...</b>#speaker:Zlatan #portrait:Zlatan_happy #layout:left
 <b>OH RIGHT! My old man!</b>
 <b>Could you please help the singers sing well?</b>
-~startRhytmGame()
+~startRhythmGame()
 <b>Thanks!</b> 
 ->END
 
@@ -64,7 +64,7 @@ Bruh. #speaker:Zlatan #portrait:Zlatan_happy #layout:left
 <b>This one is going to be harder than the last one. My old man was very impressed by your last performance.</b> #speaker:Zlatan
 <b>So I think you set his standards pretty high.</b> #speaker:Zlatan
 <b>Can you work your magic once more?</b> #speaker:Zlatan
-~startRhytmGame()
+~startRhythmGame()
 <b>You're a life saver.</b> #speaker:Zlatan #portrait:Zlatan_happy #layout:left
 ->END
     
@@ -86,7 +86,28 @@ Bruh. #speaker:Zlatan #portrait:Zlatan_happy #layout:left
 <b>Since we are on the topic of foods, theres a video about the world's biggest pljeskavica!</b>#speaker:Zlatan #portrait:Zlatan_happy #layout:left
 <b>Homemade in Leskovac. This year they made it 86,4kg!!! Insane right?</b>#speaker:Zlatan #portrait:Zlatan_happy #layout:left
 <b>...</b>#speaker:Zlatan #portrait:Zlatan_happy #layout:left
+-<b>Do you have any questions for me?</b>#speaker:Zlatan #portrait:Zlatan_happy #layout:left
++[Is everyone aggressive in Serbia?]
+    <b>It's pretty sad that people never hear about any other things from Serbia.</b>#speaker:Zlatan #portrait:Zlatan_happy #layout:left
+    <b>It's always "Serbian man robbed/killed/attacked someone" when it happens in other countries.</b>#speaker:Zlatan #portrait:Zlatan_happy #layout:left
+    <b>Or "Another corruption scandal in Serbia, who would've though".</b>#speaker:Zlatan #portrait:Zlatan_happy #layout:left
+    <b>It made and still makes me somewhat sad that our country has this bad reputation in the rest of the world.</b>#speaker:Zlatan #portrait:Zlatan_happy #layout:left
+    <b>And because of these stereotypes, people do not want to interact with most of us.</b>#speaker:Zlatan #portrait:Zlatan_happy #layout:left
+    <b>Even though we are very welcoming to strangers and are willing to be a part of other communities and integrate.</b>#speaker:Zlatan #portrait:Zlatan_happy #layout:left
+    ->fatima_gun
++[Are the men in Serbia toxic?]
+    <b>BHAHAHAHAHHAHA</b>#speaker:Zlatan #portrait:Zlatan_happy #layout:left
+    <b>That's a good one!</b>#speaker:Zlatan #portrait:Zlatan_happy #layout:left
+    <b>Most of the guys I know are the sweetest, most caring people.</b>#speaker:Zlatan #portrait:Zlatan_happy #layout:left
+    <b>Yes, they tend to look intimidating, but they have a strong moral compass, and are willing to put their hands in fire for a friend.</b>#speaker:Zlatan #portrait:Zlatan_happy #layout:left
+    <b>When I moved here, 4 of my buddies came along, and all they asked for was a round of drinks for me, to help carry my stuff.</b>#speaker:Zlatan #portrait:Zlatan_happy #layout:left
+    <b>Younger kids may be sort of brats, but isn't that the case in any other country?</b>#speaker:Zlatan #portrait:Zlatan_happy #layout:left
+    <b>They will learn with time, and hopefully become better people.</b>#speaker:Zlatan #portrait:Zlatan_happy #layout:left
+    ->fatima_gun
 
+=== fatima_gun ===
+<b>Anyways, I've learned not to judge others throughout my years, cause I can't blame them. I just hope people learn that not everything in the media is as it seems.</b>#speaker:Zlatan #portrait:Zlatan_happy #layout:left
+<b>...</b>#speaker:Zlatan #portrait:Zlatan_happy #layout:left
 <b>Oh yeah right, Fatima gave me this, could you bring it back to her?</b> #speaker:Zlatan #portrait:Zlatan_happy #layout:left
 ~giveSlingshot()
 <b>Thanks man</b> #speaker:Zlatan #portrait:Zlatan_happy #layout:left
@@ -94,5 +115,5 @@ Bruh. #speaker:Zlatan #portrait:Zlatan_happy #layout:left
     
 === gotten_slingshot ===
 <b>That what you did for Andreea...</b> #speaker:Zlatan #portrait:Zlatan_happy #layout:left
-<b>...You should probably get going dude...</b> #speaker:Zlatan #portrait:Zlatan_happy #layout:left
+<b>...You should probably get going...</b> #speaker:Zlatan #portrait:Zlatan_happy #layout:left
     ->END

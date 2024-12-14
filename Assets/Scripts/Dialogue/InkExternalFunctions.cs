@@ -23,7 +23,7 @@ public class InkExternalFunctions
         story.BindExternalFunction("takeSlingshot", TakeSlingshot);
         story.BindExternalFunction("giveSlingshot", GiveSlingshot);
         story.BindExternalFunction("giveGun", GiveGun);
-        story.BindExternalFunction("startRhytmGame", StartRhythmGame);
+        story.BindExternalFunction("startRhythmGame", StartRhythmGame);
         story.BindExternalFunction("kayakingVideo", KayakingNews);
         story.BindExternalFunction("spotlightVideo", SpotLightNews);
         story.BindExternalFunction("pljeskavicaVideo", PljeskavicaNews);
@@ -47,7 +47,7 @@ public class InkExternalFunctions
         story.UnbindExternalFunction("takeSlingshot");
         story.UnbindExternalFunction("giveSlingshot");
         story.UnbindExternalFunction("giveGun");
-        story.UnbindExternalFunction("startRhytmGame");
+        story.UnbindExternalFunction("startRhythmGame");
         story.UnbindExternalFunction("kayakingVideo");
         story.UnbindExternalFunction("spotlightVideo");
         story.UnbindExternalFunction("pljeskavicaVideo");
