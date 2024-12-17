@@ -16624,6 +16624,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2233427347802757375, guid: 4edb65a5af8515e408166dd70ea934cc, type: 3}
+      propertyPath: inkJSON
+      value: 
+      objectReference: {fileID: 4900000, guid: 9d2d7ec4e07dc9a4992b525736eb2792, type: 3}
     - target: {fileID: 7606284914091026594, guid: 4edb65a5af8515e408166dd70ea934cc, type: 3}
       propertyPath: m_Size.x
       value: 3.972896
@@ -16787,6 +16791,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2233427347802757375, guid: 4edb65a5af8515e408166dd70ea934cc, type: 3}
+      propertyPath: inkJSON
+      value: 
+      objectReference: {fileID: 4900000, guid: f27c99c2a9573744cb2337bd3e0b1584, type: 3}
     - target: {fileID: 7606284914091026594, guid: 4edb65a5af8515e408166dd70ea934cc, type: 3}
       propertyPath: m_Size.x
       value: 3.972896
