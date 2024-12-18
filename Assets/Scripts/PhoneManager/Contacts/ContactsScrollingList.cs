@@ -18,6 +18,9 @@ public class ContactsScrollingList : MonoBehaviour
     [SerializeField] private GameObject contactPrefab;
     public static ContactsScrollingList instance;
 
+    public List<string> names = new List<string>();
+
+
     void Awake(){
         if(instance != null){
             Destroy(instance);
@@ -30,7 +33,10 @@ public class ContactsScrollingList : MonoBehaviour
         //CreatecontactWithVideo("contact", "Watch the video dumbass", "justdoit.com", VideoFiles.instance.kayakingVideo, FMODEvents.instance.kayakingVideo);
         foreach(KeyValuePair<string,string> contact in EpisodeManager.instance.contacts){
             if(contact.Value != "Heads/"){
-            CreateContactWithSprite(Resources.Load<Sprite>(contact.Value),contact.Key);
+                //security for when contacts are not called before talking to first npc
+                if(!names.Contains(contact.Key)){
+                    CreateContactWithSprite(Resources.Load<Sprite>(contact.Value),contact.Key);
+                }
             }
         }
     }
@@ -44,6 +50,7 @@ public class ContactsScrollingList : MonoBehaviour
         contact.GetComponent<ConactObject>().CreateContact(contactIcon, contactName);
         contact.transform.SetAsFirstSibling();
         EpisodeManager.instance.contacts.Add(contactName, "Heads/" + contactName);
+        names.Add(contactName);
         UpdateScrolling(contact.GetComponent<RectTransform>());
     }
 

@@ -10,14 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ad00d617a413e124596d9928d737f4b6, type: 3}
-  m_Name: ConfigureWifiQuestInfo
+  m_Name: CollectCoinsQuest
   m_EditorClassIdentifier: 
-  <id>k__BackingField: ConfigureWifiQuestInfo
-  displayName: Ask your Neighbour for the Password
-  description: Go to your neighboars room and ask the for the Wifi password, after
-    they give you the password, come back to the room and type it into the computer
+  <id>k__BackingField: CollectCoinsQuest
+  displayName: 1. Collect 5 Coins
+  description: Collect 5 Coins and complete the Quest in Fatimas Apartment
   questPrerequirements: []
   questStepPrefabs:
-  - {fileID: 2233480869180428782, guid: a288ab22c275236489e4cbb5ca179624, type: 3}
-  coins: 10
-  playerExpirience: 25
+  - {fileID: 6517737308593542963, guid: 82957a02f39bb6249b2a6b7673736992, type: 3}
+  coins: 5
+  playerExpirience: 10

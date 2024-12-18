@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: RhythmGameEpisodeOneQuest
   m_EditorClassIdentifier: 
   <id>k__BackingField: RhythmGameEpisodeOneQuest
-  displayName: Make Grandpa Happy
+  displayName: 4. Make Grandpa Happy
   description: Talk to Zlatan to gain his trust. Go to Zlatans Room and help the
     singers in Zvezde Granda sing well. Afterwards talk to his grandpa!
   questPrerequirements:

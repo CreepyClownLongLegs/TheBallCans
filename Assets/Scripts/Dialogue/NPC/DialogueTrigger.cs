@@ -52,6 +52,7 @@ private void noTalking(){
         DialogueManager.Instance.EnterDialogueMode(inkJSON);
         //add to contacts
         ContactsScrollingList.instance.CreateContact(ContactIconImage, contactName);
+        //to make sure for before opening the contacts te first time
     }
 }
 
