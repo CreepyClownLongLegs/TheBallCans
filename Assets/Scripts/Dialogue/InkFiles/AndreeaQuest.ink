@@ -99,12 +99,12 @@ We thought they might've put something in the Sarmale and now we were seeing thi
     And also seeing the reaction on peoples faces whenever they hear that I am from Romania :( #portrait:Andreea_Happy #speaker:Andreea #layout:right
     Sorry... :( #portrait:Andreea_Happy #speaker:Andreea #layout:right
     You probably didnt have any bad implication :* #portrait:Andreea_Happy #speaker:Andreea #layout:right
-    Please drop by my place tommorow for some Papanasi <3 #portrait:Andreea_Happy #speaker:Andreea #layout:right
+    Please drop by my place tomorrow for some Papanasi <3 #portrait:Andreea_Happy #speaker:Andreea #layout:right
     I want you to feel welcome here with us <3 #portrait:Andreea_Happy #speaker:Andreea #layout:right
     ->DONE
     +[That sounds awesome]
     YES IT WAASS!!! :D  #portrait:Andreea_Happy #speaker:Andreea #layout:right
-    Please drop by my place tommorow for some Papanasi <3 #portrait:Andreea_Happy #speaker:Andreea #layout:right
+    Please drop by my place tomorrow for some Papanasi <3 #portrait:Andreea_Happy #speaker:Andreea #layout:right
     I want you to feel welcome here with us <3 #portrait:Andreea_Happy #speaker:Andreea #layout:right
     ->DONE
 

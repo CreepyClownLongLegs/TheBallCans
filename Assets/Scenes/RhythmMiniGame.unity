@@ -4976,6 +4976,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8700059650210273373, guid: c2e7f5d508ad87c41b44e1394cf3eb51, type: 3}
+      propertyPath: m_text
+      value: '"Zvezde Granda"'
+      objectReference: {fileID: 0}
     - target: {fileID: 8799468763828554536, guid: c2e7f5d508ad87c41b44e1394cf3eb51, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 1058
@@ -4983,6 +4987,10 @@ PrefabInstance:
     - target: {fileID: 9181614608497386303, guid: c2e7f5d508ad87c41b44e1394cf3eb51, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 366
+      objectReference: {fileID: 0}
+    - target: {fileID: 9211716850069307839, guid: c2e7f5d508ad87c41b44e1394cf3eb51, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -11496,19 +11504,19 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: ' ZVIJEZDA GRANDE SIMULATOR
+  m_text: 'ZVEZDE GRANDA SIMULATOR
 
     the balkan "THE VOICE"!
 
-    Click the
-    arrow keys (not WASD) to hit a note !
+    Click the arrow
+    keys (not WASD) to hit a note !
 
     Almost like a rhythm game !
 
     Except
     its not !
 
-    Its the Zvijezda Grande Simulator...
+    Its the Zvezde Granda Simulator...
 
     GOOD LUCK!'
   m_isRightToLeft: 0
