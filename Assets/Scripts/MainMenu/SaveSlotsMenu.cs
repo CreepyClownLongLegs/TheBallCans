@@ -89,7 +89,7 @@ public class SaveSlotsMenu : Menu
 
     public void OnBackClicked() 
     {
-        //mainMenu.ActivateMenu();
+        mainMenu.ActivateMenu();
         this.DeactivateMenu();
     }
 
@@ -121,6 +121,7 @@ public class SaveSlotsMenu : Menu
             else 
             {
                 saveSlot.SetInteractable(true);
+                Debug.Log("Save Data Found");
                 if (firstSelected.Equals(backButton.gameObject))
                 {
                     firstSelected = saveSlot.gameObject;

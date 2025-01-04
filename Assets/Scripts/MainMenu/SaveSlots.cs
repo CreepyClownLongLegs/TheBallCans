@@ -12,6 +12,7 @@ public class SaveSlot : MonoBehaviour
     [Header("Content")]
     [SerializeField] private GameObject noDataContent;
     [SerializeField] private GameObject hasDataContent;
+    [SerializeField] private TextMeshProUGUI percentageCompleteText;
 
     [Header("Clear Data Button")]
     [SerializeField] private Button clearButton;
@@ -42,6 +43,7 @@ public class SaveSlot : MonoBehaviour
             noDataContent.SetActive(false);
             hasDataContent.SetActive(true);
             clearButton.gameObject.SetActive(true);
+            percentageCompleteText.text = data.GetPercentageComplete() + "% COMPLETE";
         }
     }
 

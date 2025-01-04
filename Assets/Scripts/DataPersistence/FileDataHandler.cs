@@ -79,34 +79,55 @@ public class FileDataHandler
         return loadedData;
     }
 
-    public void Save(GameData data)
+    public void Save(GameData data, string profileId) 
     {
-        string fullPath = Path.Combine(dataDirPath, dataFileName);
-
-        try
+        // base case - if the profileId is null, return right away
+        if (profileId == null) 
         {
-            // create directory the file will be written to (if it doesnt already exist)
+            return;
+        }
+
+        // use Path.Combine to account for different OS's having different path separators
+        string fullPath = Path.Combine(dataDirPath, profileId, dataFileName);
+        string backupFilePath = fullPath + backupExtension;
+        try 
+        {
+            // create the directory the file will be written to if it doesn't already exist
             Directory.CreateDirectory(Path.GetDirectoryName(fullPath));
 
-            // serialize C# data into Json
+            // serialize the C# game data object into Json
             string dataToStore = JsonUtility.ToJson(data, true);
 
             // optionally encrypt the data
-            if (useEncryption)
+            if (useEncryption) 
             {
                 dataToStore = EncryptDecrypt(dataToStore);
             }
 
-            // write serialized data to the file
-            using(FileStream stream = new FileStream(fullPath, FileMode.Create))
+            // write the serialized data to the file
+            using (FileStream stream = new FileStream(fullPath, FileMode.Create))
             {
-                using (StreamWriter writer = new StreamWriter(stream))
+                using (StreamWriter writer = new StreamWriter(stream)) 
                 {
                     writer.Write(dataToStore);
                 }
             }
+
+            // verify the newly saved file can be loaded successfully
+            GameData verifiedGameData = Load(profileId);
+            // if the data can be verified, back it up
+            if (verifiedGameData != null) 
+            {
+                File.Copy(fullPath, backupFilePath, true);
+            }
+            // otherwise, something went wrong and we should throw an exception
+            else 
+            {
+                throw new Exception("Save file could not be verified and backup could not be created.");
+            }
+
         }
-        catch (Exception e)
+        catch (Exception e) 
         {
             Debug.LogError("Error occured when trying to save data to file: " + fullPath + "\n" + e);
         }

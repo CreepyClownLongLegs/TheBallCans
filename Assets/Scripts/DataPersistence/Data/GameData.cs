@@ -28,6 +28,7 @@ public class GameData
     public SerializableDictionary<string, string> questMap;
     public SerializableDictionary<string,bool> npcs;
     public SerializableDictionary<string,string> contacts;
+    public QuestData questData;
 
     public GameData()
     {
@@ -68,5 +69,20 @@ public class GameData
         npcs.Add("ZlatanNPCLobby", false);
         npcs.Add("SloveniaNPCLobby", false);
 
+    }
+
+    public float GetPercentageComplete()
+    {
+        float percentage = 0;
+        int experience = DataPersistenceManager.instance.GetExpirience();
+        if (experience <= 0)
+        {
+            percentage = 0;
+        }
+        else
+        {
+            percentage = experience * 100 / 130;
+        }
+        return percentage;
     }
 }

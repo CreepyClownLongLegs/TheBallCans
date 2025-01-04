@@ -12,7 +12,7 @@ public class MainMenu : Menu
 
     [Header("Menu Buttons")]
     [SerializeField] private Button newGameButton;
-    [SerializeField] private Button continueGameButton;
+    //[SerializeField] private Button continueGameButton;
     [SerializeField] private Button loadGameButton;
 
     private void Start()
@@ -24,9 +24,38 @@ public class MainMenu : Menu
     {
         if (!DataPersistenceManager.instance.HasGameData()) 
         {
-            continueGameButton.interactable = false;
+            //continueGameButton.interactable = false;
             loadGameButton.interactable = false;
         }
+    }
+
+    public void OnNewGameClicked() 
+    {
+        saveSlotsMenu.ActivateMenu(false);
+        this.DeactivateMenu();
+    }
+
+    public void OnLoadGameClicked() 
+    {
+        saveSlotsMenu.ActivateMenu(true);
+        this.DeactivateMenu();
+    }
+
+    public void StartNewGame()
+    {
+           _ = SceneLoader.Instance.LoadSceneGroup(0);
+           this.DeactivateMenu();
+    }
+
+    public void ActivateMenu() 
+    {
+        this.gameObject.SetActive(true);
+        DisableButtonsDependingOnData();
+    }
+
+    public void DeactivateMenu() 
+    {
+        this.gameObject.SetActive(false);
     }
 
     public void ExitGame() 
@@ -34,17 +63,4 @@ public class MainMenu : Menu
         Debug.Log("Quitting the game.");
         Application.Quit();
     }
-
-    public void OnNewGameClicked() 
-    {
-        saveSlotsMenu.ActivateMenu(false);
-        //this.DeactivateMenu();
-    }
-
-    public void StartNewGame()
-    {
-           _ = SceneLoader.Instance.LoadSceneGroup(0);
-           gameObject.SetActive(false);
-    }
-
 }

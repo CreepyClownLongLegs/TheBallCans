@@ -9,6 +9,7 @@ public class DataPersistenceManager : MonoBehaviour
     [SerializeField] private bool disableDataPersistence = false;
     [SerializeField] private bool initializeDataIfNull = false;
     [SerializeField] private bool overrideSelectedProfileId = false;
+    [SerializeField] private string testSelectedProfileId = "test";
 
     [Header("File Storage Config")]
     [SerializeField] private string fileName;
@@ -44,8 +45,8 @@ public class DataPersistenceManager : MonoBehaviour
         //this.selectedProfileId = dataHandler.GetMostRecentlyUpdatedProfileId();
         if (overrideSelectedProfileId) 
         {
-            //this.selectedProfileId = testSelectedProfileId;
-            //Debug.LogWarning("Overrode selected profile id with test id: " + testSelectedProfileId);
+            this.selectedProfileId = testSelectedProfileId;
+            Debug.LogWarning("Overrode selected profile id with test id: " + testSelectedProfileId);
         }
     }
 
@@ -82,7 +83,7 @@ public class DataPersistenceManager : MonoBehaviour
         }
 
         // save data to a file using data handler
-        dataHandler.Save(gameData);
+        dataHandler.Save(gameData, selectedProfileId);
     }
 
     private void OnApplicationQuit()
