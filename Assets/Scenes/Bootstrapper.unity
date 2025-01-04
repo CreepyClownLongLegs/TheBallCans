@@ -391,13 +391,9 @@ MonoBehaviour:
   - GroupName: MainMenu
     Scenes:
     - Reference:
-        asset: {fileID: 102900000, guid: 24741aa586b15a3499f0f74f1688354a, type: 3}
-        guid: 24741aa586b15a3499f0f74f1688354a
-      SceneType: 3
-    - Reference:
         asset: {fileID: 102900000, guid: e6292eac883fe6348a8586d8cc028307, type: 3}
         guid: e6292eac883fe6348a8586d8cc028307
-      SceneType: 6
+      SceneType: 0
   - GroupName: The Elevator
     Scenes:
     - Reference:
@@ -529,10 +525,6 @@ MonoBehaviour:
     - Reference:
         asset: {fileID: 102900000, guid: ca30314d8141b1543b2e942ab655d859, type: 3}
         guid: ca30314d8141b1543b2e942ab655d859
-      SceneType: 3
-    - Reference:
-        asset: {fileID: 102900000, guid: 0f77f5f29aabcdf4d8bc0afff3b5b749, type: 3}
-        guid: 0f77f5f29aabcdf4d8bc0afff3b5b749
       SceneType: 3
   isLoading: 0
   loadedScenes: []

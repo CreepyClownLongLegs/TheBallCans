@@ -39,7 +39,7 @@ namespace Systems.SceneManagement{
 
 
         async void Start() {
-            await LoadSceneGroup(0);
+            await LoadSceneGroup(3);
         }
 
         void SaveSceneNames(string sceneName){

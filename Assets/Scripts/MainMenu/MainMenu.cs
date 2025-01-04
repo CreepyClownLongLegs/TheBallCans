@@ -14,6 +14,7 @@ public class MainMenu : MonoBehaviour
 
     public void StartNewGame()
     {
-           _ = SceneLoader.Instance.LoadSceneGroup(1);
+           _ = SceneLoader.Instance.LoadSceneGroup(0);
+           gameObject.SetActive(false);
     }
 }
